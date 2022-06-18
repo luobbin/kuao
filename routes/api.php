@@ -25,6 +25,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('get_qiniu_token', 'UserController@getQiniuToken');//查询账号
         Route::resource('product', 'ProductsController');//产品管理
         Route::resource('product_cate', 'ProductCatesController');//产品分类管理
+        Route::resource('article', 'ArticlesController');//新闻管理
+        Route::resource('article_cate', 'ArticleCatesController');//新闻分类管理
+        Route::resource('case', 'CasesController');//新闻管理
+        Route::resource('case_cate', 'CasesCatesController');//新闻分类管理
         Route::get('home/{id}', 'HomeController@show');//首页栏目获取
         Route::put('home/{id}', 'HomeController@update');//首页栏目修改
 
