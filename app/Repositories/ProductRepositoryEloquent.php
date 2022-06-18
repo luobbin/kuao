@@ -26,7 +26,13 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         return Product::class;
     }
 
-
+    /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'name'=>'like',
+        'cate_id'
+    ];
 
     /**
      * Boot up the repository, pushing criteria
