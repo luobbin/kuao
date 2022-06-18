@@ -43,10 +43,8 @@ class ArticlesController extends Controller
     {
         if (request()->wantsJson()) {
             $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-            $articles = $this->repository->paginate();
-            return response()->json([
-                'data' => $articles,
-            ]);
+            $articles = $this->repository->with(['cate'])->paginate();
+            return response()->json($articles);
         }
         $where = $request->all();
         if (!isset($where['cate_id'])){
@@ -75,9 +73,7 @@ class ArticlesController extends Controller
         $article = $this->repository->find($id);
 
         if (request()->wantsJson()) {
-            return response()->json([
-                'data' => $article,
-            ]);
+            return response()->json($article);
         }
         $commonData = $this->websetRep->getCommonData();
         $article->next = $this->repository->nextItm($id);
@@ -101,9 +97,7 @@ class ArticlesController extends Controller
         $article = $this->websetRep->findByNameAttr($id);
 
         if (request()->wantsJson()) {
-            return response()->json([
-                'data' => $article,
-            ]);
+            return response()->json($article);
         }
         $commonData = $this->websetRep->getCommonData();
         return view('articles.news', [

@@ -61,7 +61,7 @@ class CasesCatesController extends Controller
      */
     public function store(Request $request)
     {
-        if (empty($request->cate_id)||empty($request->name)){
+        if (empty($request->name)){
             error(203,"参数错误");
         }
         try {
@@ -126,7 +126,7 @@ class CasesCatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (empty($request->cate_id)||empty($request->name)){
+        if (empty($request->name)){
             error(203,"参数错误");
         }
         try {

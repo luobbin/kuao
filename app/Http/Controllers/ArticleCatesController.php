@@ -40,7 +40,6 @@ class ArticleCatesController extends Controller
         $articleCates = $this->repository->all();
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $articleCates,
             ]);
@@ -60,7 +59,7 @@ class ArticleCatesController extends Controller
      */
     public function store(Request $request)
     {
-        if (empty($request->cate_id)||empty($request->name)){
+        if (empty($request->name)){
             error(203,"参数错误");
         }
         try {
@@ -125,7 +124,7 @@ class ArticleCatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (empty($request->cate_id)||empty($request->name)){
+        if (empty($request->name)){
             error(203,"参数错误");
         }
         try {

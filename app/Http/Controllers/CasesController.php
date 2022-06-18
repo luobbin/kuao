@@ -45,19 +45,17 @@ class CasesController extends Controller
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $cases = $this->repository->all();
 
         if (request()->wantsJson()) {
-            return response()->json([
-                'data' => $cases,
-            ]);
+            $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
+            $cases = $this->repository->with(['cate'])->paginate();
+            return response()->json($cases);
         }
 
         $commonData = $this->websetRep->getCommonData();
         return view('cases.index', [
             'common'=>$commonData,
-            'data' => $cases,
+            //'data' => $cases,
             'pageTitle'=> "案例列表"."-".$commonData['web_name']
         ]);
     }
@@ -72,12 +70,10 @@ class CasesController extends Controller
     public function show($id)
     {
         $case = $this->repository->find($id);
-
+        $case->imgs = empty($case->imgs)?[]:json_decode($case->imgs,true);
         if (request()->wantsJson()) {
 
-            return response()->json([
-                'data' => $case,
-            ]);
+            return response()->json($case);
         }
         $commonData = $this->websetRep->getCommonData();
         return view('cases.detail', [
@@ -102,8 +98,9 @@ class CasesController extends Controller
             error(203,"参数错误");
         }
         try {
-
-            $data = $this->repository->create($request->all());
+            $param = $request->all();
+            $param['imgs'] = json_encode($request->imgs);
+            $data = $this->repository->create($param);
 
             $response = [
                 'message' => 'created.',
@@ -148,7 +145,9 @@ class CasesController extends Controller
             error(203,"参数错误");
         }
         try {
-            $res = $this->repository->update($request->all(), $id);
+            $param = $request->all();
+            $param['imgs'] = json_encode($request->imgs);
+            $res = $this->repository->update($param, $id);
 
             $response = [
                 'message' => 'updated.',
