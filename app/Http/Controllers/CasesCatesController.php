@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\CasesCateRepositoryEloquent;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\CasesCateCreateRequest;
-use App\Http\Requests\CasesCateUpdateRequest;
 use App\Repositories\CasesCateRepository;
-use App\Validators\CasesCateValidator;
 
 /**
  * Class CasesCatesController.
@@ -25,26 +21,19 @@ class CasesCatesController extends Controller
     protected $repository;
 
     /**
-     * @var CasesCateValidator
-     */
-    protected $validator;
-
-    /**
      * CasesCatesController constructor.
      *
      * @param CasesCateRepository $repository
-     * @param CasesCateValidator $validator
      */
-    public function __construct(CasesCateRepository $repository, CasesCateValidator $validator)
+    public function __construct(CasesCateRepositoryEloquent $repository)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
@@ -64,40 +53,29 @@ class CasesCatesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CasesCateCreateRequest $request
+     * @param  Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(CasesCateCreateRequest $request)
+    public function store(Request $request)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
-
-            $casesCate = $this->repository->create($request->all());
+            $data = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'CasesCate created.',
-                'data'    => $casesCate->toArray(),
+                'message' => 'created.',
+                'data'    => $data->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -139,43 +117,29 @@ class CasesCatesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  CasesCateUpdateRequest $request
+     * @param  Request $request
      * @param  string            $id
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(CasesCateUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
-
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-
-            $casesCate = $this->repository->update($request->all(), $id);
+            $res = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'CasesCate updated.',
-                'data'    => $casesCate->toArray(),
+                'message' => 'updated.',
+                'data'    => $res->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -183,22 +147,19 @@ class CasesCatesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $idArr = explode(",",$id);
+        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'CasesCate deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return success("删除成功");
         }
 
-        return redirect()->back()->with('message', 'CasesCate deleted.');
+        return error(203,"删除失败");
     }
 }

@@ -90,38 +90,29 @@ class CasesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CasesCreateRequest $request
+     * @param  Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(CasesCreateRequest $request)
+    public function store(Request $request)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
 
-            $case = $this->repository->create($request->all());
+            $data = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'Cases created.',
-                'data'    => $case->toArray(),
+                'message' => 'created.',
+                'data'    => $data->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -144,41 +135,29 @@ class CasesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  CasesUpdateRequest $request
+     * @param  Request $request
      * @param  string            $id
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(CasesUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
-
-            $case = $this->repository->update($request->all(), $id);
+            $res = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'Cases updated.',
-                'data'    => $case->toArray(),
+                'message' => 'updated.',
+                'data'    => $res->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -186,22 +165,19 @@ class CasesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $idArr = explode(",",$id);
+        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'Cases deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return success("删除成功");
         }
 
-        return redirect()->back()->with('message', 'Cases deleted.');
+        return error(203,"删除失败");
     }
 }

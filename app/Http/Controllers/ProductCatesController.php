@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ProductCateRepositoryEloquent;
 use App\Repositories\ProductRepository;
-use App\Repositories\ProductRepositoryEloquent;
 use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
 use Prettus\Validator\Exceptions\ValidatorException;
@@ -133,7 +132,7 @@ class ProductCatesController extends Controller
             $res = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'Product updated.',
+                'message' => 'updated.',
                 'data'    => $res->toArray(),
             ];
 
@@ -147,7 +146,7 @@ class ProductCatesController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  string  $ids
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($ids)
     {

@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
+use App\Repositories\ArticleCateRepositoryEloquent;
+use Illuminate\Support\Facades\Request;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\ArticleCateCreateRequest;
-use App\Http\Requests\ArticleCateUpdateRequest;
-use App\Repositories\ArticleCateRepository;
-use App\Validators\ArticleCateValidator;
 
 /**
  * Class ArticleCatesController.
@@ -20,31 +14,25 @@ use App\Validators\ArticleCateValidator;
 class ArticleCatesController extends Controller
 {
     /**
-     * @var ArticleCateRepository
+     * @var ArticleCateRepositoryEloquent
      */
     protected $repository;
 
-    /**
-     * @var ArticleCateValidator
-     */
-    protected $validator;
 
     /**
      * ArticleCatesController constructor.
      *
-     * @param ArticleCateRepository $repository
-     * @param ArticleCateValidator $validator
+     * @param ArticleCateRepositoryEloquent $repository
      */
-    public function __construct(ArticleCateRepository $repository, ArticleCateValidator $validator)
+    public function __construct(ArticleCateRepositoryEloquent $repository)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -64,40 +52,29 @@ class ArticleCatesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  ArticleCateCreateRequest $request
+     * @param  Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(ArticleCateCreateRequest $request)
+    public function store(Request $request)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
-
-            $articleCate = $this->repository->create($request->all());
+            $data = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'ArticleCate created.',
-                'data'    => $articleCate->toArray(),
+                'message' => 'created.',
+                'data'    => $data->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -106,7 +83,7 @@ class ArticleCatesController extends Controller
      *
      * @param  int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
@@ -139,43 +116,29 @@ class ArticleCatesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  ArticleCateUpdateRequest $request
+     * @param  Request $request
      * @param  string            $id
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(ArticleCateUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        if (empty($request->cate_id)||empty($request->name)){
+            error(203,"参数错误");
+        }
         try {
-
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-
-            $articleCate = $this->repository->update($request->all(), $id);
+            $res = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'ArticleCate updated.',
-                'data'    => $articleCate->toArray(),
+                'message' => 'updated.',
+                'data'    => $res->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -183,22 +146,19 @@ class ArticleCatesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $idArr = explode(",",$id);
+        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'ArticleCate deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return success("删除成功");
         }
 
-        return redirect()->back()->with('message', 'ArticleCate deleted.');
+        return error(203,"删除失败");
     }
 }

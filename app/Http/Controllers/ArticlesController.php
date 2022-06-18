@@ -7,11 +7,8 @@ use App\Repositories\ArticleRepositoryEloquent;
 use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
+
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\ArticleCreateRequest;
-use App\Http\Requests\ArticleUpdateRequest;
 
 /**
  * Class ArticlesController.
@@ -118,40 +115,30 @@ class ArticlesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  ArticleCreateRequest $request
+     * @param  Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(ArticleCreateRequest $request)
+    public function store(Request $request)
     {
+        //print_r($request->all());
+        if (empty($request->cate_id)||empty($request->title)){
+            error(203,"参数错误");
+        }
         try {
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
-
-            $article = $this->repository->create($request->all());
+            $data = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'Article created.',
-                'data'    => $article->toArray(),
+                'message' => 'created.',
+                'data'    => $data->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -174,43 +161,29 @@ class ArticlesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  ArticleUpdateRequest $request
+     * @param  Request $request
      * @param  string            $id
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(ArticleUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        if (empty($request->cate_id)||empty($request->title)){
+            error(203,"参数错误");
+        }
         try {
-
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-
-            $article = $this->repository->update($request->all(), $id);
+            $res = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'Article updated.',
-                'data'    => $article->toArray(),
+                'message' => 'updated.',
+                'data'    => $res->toArray(),
             ];
 
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
+            return success($response);
         } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return error(204,$e->getMessageBag());
         }
     }
 
@@ -218,22 +191,19 @@ class ArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $idArr = explode(",",$id);
+        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'Article deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return success("删除成功");
         }
 
-        return redirect()->back()->with('message', 'Article deleted.');
+        return error(203,"删除失败");
     }
 }
