@@ -15,9 +15,9 @@
             <img src="/static/202108/0bf43c06d18344a1a551f1edae61e979.jpg" class="m">
         </div>
         <div class="word1">
-            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">案例中心</h3>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                以责任，耀文明，WAC华格以博物馆级别的照明，点亮非凡空间！</p>
+            <h3 class="wow fadeInUp">案例中心</h3>
+            <p class="wow fadeInUp">
+                以责任，耀文明，{{ $common['web_name'] }}以博物馆级别的照明，点亮非凡空间！</p>
         </div>
     </div>
     <!-- 内页banner End -->
@@ -25,61 +25,35 @@
     <div class="case-show p110 w83">
         <div class="col-top clearfix">
             <div class="left">
-                上海天文馆
+                {{ $data['name'] }}
             </div>
             <div class="right">
-                <p>“我们不是在写一本教科书，我们是在创造一段体验”，上海天文馆全馆运用环境氛围、灯光音效和高仿真场景模拟手段，还采用了体感互动、数据可视化、AR、VR等方式构建沉浸式宇宙空间体验环境，
-
-                    以寓教于乐的方式将晦涩枯燥的科学、天文理论知识生动传递给观众。该馆打造了“家园”“宇宙”“征程”三大主题展区，以及“中华问天”“好奇星球”“航向火星”等特色展区，300余件展品中，原创比例高达85%，互动展品占比50%以上。</p>
+                <p>
+                    {{ $data['info'] }}
+                </p>
                 <p><br/></p>
             </div>
         </div>
         <div class="col-middle">
             <div class="swiper-container pic">
                 <div class="swiper-wrapper">
+                    @foreach ($data['imgs'] as $item)
                     <div class="swiper-slide">
                         <div class="img">
-                            <img src="/static/202108/8866cf1ae61db3c6d20a7e3d9e408fd8.jpg">
+                            <img src="{{ $item['img'] }}">
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/static/202108/83fe45345227940e6f7b6d8220f53df6.jpg">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/static/202108/c5abdeb04991aa8049ffe9d219c470be.jpg">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/static/202108/9ea56a32d559f75fb7f8e7beef945583.jpg">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="swiper-container word">
                 <div class="swiper-wrapper">
+                    @foreach ($data['imgs'] as $item)
                     <div class="swiper-slide">
-                        <h3>上海天文馆</h3>
-                        <p>星际穿越，挥舞双臂，自有属于你的星河</p>
+                        <h3>{{ $item['title'] }}</h3>
+                        <p>{{ $item['info'] }}</p>
                     </div>
-                    <div class="swiper-slide">
-                        <h3>上海天文馆</h3>
-                        <p>
-                            灯光利用黑空创造的间离效果容纳了人们的想象力，虚化了空间的边界，以期在方寸之间营造空幻浩渺的宇宙氛围。低照度的环境有利于打造沉浸式体验，同时以色温、亮度作为引导，呼应参观动线，呈现丰富立体的空间层次。</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3>上海 天文馆</h3>
-                        <p>
-                            从家园启程踏入璀璨星空，围绕“日月地”展开银河系，逐渐打开浩瀚宇宙，了解人类对宇宙探索的历程和取得的成就。展陈设计将人文与科学进行了有机融合，把深奥的天文理论转化为艺术形态，以一种寓教于乐的方式打开天体和宇宙的奥秘，将神秘的宇宙星空带到身边。</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h3>上海天文馆</h3>
-                        <p>
-                            征程-经历了漫长岁月的积累，人类对宇宙的探索不断加深，从卷卷书页到天文望远镜，灯光对不同展品采用了不同的照明方式，通过立体布灯的方法来表现三维展品的完整面貌,大型展品和布景以切合主题的灯光场景来表达内涵。</p>
-                    </div>
+                    @endforeach
                 </div>
                 <!-- 分页器 -->
                 <div class="swiper-pagination"></div>
@@ -88,14 +62,15 @@
                 <div class="next"></div>
             </div>
         </div>
+
         <div class="p-part3 pt110">
             <div class="tit">案例视频</div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="img"><img src="/static/202108/c5b4c5ad9af9db4b41c119257a8cc9b9.jpg"></div>
+                        <div class="img"><img src="{{ $data['videos']['img_url'] }}"></div>
                         <div class="bg"></div>
-                        <div class="play" data-src="/uploads/files/202108/1.mp4">
+                        <div class="play" data-src="{{ $data['videos']['video_url'] }}">
                             <div class="img1"><img src="/static/images/play-ico.png">
                                 <svg viewBox="0 0 120 120" class="svg">
                                     <circle cx="60" cy="60" r="59" stroke-width="2" fill="transparent"
@@ -114,7 +89,7 @@
         </div>
         <!-- 案例视频End -->
     </div>
-    <div class="case-show1 p110">
+<!--    <div class="case-show1 p110">
         <div class="w83">
             <div class="tit">案例产品</div>
             <div class="swiper-container">
@@ -130,14 +105,14 @@
                         </div>
                     </a>
                 </div>
-                <!-- Add Pagination -->
+                &lt;!&ndash; Add Pagination &ndash;&gt;
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="case-show2">
         <h3>联系我们</h3>
-        <a href="./contact.html" class="more"><span>联系我们</span></a>
+        <a href="{{ url("/news/contact_us") }}" class="more"><span>联系我们</span></a>
     </div>
 
     <!-- 视频弹窗 -->
@@ -163,6 +138,16 @@
     <script src="{{ asset('static/js/wow.min.js') }}"></script>
     <script src="{{ asset('static/js/scrollBar.js') }}"></script>
     <script src="{{ asset('static/js/main.js') }}"></script>
+    <script src="{{ asset('static/js/scrollreveal.min.js') }}"></script>
+    <script>
+        window.sr = new ScrollReveal({
+            distance: '100px',
+            duration: 1000,
+            easing: 'ease-out',
+            viewFactor: 0.2,
+            mobile: false
+        });
+    </script>
 @endsection
 
 @section('content_js')
@@ -266,16 +251,7 @@
         });
 
     </script>
-    <script src="{{ asset('static/js/scrollreveal.min.js') }}"></script>
-    <script>
-        window.sr = new ScrollReveal({
-            distance: '100px',
-            duration: 1000,
-            easing: 'ease-out',
-            viewFactor: 0.2,
-            mobile: false
-        });
-    </script>
+
     <script>
         sr.reveal('.ny-banner .word1 h3', {
             delay: 100

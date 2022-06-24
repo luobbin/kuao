@@ -24,7 +24,13 @@ class CasesRepositoryEloquent extends BaseRepository implements CasesRepository
         return Cases::class;
     }
 
-    
+    /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'name'=>'like',
+        'cate_id'
+    ];
 
     /**
      * Boot up the repository, pushing criteria
@@ -33,5 +39,5 @@ class CasesRepositoryEloquent extends BaseRepository implements CasesRepository
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
 }

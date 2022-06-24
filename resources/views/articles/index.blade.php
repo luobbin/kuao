@@ -88,26 +88,6 @@
     </script>
 
     <script>
-        var ajaxUtil = {
-            listArticle:function(){
-                return $.ajax({
-                    url:'articles',
-                    data:{
-                        page: this.page,
-                        limit: this.pageSize,
-                        searchJoin: 'and',
-                        search: 'cate_id:{{ $cate_id }};',
-                        searchFields: 'cate_id:=;',
-                        orderBy: 'id',
-                        sortedBy: 'desc',
-                        filter: ''
-                    },
-                    async:true,
-                    type:'GET',
-                    dataType:'json'
-                });
-            }
-        }
         /**列表展示模块*/
         var listModule = {
             page:1,       //虚拟页数
@@ -145,16 +125,9 @@
             /**插入产品*/
             insertDatas:function(){
                 var that = this;
-                /*var jsonText = '[' +
-                    '{"title":"浙江乌镇北栅粮仓展厅及工作室项目获IALD优秀奖","info":"热烈祝贺浙江乌镇北栅粮仓展厅及工作室项目在刚刚结束的第36届国际照明设计奖（IALD International Lightin...",' +
-                    '"url":"#","create_date":"2019-06-03","img":"./static/202108/532286b232934a82047a55953b7a8ef6.jpg","id":1},' +
-                    '{"title":"祝贺！THE LIT AWARD 2021公布！","info":"近日，THE LIT AWARD 2021名单公布，南通大剧院、上海天文馆、景德镇御窑博物馆等多个中国项目榜上有名，WA...",' +
-                    '"url":"#","create_date":"2019-05-21","img":"./static/202108/4a29c6086e8386757c459103d2b10513.jpg","id":4}]';
-                that.data = $.parseJSON(jsonText);*/
                 that.ifGettingData = true;
                 $.when(this.listArticle()).then(function(res){
                     that.data = res.data || [];
-                    console.log("获取到的文章数据为：",that.data);
                     that.appendData(that.data);
                 });
             },
@@ -179,8 +152,6 @@
                     $('.date-container .data-list').append(html);
                 }
                 //获取到的数据比分页数量大或者相等,如果没有则显示加载更多按钮
-                console.log("pagesize",this.pageSize);
-                console.log("data.length",data.length);
                 if (this.pageSize <= data.length) {
                     this.ShowMoreDataBtn(true);
                 }else {
@@ -239,17 +210,17 @@
 
                 //滚动触发自动展示更多产品事件
                 $(window).scroll(function() {
-                    //if(!$('.date-container .show-more-data-btn').hasClass('hide')){
-                    var top = document.getElementsByClassName('show-more-data-btn')[0].getBoundingClientRect().top + $('.date-container .show-more-data-btn').height(); //元素顶端到可见区域顶端的距离
-                    var se = document.documentElement.clientHeight; //浏览器可见区域高度。
-                    if(top <= se ) {
-                        if(that.delay){
-                            $('.date-container .show-more-data-btn').trigger('click');
-                            that.delay = false;
-                            setTimeout("listModule.delay = true;",500);
+                    if(!$('.date-container .show-more-data-btn').hasClass('hide')){
+                        var top = document.getElementsByClassName('show-more-data-btn')[0].getBoundingClientRect().top + $('.date-container .show-more-data-btn').height(); //元素顶端到可见区域顶端的距离
+                        var se = document.documentElement.clientHeight; //浏览器可见区域高度。
+                        if(top <= se ) {
+                            if(that.delay){
+                                $('.date-container .show-more-data-btn').trigger('click');
+                                that.delay = false;
+                                setTimeout("listModule.delay = true;",500);
+                            }
                         }
                     }
-                    //}
                 });
 
             },
