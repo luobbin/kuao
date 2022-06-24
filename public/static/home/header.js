@@ -14,7 +14,7 @@ function initHeaderPage(){
 		}
 	}catch(e){
 	}
-	
+
 	initHeaderPageEvent();
 	initFooterPageEvent();
 }
@@ -56,7 +56,7 @@ function initHeaderPageEvent(){
 	},function(e){
 		$(this).find('.menu_zi').animate({'margin-left':'50%'},500);
 	});
-	
+
 	$(window).resize(function(e) {
 		if($(window).width()>1300){
 			if($('.mobile-menu').css('display')==='block'){
@@ -85,7 +85,7 @@ function initHeaderPageEvent(){
 			$('.mobile-menu').slideUp();
 		}
     });
-	
+
 	$('.function .seach').click(function(e){
 		var display = $('.look').css('display');
 		if(display === 'none'){
@@ -114,13 +114,6 @@ function initHeaderPageEvent(){
 	});
 }
 
-
-/**切换语言*/
-function divTwoOnclick() {
-	$.cookie('CountryCode', headerDefaults.CountryCode, { expires: 7,path: '/' });
-	$.cookie('sellLanguage', headerDefaults.lang, { expires: 7,path: '/' });
-	window.location.href = "FLUAHomeController.do?FLUAHome&sl="+headerDefaults.CountryCode;
-}
 
 /**跳转查询*/
 function ToSearch(obj){

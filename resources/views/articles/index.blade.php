@@ -27,11 +27,11 @@
         <div class="w83 date-container">
             <div class="n-tab">
                 @foreach ($cates as $cate)
-                <a href="{{ url("articles",["cate_id"=>$cate['id']]) }}}" @if ($loop->first) class="active" @endif><span>{{ $cate['name'] }}</span></a>
+                <a href="{{ url("articles") }}?cate_id={{ $cate['id'] }}" @if ($cate['id']==$cate_id) class="active" @endif><span>{{ $cate['name'] }}</span></a>
                 @endforeach
             </div>
             <div class="n-list data-list">
-                @foreach ($data as $article)
+                {{--@foreach ($data as $article)
                 <a href="{{ url("article_detail",["id"=>$article->id]) }}" class="item c-flex">
                     <div class="word">
                         <span class="time">{{ $article->created_at }}</span>
@@ -46,7 +46,7 @@
                         <img src="{{ $article['index_img'] }}">
                     </div>
                 </a>
-                @endforeach
+                @endforeach--}}
             </div>
 
             <div class="pull-left show-more-data-btn hide" data-langkey="ShowMore" title="显示更多">显示更多</div>
@@ -88,13 +88,33 @@
     </script>
 
     <script>
+        var ajaxUtil = {
+            listArticle:function(){
+                return $.ajax({
+                    url:'articles',
+                    data:{
+                        page: this.page,
+                        limit: this.pageSize,
+                        searchJoin: 'and',
+                        search: 'cate_id:{{ $cate_id }};',
+                        searchFields: 'cate_id:=;',
+                        orderBy: 'id',
+                        sortedBy: 'desc',
+                        filter: ''
+                    },
+                    async:true,
+                    type:'GET',
+                    dataType:'json'
+                });
+            }
+        }
         /**列表展示模块*/
         var listModule = {
-            page:0,       //虚拟页数
+            page:1,       //虚拟页数
             pageSize:4,        //每页个数
             data:{},       //当前显示的数据
             delay:true,     //显示更多按钮触发延时
-            ifGettingData:true,    //是否正在获取信息
+            ifGettingData:false,    //是否正在获取信息
             offsetTop:100,//顶部离列表距离
             setTimeoutId:{},     //setTimeout的ID
             init:function(){
@@ -103,7 +123,7 @@
                 this.initDatas();      //初始化右侧列表
             },
 
-            /**初始化右侧产品列表*/
+            /**初始列表*/
             initDatas:function(){
                 var that = this;
                 if(that.ifGettingData){
@@ -116,50 +136,55 @@
                 //隐藏更多按钮、删除原本展示的产品、显示加载中
                 this.ShowMoreDataBtn(false);
                 $('.date-container .n-list>a').remove();
-                $('.date-container .n-list').append('<li class="loading"><img src="https://www.flua.com/puri-plug/Images/loading.gif" style="width:20px;height:20px;"/>加载中</li>');
+                $('.date-container .n-list').append('<li class="loading"><img src="{{ $common['loading_img'] }}" style="width:20px;height:20px;"/>加载中</li>');
 
-                this.page = 0;
+                this.page = 1;
                 this.insertDatas();
             },
 
             /**插入产品*/
             insertDatas:function(){
-                var jsonText = '[' +
+                var that = this;
+                /*var jsonText = '[' +
                     '{"title":"浙江乌镇北栅粮仓展厅及工作室项目获IALD优秀奖","info":"热烈祝贺浙江乌镇北栅粮仓展厅及工作室项目在刚刚结束的第36届国际照明设计奖（IALD International Lightin...",' +
                     '"url":"#","create_date":"2019-06-03","img":"./static/202108/532286b232934a82047a55953b7a8ef6.jpg","id":1},' +
-                    '{"title":"收购拥有150年历史的豪华水晶照明品牌Schonbek","info":"Lighting 宣布从Swarovski Lighting, Ltd.（施华洛世奇照明有限公司）手中收购与Schonbek品牌有关的所...",' +
-                    '"url":"#","create_date":"2019-06-01","img":"./static/202108/b2ab97b92cdbcff21619182d3ff09889.jpg","id":2},' +
-                    '{"title":"四川美术学院美术馆外立面泛光照明工程荣获2021年亚洲照明设计大奖光艺术类特别之光奖！","info":"2021年6月1日， 亚洲照明设计师协会正式宣布由深圳市紫墨设计咨询有限公司、四川美术学院照明艺术研究所、...",' +
-                    '"url":"#","create_date":"2019-05-29","img":"./static/202108/532286b232934a82047a55953b7a8ef6.jpg","id":3},' +
                     '{"title":"祝贺！THE LIT AWARD 2021公布！","info":"近日，THE LIT AWARD 2021名单公布，南通大剧院、上海天文馆、景德镇御窑博物馆等多个中国项目榜上有名，WA...",' +
                     '"url":"#","create_date":"2019-05-21","img":"./static/202108/4a29c6086e8386757c459103d2b10513.jpg","id":4}]';
-                this.data = $.parseJSON(jsonText);
+                that.data = $.parseJSON(jsonText);*/
+                that.ifGettingData = true;
+                $.when(this.listArticle()).then(function(res){
+                    that.data = res.data || [];
+                    console.log("获取到的文章数据为：",that.data);
+                    that.appendData(that.data);
+                });
+            },
+            appendData:function (data) {
                 //首页返回顶部
-                if(this.page <= 0){
+                if(this.page <= 1){
                     this.scrollToTop();
                 }
-
                 //判断并删除加载中样式
                 if($('.date-container li.loading').length > 0) {
                     $('.date-container li.loading').remove();
                 }
                 //如果是首页删除所有产品
-                if(this.page === 0 && $('.date-container .data-list>a').length > 0){
+                if(this.page === 1 && $('.date-container .data-list>a').length > 0){
                     $('.date-container .data-list>a').remove();
                 }
-
-
                 //隐藏更多产品按钮
                 this.ShowMoreDataBtn(false);
 
-                for (var i = 0; i < this.data.length; i++) {
-                    var html = this.getItemHtml(this.data[i]);
+                for (var i = 0; i < data.length; i++) {
+                    var html = this.getItemHtml(data[i]);
                     $('.date-container .data-list').append(html);
                 }
-
-                //判断是否加载所有产品,如果没有则显示加载更多按钮
-                if (this.pageSize <= this.data.length) {
+                //获取到的数据比分页数量大或者相等,如果没有则显示加载更多按钮
+                console.log("pagesize",this.pageSize);
+                console.log("data.length",data.length);
+                if (this.pageSize <= data.length) {
                     this.ShowMoreDataBtn(true);
+                }else {
+                    this.ShowMoreDataBtn(false);
                 }
                 //去掉加载中
                 this.ifGettingData = false;
@@ -227,6 +252,24 @@
                     //}
                 });
 
+            },
+            //获取文章列表
+            listArticle:function(){
+                return $.ajax({
+                    url:'articles',
+                    data:{
+                        page: this.page,
+                        limit: this.pageSize,
+                        searchJoin: 'and',
+                        search: 'cate_id:{{ $cate_id }};',
+                        searchFields: 'cate_id:=;',
+                        orderBy: 'id',
+                        sortedBy: 'desc',
+                        filter: ''
+                    },
+                    type:'GET',
+                    dataType:'json'
+                });
             },
         };
         listModule.init();

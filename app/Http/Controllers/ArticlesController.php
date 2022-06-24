@@ -43,20 +43,29 @@ class ArticlesController extends Controller
     {
         if (request()->wantsJson()) {
             $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-            $articles = $this->repository->with(['cate'])->paginate();
+            $articles = $this->repository->with(['cate'])->paginate($request->get("limit",4));
+            foreach ($articles as $article){
+                $article->img = $article->index_img;
+                $article->url = url("article_detail",["id"=>$article->id]);
+                $article->create_date = date("Y-m-d",strtotime($article->created_at));
+            }
             return response()->json($articles);
         }
-        $where = $request->all();
-        if (!isset($where['cate_id'])){
-            $where['cate_id'] = 1;
+        $cate_id = $request->get("cate_id",1);
+        if ($request->has("search")){
+            $fields = explode(";",$request->get("search"));
+            $column = explode(":",$fields[0]);
+            if (isset($column[1]))
+                $cate_id = $column[1];
         }
 
-        $articles = $this->repository->with([])->findWhere($where)->forPage($request->get("page",1),$request->get("pageSize",10));
+        //$articles = $this->repository->with([])->findWhere($where)->forPage($request->get("page",1),$request->get("pageSize",4));
         $commonData = $this->websetRep->getCommonData();
         return view('articles.index', [
             'common'=>$commonData,
             'cates' => $cateRep->all(),
-            'data' => $articles,
+            'cate_id' => $cate_id,
+            //'data' => $articles,
             'pageTitle'=> "资讯列表"."-".$commonData['web_name']
         ]);
     }

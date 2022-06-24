@@ -23,7 +23,14 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
         return Article::class;
     }
 
-
+    /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'title'=>'like',
+        'cate_id',
+        'id'
+    ];
 
     /**
      * Boot up the repository, pushing criteria
