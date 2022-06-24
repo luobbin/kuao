@@ -52,12 +52,8 @@ class ProductsController extends Controller
             return response()->json($products);
         }
         $commonData = $this->websetRep->getCommonData();
-        $hots = [
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1],
-        ];
+
+        $hots = $this->repository->getHots();
         return view('products.index', [
             'common'=>$commonData,
             'data' => $products,
@@ -72,10 +68,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function search()
+    public function search(Request $request)
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $products = $this->repository->with(['cate'])->paginate();
+        $name = $request->get("name","");
+        $products = empty($name)?[]:$this->repository->searchByName($name,$request->get("page",1));
 
         if (request()->wantsJson()) {
             //返回json数据
@@ -84,8 +80,8 @@ class ProductsController extends Controller
         $commonData = $this->websetRep->getCommonData();
         return view('products.search', [
             'common'=>$commonData,
-            'data' => $products,
-            'keyword'=>\request()->get("name",""),
+            'data' => empty($name)?$this->repository->getHots():$products,
+            'name'=>\request()->get("name",""),
             'pageTitle'=> "产品搜索結果列表"."-".$commonData['web_name']
         ]);
     }

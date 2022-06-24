@@ -42,6 +42,27 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         $this->pushCriteria(app(RequestCriteria::class));
     }
 
+    public function getHots()
+    {
+        return [
+            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
+            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
+            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
+            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
+        ];
+    }
+
+    /**
+     * 产品搜索
+     * @param $name
+     * @param $page
+     * @return Product[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
+     */
+    public function searchByName($name, $page)
+    {
+        return Product::with([])->whereRaw("name like '%{$name}%'")->forPage($page)->get();
+    }
+
     /**
      * 获取所有产品及分类
      * @return array
