@@ -517,7 +517,7 @@ position:absolute; left:17px;top:23%;z-index:6;}
 .p-nav .c-nav a::after {content:'';display:block;width:0;height:2px;background-color:#1A4275;position:absolute;left:0;bottom:-1px;z-index:3;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
 .p-nav .c-nav a.active {color:#1A4275;font-weight:700;}
 .p-nav .c-nav a.active::after {width:100%;}
-.p-nav.ff {position:fixed;top:100px;left:0;z-index:5;width:100%;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.13);height:60px;z-index:55;background-color:#fff;}
+.p-nav.ff {position:fixed;top:80px;left:0;z-index:5;width:100%;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.13);height:60px;z-index:55;background-color:#fff;}
 .p-nav.ff h3 {height:60px;line-height:60px;}
 .p-nav.ff .c-nav a {height:60px;line-height:60px;}
 .p-nav.ff::before {height:60px;}

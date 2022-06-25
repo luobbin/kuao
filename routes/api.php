@@ -15,7 +15,9 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'admin'], function () {
     // 当前为不要验证TOKEN的路由
     Route::post('login', 'UserController@login');
-
+    //上传文件
+    Route::post('single_upload', 'FileUploadController@singleFile');
+    Route::post('muti_upload', 'FileUploadController@mutiFile');
 
     // 需要验证token的路由可在下方添加
     Route::group(['middleware' => 'jwt.token'], function () {

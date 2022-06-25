@@ -20,7 +20,7 @@ class Cases extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id','name','cate_id','index_img','imgs','location','info','product_ids','videos','created_at','updated_at','sort','if_index'];
+    protected $fillable = ['id','name','cate_id','index_img','imgs','location','info','product_ids','video_img','video_url','created_at','updated_at','sort','if_index'];
 
     //案例---分类
     public function cate()

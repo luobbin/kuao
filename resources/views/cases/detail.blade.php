@@ -68,9 +68,9 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="img"><img src="{{ $data['videos']['img_url'] }}"></div>
+                        <div class="img"><img src="{{ $data['video_img'] }}"></div>
                         <div class="bg"></div>
-                        <div class="play" data-src="{{ $data['videos']['video_url'] }}">
+                        <div class="play" data-src="{{ $data['video_url'] }}">
                             <div class="img1"><img src="/static/images/play-ico.png">
                                 <svg viewBox="0 0 120 120" class="svg">
                                     <circle cx="60" cy="60" r="59" stroke-width="2" fill="transparent"

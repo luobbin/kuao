@@ -760,7 +760,21 @@ if(!function_exists('sec')) {
     }
 }
 
-
+/**
+ * 解析寄送里面的数据
+ * @param string|array $content
+ * @return array
+ * */
+if(!function_exists('json_prase')) {
+    function json_prase($content)
+    {
+        $data = json_decode($content,true);
+        foreach ( $data as $k=>$v){
+            $data[$k] = json_decode($v,true);
+        }
+        return $data;
+    }
+}
 
 /**
  * 返回rpc服务成功结果
