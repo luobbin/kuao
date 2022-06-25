@@ -25,7 +25,13 @@ class WebSettingRepositoryEloquent extends BaseRepository implements WebSettingR
         return WebSetting::class;
     }
 
-    
+    /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'type',
+        'location'
+    ];
 
     /**
      * Boot up the repository, pushing criteria

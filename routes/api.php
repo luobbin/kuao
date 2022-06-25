@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('article', 'ArticlesController');//新闻管理
         Route::resource('article_cate', 'ArticleCatesController');//新闻分类管理
         Route::resource('case', 'CasesController');//新闻管理
+        Route::resource('webset', 'WebSettingController');//配置管理
         Route::resource('case_cate', 'CasesCatesController');//新闻分类管理
         Route::get('home/{id}', 'HomeController@show');//首页栏目获取
         Route::put('home/{id}', 'HomeController@update');//首页栏目修改

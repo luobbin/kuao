@@ -12,6 +12,8 @@ class HomeController extends Controller
 
     protected $commonData;
     protected $resp;
+    protected $resWeb;
+
     /**
      * Create a new controller instance.
      *
@@ -21,6 +23,7 @@ class HomeController extends Controller
     {
         $this->commonData = $webSettingRepositoryEloquent->getCommonData();
         $this->resp = $homeSettingRepo;
+        $this->resWeb = $webSettingRepositoryEloquent;
     }
 
     /**
@@ -150,36 +153,6 @@ class HomeController extends Controller
         } catch (ValidatorException $e) {
             return error(204,$e->getMessageBag());
         }
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function products()
-    {
-        return view('products.index');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function product_detail()
-    {
-        return view('products.detail');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function cases()
-    {
-        return view('cases.index');
     }
 
     /**
