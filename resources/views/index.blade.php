@@ -47,6 +47,16 @@
         <div class="video-switch-btn next-video"></div>
     </section>
 
+    <!--logo墙-->
+    <section class="block-2 hide">
+        <div class="home-title animated">
+            <h2 title="{{$homeNames[5]}}">{{$homeNames[5]}}</h2>
+            <span></span>
+        </div>
+        <div id="HomeProInfo" style="padding:0px 70px; margin-bottom: 36px;"></div>
+        <div class="clearfix"></div>
+    </section>
+
     <!--新闻动态-->
     <section class="block-5">
         <div class="home-title animated">
@@ -58,15 +68,7 @@
         </ul>
     </section>
 
-    <!--logo墙-->
-    <section class="block-2 hide">
-        <div class="home-title animated">
-            <h2 title="{{$homeNames[5]}}">{{$homeNames[5]}}</h2>
-            <span></span>
-        </div>
-        <div id="HomeProInfo" style="padding:0px 70px; margin-bottom: 36px;"></div>
-        <div class="clearfix"></div>
-    </section>
+
 
     <div style="height:100px;"></div>
 
