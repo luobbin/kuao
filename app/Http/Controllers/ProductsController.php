@@ -93,7 +93,6 @@ class ProductsController extends Controller
      */
     public function listFontItems()
     {
-        //返回json数据
         return response()->json($this->repository->listFontItems());
     }
 
