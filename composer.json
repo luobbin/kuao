@@ -59,12 +59,6 @@
             "@php artisan package:discover"
         ]
     },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
-    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
