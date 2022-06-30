@@ -110,11 +110,11 @@ class ProductsController extends Controller
 
         $product->imgs = empty($product->imgs)?[]:json_decode($product->imgs,true);
         $features = empty($product->features)?[]:json_decode($product->features,true);
-        if (count($features)>0){
-            foreach ($features as $k=>$v){
-                $features[$k] = json_decode($v,true);
-            }
-        }
+//        if (count($features)>0){
+//            foreach ($features as $k=>$v){
+//                $features[$k] = json_decode($v,true);
+//            }
+//        }
         $product->features = $features;
         if (request()->wantsJson()) {
             return response()->json($product);
