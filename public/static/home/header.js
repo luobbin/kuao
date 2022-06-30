@@ -118,7 +118,6 @@ function initHeaderPageEvent(){
 /**跳转查询*/
 function ToSearch(obj){
 	var keyword = $(obj).parent().find('input[name="keyword"]').val();
-	// keyword = escape(keyword);
 	var brand = $('body').data('brand');
 	keyword= encodeURIComponent(keyword);
 	window.location.href = './product_search?keyword='+keyword + '&brand='+brand;
