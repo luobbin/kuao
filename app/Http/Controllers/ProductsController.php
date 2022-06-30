@@ -108,9 +108,10 @@ class ProductsController extends Controller
         $product = $this->repository->with(['cate'])->find($id);
 
         $product->imgs = empty($product->imgs)?[]:json_decode($product->imgs,true);
-        //print_r($product->imgs);exit;
+        //
         $features = empty($product->features)?[]:json_decode($product->features,true);
-        if (count($features)>0){
+        //print_r($features);exit;
+        if (count($features)>1){
             foreach ($features as $k=>$v){
                 $features[$k] = json_decode($v,true);
             }
