@@ -53,7 +53,7 @@ class WebSettingRepositoryEloquent extends BaseRepository implements WebSettingR
                 //json格式要解析出来
                 $content = $v->content;
                 if ($v->name_attr=="web_header_menu_setting"){
-                    $content = json_encode([
+                    /*$content = json_encode([
                       ['name'=>'产品中心','url' => url("products"), 'childs'=>[
                           ['name'=>'室内专业类','url' => url("products",["cate_id"=>1])],
                           ['name'=>'室内设计类','url' => url("products",["cate_id"=>1])],
@@ -71,24 +71,26 @@ class WebSettingRepositoryEloquent extends BaseRepository implements WebSettingR
                       ['name'=>'关于我们','url' => url("news",["id"=>'about_us']), 'childs'=>[
                             ['name'=>'公司资讯','url' => url('articles')],
                             ['name'=>'工厂介绍','url' => url("news",["id"=>'factory_info'])],
-                            ['name'=>'关于库奥','url' => url(url("news",["id"=>'about_us']))]
+                            ['name'=>'关于库奥','url' => url("news",["id"=>'about_us'])]
                         ]
                       ],
                       ['name'=>'联系我们','url' => '#', 'childs'=>[
-                            ['name'=>'联系我们','url' => url(url("news",["id"=>'contact_us']))]
+                            ['name'=>'联系我们','url' => url("news",["id"=>'contact_us'])]
                         ]
                       ]
                     ]);
+                    WebSetting::with([])->where("name_attr",$v->name_attr)->update(["content"=>$content]);*/
                 }else if ($v->name_attr=="mob_header_menu_setting"){
-                    $content = json_encode([
-                        ['name'=>'产品中心','url' => '/products'],
-                        ['name'=>'巴比伦博物馆照明','url' => '/product_cates'],
+                    /*$content = json_encode([
+                        ['name'=>'产品中心','url' => url("products")],
+                        ['name'=>'巴比伦博物馆照明','url' => url("products",["cate_id"=>3])],
                         ['name'=>'项目案例','url' => '/cases'],
                         ['name'=>'新闻动态','url' => '/article_cates'],
-                        ['name'=>'关于库奥','url' => '/article']
+                        ['name'=>'关于库奥','url' => url("news",["id"=>'about_us'])]
                     ]);
+                    WebSetting::with([])->where("name_attr",$v->name_attr)->update(["content"=>$content]);*/
                 }else if ($v->name_attr=="right_account_list"){
-                    $content = json_encode([
+                    /*$content = json_encode([
                         [
                             'name'=>'微信',
                             'ico1' => '/static/images/fr-ico1-1.png',
@@ -102,33 +104,35 @@ class WebSettingRepositoryEloquent extends BaseRepository implements WebSettingR
                             'img' => '/static/images/wb-ewm.jpg'
                         ]
                     ]);
+                    WebSetting::with([])->where("name_attr",$v->name_attr)->update(["content"=>$content]);*/
                 }else if ($v->name_attr=="footer_menu_setting"){
-                    $content = json_encode([
-                        ['name'=>'产品中心','url' => '/product_cates', 'childs'=>[
-                            ['name'=>'室内专业类','url' => '/product'],
-                            ['name'=>'室内设计类','url' => '/product'],
-                            ['name'=>'博物馆照明','url' => '/product'],
-                            ['name'=>'展示箱','url' => '/product']
+                   /* $content = json_encode([
+                        ['name'=>'产品中心','url' => url("products"), 'childs'=>[
+                            ['name'=>'室内专业类','url' => url("products",["cate_id"=>1])],
+                            ['name'=>'室内设计类','url' => url("products",["cate_id"=>1])],
+                            ['name'=>'博物馆照明','url' => url("products",["cate_id"=>1])],
+                            ['name'=>'展示箱','url' => url("products",["cate_id"=>1])]
                         ]
                         ],
-                        ['name'=>'项目案例','url' => '/cases', 'childs'=>[
-                            ['name'=>'博物馆&美术馆&科技馆','url' => '/cases'],
-                            ['name'=>'星级酒店','url' => '/case'],
-                            ['name'=>'家装别墅','url' => '/case'],
-                            ['name'=>'商业空间','url' => '/case']
+                        ['name'=>'项目案例','url' => url("cases",["cate_id"=>1]), 'childs'=>[
+                            ['name'=>'博物馆&美术馆&科技馆','url' => url("cases",["cate_id"=>1])],
+                            ['name'=>'星级酒店','url' => url("cases",["cate_id"=>1])],
+                            ['name'=>'家装别墅','url' => url("cases",["cate_id"=>1])],
+                            ['name'=>'商业空间','url' => url("cases",["cate_id"=>1])]
                         ]
                         ],
-                        ['name'=>'关于我们','url' => '/articles', 'childs'=>[
-                            ['name'=>'公司资讯','url' => '/article'],
-                            ['name'=>'工厂介绍','url' => '/article'],
-                            ['name'=>'关于库奥','url' => '/article']
+                        ['name'=>'关于我们','url' => "#", 'childs'=>[
+                            ['name'=>'公司资讯','url' => url("articles")],
+                            ['name'=>'工厂介绍','url' => url("news",["id"=>'factory_info'])],
+                            ['name'=>'关于库奥','url' => url("news",["id"=>'about_us'])]
                         ]
                         ],
                         ['name'=>'联系我们','url' => '#', 'childs'=>[
-                            ['name'=>'联系我们','url' => '/article']
+                            ['name'=>'联系我们','url' => url("news",["id"=>'contact_us'])]
                         ]
                         ]
                     ]);
+                    WebSetting::with([])->where("name_attr",$v->name_attr)->update(["content"=>$content]);*/
                 }
                 $commonData[$v->name_attr] = json_decode($content,true);
             }else{
