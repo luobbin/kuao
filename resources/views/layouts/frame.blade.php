@@ -15,78 +15,112 @@
     <link rel="stylesheet" href="{{ url('static/home/style.css') }}">
 </head>
 <body class="Home-body">
-
-<!--宽版顶部导航栏-->
-<header id="head">
-    <!--左侧logo-->
-    <div class="logo">
-        <a href="{{ route('index') }}">
-            <img src="{{ $common['logo'] }}" alt="##">
-        </a>
-    </div>
-    <!--中间菜单-->
-    <ul class="menu menu_ZH">
-        @foreach ($common['web_header_menu_setting'] as $menu)
-            <li class="lists ">
-                <div class="divxian">
-                    <a class="one" href="{{$menu['url']}}" title="{{$menu['name']}}">{{$menu['name']}}</a>
-                    <div class="xia"></div>
-                </div>
-                <div class="menu_zi @if ($menu['name'] == "产品中心") menu_zi_inventory @endif">
-                    @foreach ($menu['childs'] as $menuChild)
-                        <div class="zi"><a class="one ziSize" href="{{$menuChild['url']}}" title="{{$menuChild['name']}}">{{$menuChild['name']}}</a></div>
-                        @if ($menu['name']=="产品中心")
-                            <hr style="margin: 5px;border-color: #CCCCCC;">
-                        @endif
-                    @endforeach
-                </div>
-            </li>
-        @endforeach
-    </ul>
-    <!--右侧功能栏-->
-    <div class="function">
-        <!--搜索-->
-        <span class="seach"><em style="font-style:normal" title="搜索">搜索</em></span>
+<!-- pc头部 -->
+<header class="fix">
+    <div class="left">
+        <div class="nav-ico"></div>
     </div>
 
-    <div class="head-right-img">
-        <img src="{{ $common['connect_phone_img'] }}">
-    </div>
+    <a href="{{ route('index') }}" class="logo">
+        <img src="{{ $common['logo'] }}" class="oa" alt="{{$common['web_name']}}">
+        <img src="{{ $common['logo'] }}" class="ob" alt="{{$common['web_name']}}">
+    </a>
 
-    <div class="look">
-        <div name="infosearch" method="post">
-            <input type="hidden" name="sl" value="ZH">
-            <input style="border-radius:0;" class="for" name="keyword" type="text" placeholder="产品名称">
-            <input name="submitsearch" type="button" class="jiao buttonface" value="搜索" onclick="ToSearch(this);">
+    <div class="right">
+        <div class="ser1"></div>
+    </div>
+    <div id="siteHeaderSearch">
+        <div class="search-box">
+            <div class="search-box-cover"></div>
+            <form action="{{ url('product_search') }}" method="get" class="search-form">
+                <span class="search-btn"></span>
+                <input type="text" name="keyword" placeholder="请输入您想搜索的内容" class="search-input">
+                <span class="close-btn"></span>
+            </form>
         </div>
     </div>
-
-    <div class="moblie-bt"><span></span><span></span><span></span></div>
-    <div class="clearfix"></div>
 </header>
+<!-- pc头部End -->
 
-<!--手机版右侧菜单-->
-<section class="mobile-menu">
-    <ul>
-        @foreach ($common['mob_header_menu_setting'] as $menu)
-            <li>
-                <a class="one" href="{{$menu['url']}}" title="{{$menu['name']}}">{{$menu['name']}}</a>
-                <div class="xian"></div>
-            </li>
-        @endforeach
-    </ul>
-    <!--功能箱-->
-    <div class="function">
-        <div class="look" style="display:block; position:relative; bottom:0; margin-bottom:20px;">
-            <div name="infosearch" method="post">
-                <input type="hidden" name="sl" value="ZH">
-                <input style="background:#E8E8E8; width:50%; border-radius:0; color:#000" id="keyword" class="for" name="keyword" type="text" placeholder="产品名称">
-                <input name="submitsearch" type="button" class="jiao buttonface" value="搜索" onclick="ToSearch(this);">
+<!-- PC目录弹出 -->
+<div class="menu-tc">
+    <div class="nav">
+        <div class="col-top">
+            <img src="{{ url('static/images/menu-close.png') }}">
+            目录
+        </div>
+
+        <div class="col-middle">
+            @foreach ($common['web_header_menu_setting'] as $menu)
+                <dl>
+                    <dt>
+                        <a href="{{$menu['url']}}" title="{{$menu['name']}}">{{$menu['name']}}</a>
+                        <i></i>
+                    </dt>
+                    @if ($menu['childs'])
+                    <dd>
+                        @foreach ($menu['childs'] as $menuChild)
+                            <a href="{{$menuChild['url']}}" title="{{$menuChild['name']}}">{{$menuChild['name']}}</a>
+                        @endforeach
+                    </dd>
+                    @endif
+                </dl>
+            @endforeach
+        </div>
+        <div class="col-bottom">
+            <p class="time">{{ $common['connect_time'] }}</p>
+            <p class="tel">{{ $common['connect_phone'] }}</p>
+            <div class="fx">
+				<span>
+					<img src="{{ $common['wechat_connect_img'] }}">
+				</span>
             </div>
         </div>
-    </div>
-</section>
 
+    </div>
+    <div class="bg"></div>
+</div>
+<!-- 目录弹出End -->
+
+
+<!-- 手机头部 -->
+<div class="search-bg1"></div>
+<div class="header2">
+    <div class="main-wrap f-cb">
+        <h1 class="logo fl">
+            <a href="{{ route('index') }}">
+                <img src="{{ $common['logo'] }}">
+            </a>
+        </h1>
+        <div class="ser">
+            <a href="{{ url('product_search') }}"><img src="{{ url('static/images/ser-ico1.png') }}"></a>
+        </div>
+        <div class="nav-btn fr">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </div>
+    <div class="sub-menu">
+        <ul>
+            @foreach ($common['web_header_menu_setting'] as $menu)
+                <li>
+                    @if ($menu['childs'])
+                        <div class="tit sub-tit" title="{{ $menu['name'] }}"><a href="javascript:void(0)">{{ $menu['name'] }}</a><i></i></div>
+                        <div class="sec-list">
+                            @foreach ($menu['childs'] as $menuChild)
+                                <p><a href="{{$menuChild['url']}}" title="{{$menuChild['name']}}">{{$menuChild['name']}}</a></p>
+                            @endforeach
+                        </div>
+                    @else
+                        <a class="tit" href="{{$menu['url']}}" title="{{$menu['name']}}">{{$menu['name']}}</a>
+                    @endif
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+<!-- 手机头部End -->
 
 @yield('content')
 
@@ -157,6 +191,13 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('static/home/jquery-1.11.2.min.js') }}"></script>
 <script src="{{ asset('static/js/scrollBar.js') }}"></script>
+<script src="{{ asset('static/js/main.js') }}"></script>
+<script src="{{ asset('static/js/jquery.transit.js') }}"></script>
+<script src="{{ asset('static/js/swiper.min.js') }}"></script>
+<script src="{{ asset('static/js/swiper.animate.min.js') }}"></script>
+<script src="{{ asset('static/js/wow.min.js') }}"></script>
+<script src="{{ asset('static/js/scrollBar.js') }}"></script>
+<script src="{{ asset('static/js/scrollreveal.min.js') }}"></script>
 @yield('footer_js')
 
 <script type="text/javascript" src="{{ asset('static/home/header.js') }}"></script>
