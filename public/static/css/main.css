@@ -82,10 +82,10 @@ header a.logo img {display:block;width:224px;transition:all .3s linear;-moz-tran
 header a.logo img.oa {display:block;}
 header a.logo img.ob {display:none;}
 header.fix {background-color:rgba(255,255,255,0.1);}
-header.fix .nav-ico {background-image:url(../images/nav-ico1.png);}
+/*header.fix .nav-ico {background-image:url(../images/nav-ico1.png);}*/
 header.fix .nav-ico1 {color:#000;}
 header.fix .ser1 {color:#000;}
-header.fix .ser1::before {background-image:url(../images/ser-ico.png);}
+header.fix .ser1::before {background-image:url(../images/ser-ico1.png);}
 header.fix .lang p a {color:#000;}
 header.fix .lang p::after {background-image:url(../images/down-ico1.png);}
 header.fix a.logo img.oa {display:none;}
@@ -153,14 +153,14 @@ header.fa {position:absolute;}
 .header2 .main-wrap {height:55px;padding:0 3%;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.1);box-sizing:border-box;width:100%;}
 .header2 .logo {height:55px;overflow:hidden;}
 .header2 .logo a {display:block;}
-.header2 .logo img {display:block;height:15px;margin-top:20px;}
+.header2 .logo img {display:block;height:18px;margin-top:20px;}
 .header2 .lang {line-height:55px;font-size:12px;position:absolute;top:0;height:55px;right:50px;}
 .header2 .lang a {color:#333;font-size:14px;}
 .header2 .ser{position:absolute;right:80px;top:50%;transform:translateY(-50%)}
-.header2 .nav-btn {width:24px;height:18px;position:relative;cursor:pointer;margin-top:18px;}
-.header2 .nav-btn .line {display:block;width:100%;height:2px;border-radius:2px;background-color:#ababab;position:absolute;}
+.header2 .nav-btn {width:18px;height:15px;position:relative;cursor:pointer;margin-top:18px;}
+.header2 .nav-btn .line {display:block;width:100%;height:2px;border-radius:2px;background-color:#D8D8D8;position:absolute;}
 .header2 .nav-btn .line1 {-webkit-transform-origin:left 0px 0;-ms-transform-origin:left 0px 0;transform-origin:left 0px 0;}
-.header2 .nav-btn .line2 {top:8px;}
+.header2 .nav-btn .line2 {top:6px;}
 .header2 .nav-btn .line3 {bottom:0;-webkit-transform-origin:left 2px 0;-ms-transform-origin:left 2px 0;transform-origin:left 2px 0;}
 .header2 .sub-menu {width:100%;padding:0 2%;display:none;position:absolute;left:0;top:60px;z-index:2;overflow-y:auto;box-sizing:border-box;}
 .header2 .sub-menu ul {width:100%;overflow-y:scroll;height:calc(100vh - 55px - 1.5rem);}

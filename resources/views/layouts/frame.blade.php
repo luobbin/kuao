@@ -93,7 +93,7 @@
             </a>
         </h1>
         <div class="ser">
-            <a href="{{ url('product_search') }}"><img src="{{ url('static/images/ser-ico1.png') }}"></a>
+            <a href="{{ url('product_search') }}"><img src="{{ url('static/images/ser-ico2.png') }}"></a>
         </div>
         <div class="nav-btn fr">
             <span class="line line1"></span>

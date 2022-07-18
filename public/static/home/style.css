@@ -93,7 +93,7 @@ a:link{ text-decoration:none;}
 .flow-tip:hover>div{display:block;}
 /*endregion 泛用样式*/
 
-body{margin:0 40px; padding-top:110px;font-family:'DINPro-Regular','Microsoft YaHei','SourceHanSansCN-Regular','SourceHanSansCN-Normal','黑体','SourceHanSansSC-Regular';}
+/*body{margin:0 40px; padding-top:110px;font-family:'DINPro-Regular','Microsoft YaHei','SourceHanSansCN-Regular','SourceHanSansCN-Normal','黑体','SourceHanSansSC-Regular';}*/
 .default-section{width:1200px;margin:0 auto;margin-top: 10px;margin-bottom:30px;display:flex;}
 
 
