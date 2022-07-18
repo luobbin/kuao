@@ -11,13 +11,13 @@
     <!-- 内页banner -->
     <div class="ny-banner">
         <div class="img">
-            <img src="/static/202108/ef40ebff2697f85f7408442a5c7df363.jpg" class="pc">
-            <img src="/static/202108/0bf43c06d18344a1a551f1edae61e979.jpg" class="m">
+            <img src="{{ $common['cases_background_pc_img'] }}" class="pc">
+            <img src="{{ $common['cases_background_mob_img'] }}" class="m">
         </div>
         <div class="word1">
-            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">案例中心</h3>
+            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">项目案例</h3>
             <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                以责任，耀文明，{{ $common['web_name'] }}以博物馆级别的照明，点亮非凡空间！</p>
+                {{ $common['cases_background_info'] }}！</p>
         </div>
     </div>
     <!-- 内页banner End -->
@@ -26,19 +26,18 @@
     <div class="case p110 w83">
         <div class="col-top clearfix" style=" height: auto;">
             <div class="left">
-                <h3><b>1000+</b> 精选案例</h3>
-                <p>过往经典案例<br>开启您的灵感之旅</p>
+                <h3><span style="color:#A1A09E;">项目案例</span> | </h3>
             </div>
             <div class="right">
                 <h3>分类筛选</h3>
-                <div class="tab">
-                    @foreach ($cates as $cate)
-                        <a href="{{ url("cases") }}?cate_id={{ $cate['id'] }}" @if ($cate['id']==$cate_id) class="active" @endif><span>{{ $cate['name'] }}</span></a>
-                    @endforeach
-                </div>
                 <div class="form searchCase">
                     <input name="keyword" type="text" placeholder="按案例名称搜索"/>
                     <button class="searchButton">搜索</button>
+                </div>
+                <div class="tab">
+                    @foreach ($cates as $cate)
+                        <a href="{{ url("cases") }}?cate_id={{ $cate['id'] }}" @if ($cate['id']==$cate_id) class="active" @endif>{{ $cate['name'] }}</a>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -170,7 +169,7 @@
                         '<img src="'+ pro['index_img'] +'">' +
                     '</div>' +
                     '<div class="word">' +
-                        '<h3>'+ pro['name'] +'</h3>' +
+                        '<h3>'+ pro['name'] +'<span> 案例详解 >>> </span></h3>' +
                         '<p>'+ pro['info'] +'</p>' +
                         '<div class="adr">' +  pro['location'] + '</div>' +
                     '</div>' +

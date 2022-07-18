@@ -69,6 +69,8 @@ a:link{ text-decoration:none;}
 .text-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .after-colon:after {content:':';}
 .text-through{text-decoration: line-through !important;}
+.show-more-data-btn{width:100%;margin:20px 20px 0;text-align:center;display:block;font-size:18px;color:#FFFFFF;background:#565656;height:50px;line-height:50px;cursor:pointer;}
+.show-more-data-btn.hide{display: none;}
 
 /**固定比例的正方形*/
 .rectangle>div{text-decoration:none;list-style-type:none;overflow:hidden;}

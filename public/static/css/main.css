@@ -802,20 +802,33 @@ to {opacity:1;stroke-dasharray:371 371}
 
 /* 工程案例 */
 .case{}
-.case .col-top{margin-bottom: 100px;}
+.case .col-top{margin-bottom: 30px;}
 .case .col-top .left{float: left;}
-.case .col-top .left h3{color:#FFA11A;font-size:30px;margin-bottom: 35px;}
+.case .col-top .left h3{color:#C8A063;font-size:50px;margin-bottom: 35px;}
 .case .col-top .left p{font-size: 40px;color:#333;line-height: 50px;font-weight: bold;}
-.case .col-top .right{float: right;}
-.case .col-top .right h3{color:#000;font-size:20px;margin-bottom: 15px;}
-.case .col-top .right .tab {margin-bottom: 30px;}
-.case .col-top .right .tab a {display:inline-block;font-size:16px;color:#4D4D4D;padding:0 26px;height:36px;line-height:36px;border-radius:30px;margin-right:24px;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
-.case .col-top .right .tab a:last-child {margin-right:0;}
-.case .col-top .right .tab a.active {background-color:#1A4275;color:#fff;}
-.case .col-top .right .form{display: block;width: 100%;position: relative;border-radius: 22px;border:1px solid #EBEBEB;font-size:14px;padding:0 45px;}
+.case .col-top .right{float: right; width: 50%;}
+.case .col-top .right h3{color:#9F9FA1;font-size:24px;margin-bottom: 15px;}
+.case .col-top .right .tab {margin-top: 15px;}
+.case .col-top .right .tab a {color:#9F9FA1; font-size: 14px; padding:0 25px; border-right: 2px solid #9F9FA1; background: none;}
+.case .col-top .right .tab a:hover,.case .col-top .right .tab a:link{background: none;}
+.case .col-top .right .tab a:first-child {padding-left:0;}
+.case .col-top .right .tab a:last-child {border-right:0;}
+.case .col-top .right .tab a.active {color:#fff;}
+.case .col-top .right .form{
+    display: block;
+    width: 80%;
+    position: relative;
+    border-radius: 2px;
+    border: 1px solid #EBEBEB;
+    font-size: 14px;
+    padding: 0 50px;
+    margin-left: 20%;
+    margin-top: -46px;
+    background-color: #fff;
+}
 .case .col-top .right .form::before{content: '';width: 16px;height:16px;background-image: url(../images/case-ser.png);position: absolute;left:20px;top:50%;margin-top:-8px;}
-.case .col-top .right .form input{width: 100%;height:44px;box-sizing: border-box;}
-.case .col-top .right .form button{cursor: pointer; display: block; width: 90px;height:30px;border-radius: 15px; position: absolute;right:10px;top:50%;margin-top:-15px; background-color: #1A4275;color:#fff;font-size: 14px;text-align: center;outline: none;border: none;}
+.case .col-top .right .form input{width: 100%;height:32px;box-sizing: border-box;}
+.case .col-top .right .form button{cursor: pointer; display: block; width: 60px;height:30px;border-radius: 1px; position: absolute;right:10px;top:50%;margin-top:-15px; background-color: #5A5657;color:#fff;font-size: 14px;text-align: center;outline: none;border: none;}
 
 .case .col-bottom{
     display: -webkit-box;
@@ -830,11 +843,13 @@ to {opacity:1;stroke-dasharray:371 371}
 .case .col-bottom a.item .img {width:100%;overflow:hidden;position:relative;}
 .case .col-bottom a.item .img img {display:block;width:100%;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
 .case .col-bottom a.item .word {padding:36px 24px 10px 24px;position: relative;}
-.case .col-bottom a.item .word h3 {font-size:28px;color:#333;font-weight:bold;margin-bottom:15px;}
-.case .col-bottom a.item .word p {font-size:16px;line-height:24px;height:48px;color:#666;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+.case .col-bottom a.item .word h3 {font-size:28px;color:#9F9FA1;font-weight:bold;margin-bottom:15px;}
+.case .col-bottom a.item .word h3 span{float: right;}
+.case .col-bottom a.item .word p {display:none;font-size:16px;line-height:24px;height:48px;color:#666;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
 .case .col-bottom a.item:nth-child(2n){margin-right: 0;margin-top:90px;}
-.case .col-bottom a.item .adr{color:#1A4275;font-size:16px;display: inline-block;padding-left: 20px;position: absolute;right:24px;top:40px;}
-.case .col-bottom a.item .adr::before{content: '';display: block;width: 16px;height:16px;background-image: url(../images/adr-ico.png);position: absolute;left:0;top:0;}
+.case .col-bottom a.item .more{color:#9F9FA1;font-size:16px;display: inline-block;padding-left: 20px;position: absolute;right:24px;top:40px;}
+.case .col-bottom a.item .adr{color:#1A4275;font-size:16px;display: none;padding-left: 20px;position: absolute;right:24px;top:40px;}
+/*.case .col-bottom a.item .adr::before{content: '';display: block;width: 16px;height:16px;background-image: url(../images/adr-ico.png);position: absolute;left:0;top:0;}*/
 
 /* 案例详情 */
 .case-show{}
@@ -1143,14 +1158,15 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .about4 .swiper-slide .word{padding:20px 30px;}
 .about3 .col-middle{margin-left:100px;margin-top:80px;}
 
-.case .col-top .left h3{font-size:24px;}
+.case .col-top .left h3{font-size:44px;}
 .case .col-top .left p{font-size: 30px;line-height: 40px;}
 .case .col-bottom a.item .word{padding:18px 12px 5px 12px;}
 .case .col-bottom a.item .word h3{font-size:18px;}
+.case .col-bottom a.item .word h3 span{font-size:15px; line-height: 18px;}
 .case .col-bottom a.item .word p{font-size:14px;}
 .case .col-bottom a.item .adr{font-size:14px;top: 18px;}
 .case .col-bottom a.item:nth-child(2n){margin-top: 50px;}
-.case .col-top .right .tab a{font-size:14px;}
+.case .col-top .right .tab a{font-size:15px;}
 
 .case-show .col-top .left{font-size: 30px;}
 .case-show .col-middle .word .swiper-slide{padding:50px 40px;}
@@ -1233,8 +1249,6 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .about3 .col-middle li{padding:30px 15px;}
 .about3 .col-middle li span.num{right:15px;bottom:36px;font-size:40px;}
 .about3 .col-bottom{right:-190px;}
-
-.case .col-top .right .tab a{font-size:12px;}
 
 .down .right ul.act li .word h3{font-size:20px;}
 .down .right ul.act li .word p{font-size:14px;}
