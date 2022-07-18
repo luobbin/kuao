@@ -22,8 +22,7 @@
     </div>
 
     <a href="{{ route('index') }}" class="logo">
-        <img src="{{ $common['logo'] }}" class="oa" alt="{{$common['web_name']}}">
-        <img src="{{ $common['logo'] }}" class="ob" alt="{{$common['web_name']}}">
+        <img src="{{ $common['logo'] }}" alt="{{$common['web_name']}}" height="100%">
     </a>
 
     <div class="right">
@@ -141,24 +140,32 @@
             <div class="clearfix"></div>
         </div>
         <div class="di-qrcode-fen">
-            <div class="di-qrcode">
-                <div class="qrcode qrcode1" style="display: block;">
-                    <img src="{{ $common['public_account_img'] }}">
-                    <p title="KA公众号">KA公众号</p>
-                </div>
-                <div class="qrcode qrcode2">
-                    <img src="{{ $common['wechat_connect_img'] }}">
-                    <p title="微信二维码">微信二维码</p>
-                </div>
-            </div>
             <div class="di-fen-ban">
                 <p title="社交分享">社交分享</p>
                 <div class="di-fen" data-id="S">
                     {!! $common['share_code'] !!}
                 </div>
-                <a href="http://www.beian.miit.gov.cn/" title="{{$common['web_copyright']}}" target="_blank" class="di-beian" > {!! $common['web_copyright'] !!} </a>
+            </div>
+            <div class="di-qrcode">
+                <div class="qrcode qrcode1" style="display: block;">
+                    <img src="{{ $common['public_account_img'] }}">
+{{--                    <p title="KA公众号">KA公众号</p>--}}
+                </div>
+                <div class="qrcode qrcode2">
+                    <img src="{{ $common['wechat_connect_img'] }}">
+{{--                    <p title="微信二维码">微信二维码</p>--}}
+                </div>
             </div>
             <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="di-foot">
+            <img src="{{ url('static/images/logo2.png') }}">
+            <div class="address">{{ $common['connect_address'] }}</div>
+            <div class="clearfix"></div>
+            <hr style="margin: 10px 0; border: 1px solid; border-color:#9E9F9F;">
+            <div class="clearfix"></div>
+            <a href="http://www.beian.miit.gov.cn/" title="{{$common['web_copyright']}}" target="_blank" class="di-beian" > {!! $common['web_copyright'] !!} </a>
         </div>
         <div class="clearfix"></div>
     </div>
