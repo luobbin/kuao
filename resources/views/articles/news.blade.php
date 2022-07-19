@@ -8,11 +8,11 @@
 
 
 @section('content')
+<div class="clearfix"></div>
 
-
-
+<div class="news-show w83 p110">
 {!! $data['content'] !!}
-
+</div>
 @endsection
 
 @section('footer_js')

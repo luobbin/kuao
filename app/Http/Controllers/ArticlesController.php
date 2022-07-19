@@ -47,7 +47,7 @@ class ArticlesController extends Controller
             foreach ($articles as $article){
                 $article->img = $article->index_img;
                 $article->url = url("article_detail",["id"=>$article->id]);
-                $article->create_date = date("Y-m-d",strtotime($article->created_at));
+                $article->create_date = date("Y/m/d",strtotime($article->created_at));
             }
             return response()->json($articles);
         }

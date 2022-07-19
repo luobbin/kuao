@@ -23,32 +23,16 @@
     <!-- 内页banner End -->
 
     <!-- 新闻中心 -->
-    <div class="news p110">
-        <div class="w83 date-container">
-            <div class="n-tab">
-                @foreach ($cates as $cate)
-                <a href="{{ url("articles") }}?cate_id={{ $cate['id'] }}" @if ($cate['id']==$cate_id) class="active" @endif><span>{{ $cate['name'] }}</span></a>
-                @endforeach
-            </div>
+    <div class="news p110 w83">
+        <div class="n-tab">
+            @foreach ($cates as $cate)
+                <div class="tit-ban">{{ $cate['name'] }}</div>
+            @endforeach
+        </div>
+        <div class="clearfix"></div>
+        <div class="date-container">
             <div class="n-list data-list">
-                {{--@foreach ($data as $article)
-                <a href="{{ url("article_detail",["id"=>$article->id]) }}" class="item c-flex">
-                    <div class="word">
-                        <span class="time">{{ $article->created_at }}</span>
-                        <h3>{{ $article['title'] }}</h3>
-                        <p>{{ $article['info'] }}
-                        </p>
-                        <div class="more">
-                            <span>查看详情</span><i></i>
-                        </div>
-                    </div>
-                    <div class="img">
-                        <img src="{{ $article['index_img'] }}">
-                    </div>
-                </a>
-                @endforeach--}}
             </div>
-
             <div class="pull-left show-more-data-btn hide" data-langkey="ShowMore" title="显示更多">显示更多</div>
         </div>
     </div>
@@ -166,16 +150,16 @@
                 var html = [];
 
                 html.push('<a href="'+ pro['url'] +'" class="item c-flex">' +
+                    '<div class="img">' +
+                    '<img src="'+ pro['img'] +'">' +
+                    '</div>' +
                     '<div class="word">' +
                     '<span class="time">'+ pro['create_date'] +'</span>' +
                     '<h3>'+ pro['title'] +'</h3>' +
                     '<p>'+ pro['info'] +'</p>' +
-                    '<div class="more">' +
-                    '<span>查看详情</span><i></i>' +
+                    '<div class="new-more">' +
+                    '<span>新闻详情 >>></span>' +
                     '</div>' +
-                    '</div>' +
-                    '<div class="img">' +
-                    '<img src="'+ pro['img'] +'">' +
                     '</div>' +
                     '</a>');
                 return html.join('\n');

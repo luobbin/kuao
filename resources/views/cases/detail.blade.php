@@ -117,7 +117,7 @@
         @endif
 
         <div class="clearfix"></div>
-        <div class="case-show1">
+        <div class="case-show1 p110">
             <div class="tit">联系我们</div>
             <a href="{{ url("/news/contact_us") }}">
                 <img src="{{ $common['case_contact_us_img'] }}" style="width: 100%">

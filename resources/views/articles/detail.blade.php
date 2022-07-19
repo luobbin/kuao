@@ -40,7 +40,7 @@
                 </p>
             </div>
             <div class="fr">
-                <a href="{{ url("articles") }}" class="more"><span>返回列表</span><i></i></a>
+                <a href="{{ url("articles") }}" class="buttonface">返回列表 >>></a>
             </div>
         </div>
 
