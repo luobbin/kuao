@@ -854,8 +854,8 @@ to {opacity:1;stroke-dasharray:371 371}
 /* 案例详情 */
 .case-show{}
 .case-show .col-top{margin-bottom: 110px;}
-.case-show .col-top .left{float: left;font-size:40px;font-weight: bold;color:#333;max-width: 30%;line-height: 1.2;}
-.case-show .col-top .right{width: 66%;float: right;color:#333;font-size:14px;line-height: 20px;text-align: justify;}
+.case-show .col-top .left{float: left;font-size:40px;font-weight: bold;color:#9FA0A0;max-width: 25%;line-height: 1.2;border-right: 3px solid #C8A063;padding-right: 1%;}
+.case-show .col-top .right{width: 73%;float: right;color:#9FA0A0;font-size:14px;line-height: 20px;text-align: justify;}
 .case-show .col-top .right p{margin-bottom: 15px;}
 
 .case-show .col-middle{position: relative;width:100%;display: flex;}
@@ -865,7 +865,7 @@ to {opacity:1;stroke-dasharray:371 371}
 
 .case-show .col-middle .word{width:calc(38% + 20px);background-color: #F7F7F7;position: relative;top:30px;right:20px;z-index:3;}
 .case-show .col-middle .word .swiper-slide{padding:100px 80px;box-sizing: border-box;}
-.case-show .col-middle .word .swiper-slide h3{color:#333;font-size:28px;margin-bottom: 35px;}
+.case-show .col-middle .word .swiper-slide h3{color:#9FA0A0;font-size:28px;margin-bottom: 35px;}
 .case-show .col-middle .word .swiper-slide p{font-size:16px;line-height: 24px;}
 
 .case-show .col-middle .word .swiper-pagination{width: 60px; bottom:100px;text-align: left;left:154px;color:#AFAFAF;font-style: italic;z-index:5;}
@@ -881,22 +881,22 @@ to {opacity:1;stroke-dasharray:371 371}
 .case-show .col-middle .word .prev:hover::before{background-image: url(../images/prev-ico1.png);}
 .case-show .col-middle .word .next:hover::before{background-image: url(../images/next-ico1.png);}
 
-.case-show .p-part3 .tit{color:#333;font-size:40px;font-weight: bold;margin-bottom: 40px;text-align: center;}
+.case-show .p-part3 .tit{float:left;color:#9FA0A0;font-size:40px;font-weight: bold;margin-bottom: 40px;border-right: 3px solid #C8A063;width:auto; padding-right: 1%; }
 
-.case-show1{background-color: #F8F8F8;}
-.case-show1 .tit{color:#333;font-size:40px;font-weight: bold;margin-bottom: 40px;}
+.case-show1 .bg-white{background-color: #F8F8F8; padding: 3% 8%;}
+.case-show1 .tit{float: left;color:#9FA0A0;font-size:40px;font-weight: bold;margin-bottom: 40px;max-width: 25%;line-height: 1.2;border-right: 3px solid #C8A063;padding-right: 1%;}
 .case-show1 a.item {display:block;float:left;background-color:#fff;box-sizing:border-box;padding:50px 0;border:1px solid #f4f4f4;margin-bottom:50px;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
 .case-show1 a.item:nth-child(3n) {margin-right:0;}
 .case-show1 a.item .tip {font-size:14px;color:#333;padding:0 40px;}
 .case-show1 a.item .img {width:100%;padding:0 40px;overflow:hidden;}
 .case-show1 a.item .img img {display:block;width:100%;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
-.case-show1 a.item .word {border-top:1px solid #f4f4f4;padding-top:50px;padding:50px 40px 0;}
+.case-show1 a.item .word {border-top:1px solid #f4f4f4;padding:50px 40px 0;}
 .case-show1 a.item .word h3 {color:#333;font-size:22px;margin-bottom:10px;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
 .case-show1 a.item .word p {color:#666;font-size:14px;height:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display: none;}
 
 .case-show1 .swiper-pagination{position: relative;bottom:0;}
 .case-show1 .swiper-pagination-bullet{width:24px;height:12px;border-radius: 6px;background-color: #E0E0E0;opacity: 1;}
-.case-show1 .swiper-pagination-bullet-active{background-color: #1A4275;width:44px;}
+.case-show1 .swiper-pagination-bullet-active{background-color: #666;width:44px;}
 
 .case-show2{background-image: url(../images/case-show-bg.jpg);width:100%;padding:60px 0;margin-bottom: 100px;}
 .case-show2 h3{color:#fff;font-size:40px;font-weight: bold;margin-bottom: 40px;text-align: center;}

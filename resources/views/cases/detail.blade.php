@@ -11,13 +11,12 @@
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
-            <img src="/static/202108/ef40ebff2697f85f7408442a5c7df363.jpg" class="pc">
-            <img src="/static/202108/0bf43c06d18344a1a551f1edae61e979.jpg" class="m">
+            <img src="{{ $common['case_background_pc_img'] }}" class="pc">
+            <img src="{{ $common['case_background_mob_img'] }}" class="m">
         </div>
         <div class="word1">
-            <h3 class="wow fadeInUp">案例中心</h3>
-            <p class="wow fadeInUp">
-                以责任，耀文明，{{ $common['web_name'] }}以博物馆级别的照明，点亮非凡空间！</p>
+            <h3 class="wow fadeInUp">项目案例</h3>
+            <p class="wow fadeInUp">{{ $common['cases_background_info'] }}</p>
         </div>
     </div>
     <!-- 内页banner End -->
@@ -62,9 +61,10 @@
                 <div class="next"></div>
             </div>
         </div>
-
+        <div class="clearfix"></div>
         <div class="p-part3 pt110">
             <div class="tit">案例视频</div>
+            <div class="clearfix"></div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -88,31 +88,42 @@
             </div>
         </div>
         <!-- 案例视频End -->
-    </div>
-<!--    <div class="case-show1 p110">
-        <div class="w83">
+        <div class="clearfix"></div>
+        @if($data['products'])
+        <div class="case-show1 p110">
             <div class="tit">案例产品</div>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <a href="./product-detail/215.html" class="swiper-slide item">
-                        <div class="tip">InvisiLED TAPE</div>
-                        <div class="img">
-                            <img src="/static/202111/af968efb9ed2790ad513f72fc332b9b4.jpg">
-                        </div>
-                        <div class="word">
-                            <h3>S系列</h3>
-                            <p>LED-TCE/InvisiLED S灯带</p>
-                        </div>
-                    </a>
+            <div class="clearfix"></div>
+            <div class="bg-white">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach ($data['products'] as $product)
+                        <a href="{{$product['url']}}" class="swiper-slide item">
+                            <div class="tip">{{ $product['name'] }}</div>
+                            <div class="img">
+                                <img src="{{ $product['index_img'] }}">
+                            </div>
+                            <div class="word">
+                                <h3>{{ $product['description'] }}</h3>
+                                <p>{{ $product['info'] }}</p>
+                            </div>
+                        </a>
+                        @endforeach
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-                &lt;!&ndash; Add Pagination &ndash;&gt;
-                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </div>-->
-    <div class="case-show2">
-        <h3>联系我们</h3>
-        <a href="{{ url("/news/contact_us") }}" class="more"><span>联系我们</span></a>
+        @endif
+
+        <div class="clearfix"></div>
+        <div class="case-show1">
+            <div class="tit">联系我们</div>
+            <a href="{{ url("/news/contact_us") }}">
+                <img src="{{ $common['case_contact_us_img'] }}" style="width: 100%">
+            </a>
+        </div>
+
     </div>
 
     <!-- 视频弹窗 -->

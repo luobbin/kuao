@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Repositories\CasesCateRepositoryEloquent;
 use App\Repositories\CasesRepositoryEloquent;
+use App\Repositories\ProductRepositoryEloquent;
 use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\CasesCreateRequest;
-use App\Http\Requests\CasesUpdateRequest;
 use App\Repositories\CasesRepository;
 
 /**
@@ -80,7 +78,7 @@ class CasesController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function show($id)
+    public function show($id, ProductRepositoryEloquent $repProduct)
     {
         $case = $this->repository->find($id);
 //        $default_imgs = [
@@ -91,8 +89,10 @@ class CasesController extends Controller
 //        ];
 
         $case->imgs = empty($case->imgs)?[]:json_prase($case->imgs);
+        if (!empty($case->product_ids)){
+            $case->products = $repProduct->findByIds($case->product_ids);
+        }
         if (request()->wantsJson()) {
-
             return response()->json($case);
         }
         $commonData = $this->websetRep->getCommonData();

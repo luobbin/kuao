@@ -17,7 +17,7 @@
         <div class="word1">
             <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">项目案例</h3>
             <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                {{ $common['cases_background_info'] }}！</p>
+                {{ $common['cases_background_info'] }}</p>
         </div>
     </div>
     <!-- 内页banner End -->
@@ -43,7 +43,7 @@
         </div>
         <div class="date-container">
             <div class="col-bottom data-list clearfix" style="height: auto;">
-                
+
             </div>
 
             <div class="pull-left show-more-data-btn hide" data-langkey="ShowMore" title="显示更多">显示更多</div>

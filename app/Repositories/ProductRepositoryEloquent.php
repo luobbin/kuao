@@ -64,6 +64,16 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
     }
 
     /**
+     * 根据ids查询产品列表
+     * @param $ids string 逗号分隔的产品ID数据 如：1,2,3
+     * @return Product[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function findByIds($ids)
+    {
+        return Product::with([])->whereIn("id",explode(",",$ids))->get();
+    }
+
+    /**
      * 获取所有产品及分类
      * @return array
      */
