@@ -9,25 +9,25 @@
 
 @section('content')
 
-    <div class="search content">
+    <div class="search content w83">
         <form action="{{ url("product_search") }}" method="get" class="f_18 ss">
             <input type="text" class="" name="name" value="{{ $name }}" placeholder="请输入搜索内容...">
             <button class="iconfont iconsousuo">
-                <img src="{{ url('static/images/icon-search-h.png') }}" alt="">
+                <img src="{{ url('static/images/ser-ico2.png') }}" alt="">
             </button>
         </form>
+        <div class="clearfix"></div>
         <div class="product" style="background-color: #fff;">
             <dl>
                 <dd>
                     @foreach ($data as $item)
-                    <a href="{{ $item['url'] }}" class="item">
-                        <div class="tip">{{ $item['name'] }}</div>
+                    <a href="{{ url("product_detail",["id"=>$item['id']]) }}" class="item">
+                        <div class="tip">{{ $item['description'] }}</div>
                         <div class="img">
                             <img src="{{ $item['index_img'] }}">
                         </div>
                         <div class="word">
-<!--                            <h3></h3>-->
-                            <p>{{ $item['description'] }}</p>
+                            {{ $item['name'] }}
                         </div>
                     </a>
                     @endforeach

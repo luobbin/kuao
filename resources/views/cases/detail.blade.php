@@ -97,7 +97,7 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         @foreach ($data['products'] as $product)
-                        <a href="{{$product['url']}}" class="swiper-slide item">
+                        <a href="{{ url("product_detail",["id"=>$product['id']]) }}" class="swiper-slide item">
                             <div class="tip">{{ $product['name'] }}</div>
                             <div class="img">
                                 <img src="{{ $product['index_img'] }}">

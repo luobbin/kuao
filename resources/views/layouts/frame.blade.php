@@ -33,7 +33,7 @@
             <div class="search-box-cover"></div>
             <form action="{{ url('product_search') }}" method="get" class="search-form">
                 <span class="search-btn"></span>
-                <input type="text" name="keyword" placeholder="请输入您想搜索的内容" class="search-input">
+                <input type="text" name="name" placeholder="请输入您想搜索的内容" class="search-input">
                 <span class="close-btn"></span>
             </form>
         </div>

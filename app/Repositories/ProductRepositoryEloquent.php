@@ -44,12 +44,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 
     public function getHots()
     {
-        return [
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
-            ['name'=>'ADRAY SQ SINGLE','index_img'=>'/static/home/001180.jpg','url'=>url("product_detail",["id"=>1]),'cate_id'=>1,"description"=>"EF3N01 小功率方形投光灯"],
-        ];
+        return Product::with([])->orderBy("if_hot","desc")->orderBy("id","desc")->limit(4)->get();;
     }
 
     /**

@@ -12,8 +12,8 @@
     <!-- 内页banner -->
     <div class="ny-banner">
         <div class="img">
-            <img src="{{ url('static/202108/9121a80995be2ae14ba1a92a4b2c6717.jpg') }}" class="pc">
-            <img src="{{ url('static/202108/da403b3bbef9c4b6f27ce12ba2319978.jpg') }}" class="m">
+            <img src="{{ $common['product_background_pc_img'] }}" class="pc">
+            <img src="{{ $common['product_background_mob_img'] }}" class="m">
         </div>
         <div class="word1">
                 <h3>{{ $data['name'] }}</h3>
@@ -31,6 +31,7 @@
         </div>
     </div>
     <!-- 内页banner End -->
+<div class="w83 p110" style="background-color: white;">
     <!-- 产品简介 -->
     <div id="p-show1"></div>
     <div class="p-part1">
@@ -68,7 +69,8 @@
     <div id="p-show2"></div>
     <div class="p-part2 pt110">
         <div class="w83">
-            <div class="p-tit">产品特点</div>
+            <div class="tit-ban">产品特点</div>
+            <div class="clearfix"></div>
             @foreach ($data['features'] as $feature)
                 @if ($loop->index%2==0)
                     <dl class="c-flex">
@@ -100,14 +102,15 @@
     <div id="p-show3"></div>
     <div class="p-part5 pt110">
         <div class="w83">
-            <div class="p-tit">产品规格</div>
+            <div class="tit-ban">产品规格</div>
+            <div class="clearfix"></div>
             <div class="ms">
                 {!! $data['specification'] !!}
             </div>
         </div>
     </div>
     <!-- 产品规格End -->
-
+</div>
     <!-- 视频弹窗 -->
     <div id="z_tanchuang" class="z_tanchuang">
         <div class="tbox">

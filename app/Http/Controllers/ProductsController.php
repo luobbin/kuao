@@ -111,9 +111,12 @@ class ProductsController extends Controller
         //
         $features = empty($product->features)?[]:json_decode($product->features,true);
         //print_r($features);exit;
-        if (count($features)>1){
+        if (count($features)>0){
             foreach ($features as $k=>$v){
-                $features[$k] = json_decode($v,true);
+                if (is_array($v))
+                    $features[$k] = $v;
+                else
+                    $features[$k] = json_decode($v,true);
             }
         }
         $product->features = $features;
