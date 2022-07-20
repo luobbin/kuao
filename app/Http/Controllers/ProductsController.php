@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\ProductCate;
 use App\Repositories\ProductRepositoryEloquent;
 use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
@@ -52,13 +53,19 @@ class ProductsController extends Controller
             return response()->json($products);
         }
         $commonData = $this->websetRep->getCommonData();
-
+        $cid = \request()->get("cid","");//大类目
+        $cname = "";
+        if (!empty($cid)){
+            $cname = ProductCate::with([])->where("id",$cid)->value("name");
+            $cid = sprintf("%04d",$cid);
+        }
         $hots = $this->repository->getHots();
         return view('products.index', [
             'common'=>$commonData,
             'data' => $products,
             'hot_products' => $hots,
-            'keyword'=>\request()->get("name",""),
+            'cid'=>$cid,
+            'cname'=>$cname,
             'pageTitle'=> "产品列表"."-".$commonData['web_name']
         ]);
     }

@@ -8,7 +8,6 @@ var defaults = {
 	brand:'',            //品牌
 	defFilter:{          //默认筛选
 		pf110:null,          //数据筛选条件
-		sellOrHome:''        //仅商用家用    1.家用  2.商用 3.混合
 	},
 	loading_img:loading_img,
 	setTimeoutId:{},     //setTimeout的ID
@@ -19,12 +18,12 @@ var defaults = {
 };
 
 
-function initInventory() {
+function initInventory(option) {
 	document.documentElement.scrollTop = 0;
 	defaults.conf = InventoryConf;
-
-	if(defaults.defFilter.pf110){
-		proUtil.filter.pf110 = defaults.defFilter.pf110;
+	if(option.typecode !== ""){
+		proUtil.filter.pf110 = option.typecode;
+		defaults.defFilter.pf110 = option
 	}
 
 	//读取产品信息
@@ -348,7 +347,7 @@ var proListModule = {
 		var filters = $.extend(true,{},proUtil.filter);
 		var fields = leftModule.proLvl.getSelectedFields();
 		if(fields.length === 0 && proUtil.filter.pf110){
-			fields.push({key:'pf110',value:proUtil.filter.pf110});
+			fields.push({key:'pf110',value:defaults.defFilter.pf110.typecode,name:defaults.defFilter.pf110.typename});
 		}
 		console.log("获取到的筛选数据为：",fields);
 		/*开始生成面包屑*/

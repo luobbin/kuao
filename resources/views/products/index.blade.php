@@ -72,8 +72,7 @@
                 <div>
                     <div id="pro-list-filter" class="pull-left pro-list-filter">
                         <ul class="breadcrumb">
-                            <li>室内专业类</li>
-                            <li>线性灯</li>
+
                         </ul>
                     </div>
 
@@ -157,7 +156,11 @@
 
     <script type="text/javascript">
         $(function () {
-            initInventory();
+            var option = {
+                typecode: "{{ $cid }}",
+                typename: "{{ $cname }}"
+            }
+            initInventory(option);
         });
 
     </script>
