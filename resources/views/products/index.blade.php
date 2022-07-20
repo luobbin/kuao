@@ -22,7 +22,7 @@
         <div class="point"></div>
         <div class="clearfix"></div>
     </section>
-
+    <div class="clearfix" style="margin-top: 80px;"></div>
     <section class="pin-1 css3">
         <div class="pro-left css5">
 
@@ -31,8 +31,8 @@
             <div class="pro-block panel-group pro-lvl-group pro-lvl-group-1" id="pro-lvl-group">
             </div>
 
+            <div class="pro-left-title2 text-ellipsis" title="热销新品推荐">热销新品推荐</div>
             <div class="pro-block sell-well">
-                <div class="pro-left-title2 text-ellipsis" title="热销新品推荐">热销新品推荐</div>
                 <div class="sell-well-selects">
                     <div class="selected" style="width: 100%;">
                         <span class="text-ellipsis" data-field="po16" data-value="HOT" title="HOT">HOT</span>
@@ -51,16 +51,16 @@
                     @endforeach
                 </ul>
                 <div class="more-promotion-well">
-                    <a href="{{ url("products") }}"><span class="more-promotion-well-text text-ellipsis" title="查看更多">查看更多</span></a>
-                    <span class="more-promotion-well-arrow text-ellipsis"></span>
+                    <a href="{{ url("products") }}" class="more-promotion-well-text text-ellipsis" title="查看更多">查看更多 <span>>>></span></a>
                 </div>
             </div>
 
+            <div class="pro-left-title2 text-ellipsis" title="目录申请">目录申请</div>
             <div class="pro-block pro-left-catalog">
-                <div class="pro-left-title2 text-ellipsis" title="目录申请">目录申请</div>
                 <ul>
-                    <li><img src="{{ url('static/home/catalog5.png') }}"></li>
-                    <li><img src="{{ url('static/home/catalog6.png') }}"></li>
+                    @foreach($common['catalog_apply_imgs'] as $catalog_img)
+                    <li><img src="{{ $catalog_img }}"></li>
+                    @endforeach
                 </ul>
                 <div class="pro-left-catalog-btn" title="申请">申请</div>
             </div>

@@ -78,127 +78,18 @@ var proUtil = {
 			return data;
 		}
 
-		var that = this;
 		var list = new Array();
+		var lastKey = Object.keys(filter)[Object.keys(filter).length-1];
+		var lastVal = Object.values(filter)[Object.values(filter).length-1];
 		$.each(data, function(index2, pro) {
-			if(that.matchRuleProduct(pro,{},filter)){
+			if(pro[lastKey] && pro[lastKey]===lastVal){
 				list.push(pro);
-				return false;
 			}
 		});
 
 		return list;
 	},
 
-	/**
-	 * 筛选
-	 * @param pro        合并信息
-	 * @param product    单条BOM信息
-	 * @param filter     筛选条件
-	 * @returns {boolean}
-	 */
-	matchRuleProduct:function(pro,product,filter){
-		var match = true;
-		if(isObject(filter)){
-			var that = this;
-			$.each(filter, function(key, value) {
-				if (!that.matchRule(pro,product,key,value)) {
-					match = false;
-					return false;
-				}
-			});
-		}
-		return match;
-	},
-
-	/**
-	 * 筛选
-	 * @param pro        合并信息
-	 * @param product    单条BOM信息
-	 * @param field      筛选字段
-	 * @param filterValue     筛选值
-	 * @returns {boolean}
-	 */
-	matchRule:function(pro,product,field,filterValue){
-
-		if(field == 'pf58' && pro.type != 0){
-			return true;
-		}
-		var rules = defaults.conf.matchRules;
-		if(!(rules.cp.pf110.indexOf(product['pf110']) > -1 && (pro.type == 0 || pro.type == 2)) && rules.cp.unFilterFields.indexOf(field) > -1){
-			// return true;
-		}
-		//获取产品值
-		var value;
-		if((pro.type == 0 && rules.mainFields.indexOf(field) > -1) || (pro.type != 0 && rules.mainFields2.indexOf(field) > -1)){
-			value = pro[field];
-		}else{
-			value = product[field];
-		}
-		if(field == 'search'){
-			value = (pro[field] || '') + '|' + (product[field] || '');
-		}
-
-		//产品值为空时，跳过筛选返回通过
-		if(rules.emptySkip.indexOf(field) > -1 && isEmpty(value)){
-			return true;
-		}
-
-		if(isObject(filterValue) && filterValue.type === 'moreFilter'){
-			return moreFilterModle.matchRule(value,filterValue,pro,product);
-		}
-
-		//模糊匹配
-		if(rules.fuzzyFields.indexOf(field) > -1){
-			if(Array.isArray(filterValue)){
-				for(var i in filterValue){
-					if(value && value.toUpperCase().indexOf((filterValue[i] || '').toString().toUpperCase()) > -1){
-						return true;
-					}
-				}
-				return false;
-			}else{
-				return value && value.toUpperCase().indexOf((filterValue || '').toString().toUpperCase()) > -1;
-			}
-		}
-
-		if(Array.isArray(filterValue)){
-			return value && filterValue.indexOf(value) > -1;
-		}else{
-			return value && value == filterValue;
-		}
-	},
-
-	/**排序*/
-	OrderProductfileDataCompare : function (prop, order) {
-		var sorts;
-		if(Array.isArray(prop)){
-			sorts = prop;
-		}else{
-			sorts = [{prop:prop,order:order}]
-		}
-		var that = this;
-		return function (obj1, obj2) {
-			for(var i in sorts){
-				prop = sorts[i].prop;
-				if(isNotEmpty(prop)){
-					var orderNum = order == 'desc' ? -1 : 1;
-					var val1 = obj1,val2 = obj2;
-					var props = prop.split('.');
-					for(var j in props){
-						val1 = val1[props[j]];
-						val2 = val2[props[j]];
-					}
-					if (val1 < val2) {
-						return -1*orderNum;
-					} else if (val1 > val2) {
-						return orderNum;
-					}
-				}
-			}
-			return 0;
-		}
-	},
 	/**替换文本*/
 	getShowText:function(field,value){
 		try{
@@ -291,8 +182,6 @@ var proListModule = {
 	 * @param type       来源
 	 *                      0.初次进入页面
 	 *                      1.左侧分类点击事件
-	 *                      5.点击中间系列
-	 *                      6.变更排序
 	 * @param option     参数配置
 	 */
 	refresh:function(type,option){
@@ -316,11 +205,10 @@ var proListModule = {
 		}else{
 			data = proUtil.proData;
 		}
+		// console.log("更新后的产品数据获取筛选为：",proUtil.filter)
 		data = proUtil.getAfterFilterData(data,proUtil.filter);
-		var sort = $('.pro-right .pro-right-btn .sort.selected').data('sort');
-		sort = isEmpty(sort) ? 'pf01' : sort;
-		data.sort(proUtil.OrderProductfileDataCompare(sort,$('.pro-right .pro-right-btn .sort.selected').hasClass('desc') ? 'desc' : 'asc'));
 		this.data = data;
+		// console.log("更新后的产品数据为：",data)
 	},
 
 	/**初始化右侧产品列表*/
@@ -337,13 +225,14 @@ var proListModule = {
 		this.ShowMoreProductsBtn(false);
 		$('.pro-right .pro-right-list>li').remove();
 		$('.pro-right .pro-right-list').append('<li class="loading"><img src="'+ defaults.loading_img +'" style="width:20px;height:20px;"/>' + defaults.locales['loading'] + '</li>');
-
+		/*根据筛选重新获取产品列表*/
 		this.updateData();
 		this.index = 0;
 
-		if($('#pro-list-num').length == 1){
+		if($('#pro-list-num').length === 1){
 			$('#pro-list-num').html('(' + this.data.length + ')');
 		}
+		/*将新获取的产品数据插入到列表*/
 		this.insertProducts();
 	},
 
@@ -421,7 +310,7 @@ var proListModule = {
 			'					<div>',
 			'						<div>',
 			'							<div></div>',
-			'							<img alt="无图片" src="'.concat(pro['url'],'"  data-src="',pro['url'] ,'" onerror="this.src=\''+ default_img +'\'">'));
+			'							<img alt="无图片" src="'.concat(pro['index_img'],'"  data-src="',pro['index_img'] ,'" onerror="this.src=\''+ default_img +'\'">'));
 		if(this.mapMode){
 			html.push('							<span class="pro-icons">');
 			html.push('								<div class="clearfix"></div>',
@@ -458,10 +347,11 @@ var proListModule = {
 		}
 		var filters = $.extend(true,{},proUtil.filter);
 		var fields = leftModule.proLvl.getSelectedFields();
-		console.log("获取到的筛选数据为：",fields);
 		if(fields.length === 0 && proUtil.filter.pf110){
 			fields.push({key:'pf110',value:proUtil.filter.pf110});
 		}
+		console.log("获取到的筛选数据为：",fields);
+		/*开始生成面包屑*/
 		var html = [];
 		html.push('					<ul class="breadcrumb">');
 		$.each(fields || [],function(index,item){
@@ -475,6 +365,7 @@ var proListModule = {
 
 		html.push('					</ul>');
 		$('#pro-list-filter').html(html.join('\n'));
+		/*生成面包屑结束*/
 		this.initProducts();
 	},
 

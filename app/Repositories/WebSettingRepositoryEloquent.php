@@ -49,7 +49,7 @@ class WebSettingRepositoryEloquent extends BaseRepository implements WebSettingR
         $data = WebSetting::with([])->where("location","common")->get();
         $commonData = [];
         foreach ($data as $k=>$v){
-            if ($v->type==2){
+            if (in_array($v->type,[2,5])){
                 //json格式要解析出来
                 $content = $v->content;
                 if ($v->name_attr=="web_header_menu_setting"){
