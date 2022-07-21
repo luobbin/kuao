@@ -60,6 +60,7 @@ class HomeSettingRepositoryEloquent extends BaseRepository implements HomeSettin
      */
     public function getHomeCases($conf)
     {
+        $conf = is_array($conf)?$conf:json_decode($conf,true);
         $res = [];
         switch (intval($conf['way'])) {
             case 1://发布时间
@@ -96,6 +97,7 @@ class HomeSettingRepositoryEloquent extends BaseRepository implements HomeSettin
      */
     public function getHomeArticles($conf)
     {
+        $conf = is_array($conf)?$conf:json_decode($conf,true);
         $res = [];
         switch (intval($conf['way'])) {
             case 1://发布时间
@@ -119,6 +121,7 @@ class HomeSettingRepositoryEloquent extends BaseRepository implements HomeSettin
                 'cate_name'=>$v->cate()->value("name"),
                 'd'=>date("d",strtotime($v->created_at)),
                 'm'=>date("Y-m",strtotime($v->created_at)),
+                'date'=>date("Y.m.d",strtotime($v->created_at)),
                 'url' => url("article_detail",["id"=>$v->id])
             ];
             $res[] = $item;

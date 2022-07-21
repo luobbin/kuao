@@ -207,13 +207,11 @@
 <script src="{{ asset('static/js/scrollreveal.min.js') }}"></script>
 @yield('footer_js')
 
-<script type="text/javascript" src="{{ asset('static/home/header.js') }}"></script>
 <script>
     var map;
     var default_img='{{ $common['default_img'] }}';
     var loading_img='{{ $common['loading_img'] }}';
     $(function () {
-        initHeaderPage();
         $('#footer .di-link-ban .di-link.hide').each(function (index, element) {
             if ($(this).find('a.di-link-nei').length == 0) {
                 $(this).remove();

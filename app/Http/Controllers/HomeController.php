@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\CasesCateRepositoryEloquent;
 use App\Repositories\HomeSettingRepositoryEloquent;
 use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
@@ -31,11 +32,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(CasesCateRepositoryEloquent $cateRep)
     {
+        //顶部视频
+        $banner = [
+            'pc_video_url' => '/static/images/index_banner01.mp4',
+            'mob_img_url'   => '/static/images/index_bannerm01.jpg',
+            'mob_h3'    =>  'KA 中国',
+            'mob_p' =>  '以诚信为本的信念，科技创新发展，节能环保先锋的标准，为社会进步贡献力量，引导行业的可持续性发展',
+            'mob_a_url' => url("news",["id"=>"about_us"])
+        ];
         return view('index',[
             'common'=>$this->commonData,
             'homeNames' => $this->resp->getAllName(),
+            'banner'    => $banner,
+            'cates' => $cateRep->all(),
             'pageTitle'=> $this->commonData['web_name']."-"."首页"
             ]);
     }

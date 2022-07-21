@@ -11,7 +11,7 @@ function initHome(){
 	initHomeNews();
 	initHomeVideo();
 	//initHomeVideoSlider();
-	initHomeEngineeringCase();
+	// initHomeEngineeringCase();
 
 }
 
@@ -26,16 +26,17 @@ function initHomeBanner(){
 			var html;
 			for(var i in data){
 				var item = $.parseJSON(data[i]);
-				console.log("解析出的banner数据",item)
 				html = '<li class="css3">' +
-				       '	<img src="' + defaults.fileServerHttp + item['img'] + '" width="100%" onerror="' + defaults.default_img + '">' +
-				       '	<div class="ban-con">' +
-				       '		<h2 title="' + item['title'] + '">' + item['title'] + '</h2>' +
-				       '		<p title="' + item['info'] + '">' + item['info'] + '</p>' +
+					'<a href="' + item['url'] + '" title="LearnMore">' +
+					'<img src="' + defaults.fileServerHttp + item['img'] + '" width="100%" onerror="' + defaults.default_img + '">' +
+					'</a>'+
+					'<div class="ban-con">' +
+				    '		<h2 title="' + item['title'] + '">' + item['title'] + '</h2>' +
+				    '		<p title="' + item['info'] + '">' + item['info'] + '</p>' +
 				       (isNotEmpty(item['url']) ? '<a href="' + item['url'] + '" title="LearnMore">了解更多</a>' : '') +
-				       '	</div>' +
-				       '	<div class="clearfix"></div>' +
-				       '</li>';
+				    '	</div>' +
+				    '	<div class="clearfix"></div>' +
+				    '</li>';
 				$('#slider').append(html);
 			}
 			$('#slider').append('<div class="clearfix"></div>');
@@ -144,6 +145,7 @@ function initHomeProduct(){
 		success: function(data){
 			data = $.parseJSON(data);
 			var html=[];
+			html.push('<ul>');
 			for(var i in data){
 				var item = $.parseJSON(data[i]);
 				html.push('<li class="col-md-3 col-sm-3 col-xs-3">' +
@@ -151,6 +153,7 @@ function initHomeProduct(){
 					'<img src="' + item['img'] + '" width="100%">' +
 					'</a></li>');
 			}
+			html.push('</ul>');
 			$('#HomeProInfo').html(html.join(''));
 			if($('#HomeProInfo li').length > 0){
 				$('.block-2').removeClass('hide');
@@ -198,31 +201,18 @@ function initHomeNews(){
 			data = $.parseJSON(data);
 			var html;
 			for(var i in data){
-				if(i%2 === 0){
-					$('#HomeNewsList').append('<li class="col-md-12 col-sm-12 col-xs-12" style="height: 1px;">&nbsp</li>');
-				}
 				var item = data[i];
 				html = '<li class="col-md-6 col-sm-12 col-xs-12">' +
 					'	<a href="' + item['url'] + '">' +
-					'		<div class="new-case">' +
-					'			<div class="new-time col-md-2 col-sm-2 col-xs-12">' +
-					'				<span>' + item['d'] + '</span>' +
-					'				' + item['ym'] + '' +
+					'		<div class="new-article">' +
+					'			<img src="' + item['index_img'] + '" onerror="this.src=\'' + defaults.default_img + '\'">' +
+					'			<div class="new-nei col-md-6 col-sm-6 col-xs-6">' +
+					'				<h3>' + item['date'] + '</h3>' +
+					'				<P>' + item['title'] + '</P>' +
+					'				<div class="clearfix"></div>' +
+					'				<span>了解更多 >>></span>' +
 					'			</div>' +
-					'			<div class="new-con col-md-10 col-sm-10 col-xs-12">' +
-					'				<div class="new-tu col-md-4  col-sm-4 col-xs-5">' +
-					'					<div class="new-tx">' +
-					'						<img src="' + item['img'] + '" onerror="this.src=\'' + defaults.default_img + '\'">' +
-					'					</div>' +
-					'				</div>' +
-					'				<div class="new-nei col-md-8 col-sm-8 col-xs-7">' +
-					'					<h3 title="' + item['title'] + '">' + item['title'] + '</h3>' +
-					'					<P>' + item['info'] + '</P>' +
-					'				</div>' +
-					'			</div>' +
-					'			<div class="clearfix"></div>' +
 					'		</div>' +
-					'		<span class="more">了解更多</span>' +
 					'	</a>' +
 					'</li>';
 				$('#HomeNewsList').append(html);
