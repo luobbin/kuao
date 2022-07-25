@@ -40,12 +40,6 @@
 @endsection
 
 @section('footer_js')
-    <script src="{{ asset('static/js/jquery.transit.js') }}"></script>
-    <script src="{{ asset('static/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('static/js/swiper.animate.min.js') }}"></script>
-    <script src="{{ asset('static/js/wow.min.js') }}"></script>
-    <script src="{{ asset('static/js/scrollBar.js') }}"></script>
-    <script src="{{ asset('static/js/scrollreveal.min.js') }}"></script>
     <script>
         window.sr = new ScrollReveal({
             distance: '100px',
