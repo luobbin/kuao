@@ -266,8 +266,10 @@
                 //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
                 if (scroH >= navH) {
                     $(".p-nav").addClass("ff");
+                    $('header').addClass('gray');
                 } else if (scroH < navH) {
                     $(".p-nav").removeClass("ff");
+                    $('header').removeClass('gray');
                 }
             })
         });

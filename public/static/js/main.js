@@ -64,6 +64,33 @@ $(document).ready(function() {
 	$(".menu-tc .nav .col-middle").scrollBar();
 });
 
+//置顶按钮
+$(document).scroll(function() {
+	var res = $(document).scrollTop();
+	if (res > 400) {
+		$('.right_zd').addClass('active');
+	} else {
+		$('.right_zd').removeClass('active');
+	}
+});
+$(function() {
+	$('.right_zd li:last-child').click(function() {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 500);
+		return false;
+	});
+});
+
+$(document).ready(function() {
+	$(".right_zd ul li").hover(function() {
+		$(".right_zd ul li").removeClass('active');
+		$(this).addClass('active');
+	}, function() {
+		$(".right_zd ul li").removeClass('active');
+	});
+});
+
 //手机头部
 $(function() {
 	$(".header2 .nav-btn").on('click', function() {
