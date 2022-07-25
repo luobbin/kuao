@@ -115,6 +115,25 @@ class ArticlesController extends Controller
             'pageTitle'=> $article->name."-".$commonData['web_name']
         ]);
     }
+
+    /**
+     * 资讯专题页测试
+     *
+     * @param  string $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     */
+    public function test($id)
+    {
+        $article = $this->websetRep->findByNameAttr($id);
+        $commonData = $this->websetRep->getCommonData();
+        return view('articles.test', [
+            'common'=>$commonData,
+            'data' => $article,
+            'pageTitle'=> $article->name."-".$commonData['web_name']
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

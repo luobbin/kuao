@@ -26,9 +26,8 @@ Route::get('/listFontCate', 'ProductCatesController@listFontCate');//产品分�
 Route::get('/listFontItems', 'ProductsController@listFontItems');//产品所有
 
 
-//Route::get('/home', 'HomeController@home')->name('home');
-
-Route::get('/test', 'TestController@index');//->middleware("token:111222333");//中间件传参应用
+Route::get("/test/{id}",'ArticlesController@test');//专题页测试
+//Route::get('/test', 'TestController@index');//->middleware("token:111222333");//中间件传参应用
 
 /*
 下例指: 当用GET方式访问 xx.com/yy 这个地址时,用XxController中的reg()方法去响应.
