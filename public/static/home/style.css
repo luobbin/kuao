@@ -63,7 +63,7 @@ a:link{ text-decoration:none;}
 .text-through{text-decoration: line-through !important;}
 .show-more-data-btn{width:100%;margin:20px 20px 0;text-align:center;display:block;font-size:18px;color:#FFFFFF;background:#565656;height:50px;line-height:50px;cursor:pointer;}
 .show-more-data-btn.hide{display: none;}
-.tit-ban{float: left;color:#9FA0A0;font-size:30px;font-weight: bold;margin-bottom: 40px;max-width: 25%;line-height: 1.2;border-right: 3px solid #C8A063;padding-right: 1%;}
+.tit-ban{float: left;color:#9FA0A0;font-size:30px;font-weight: bold;margin-bottom: 40px;max-width: 28%;line-height: 1.2;border-right: 3px solid #C8A063;padding-right: 1%;}
 
 /**固定比例的正方形*/
 .rectangle>div{text-decoration:none;list-style-type:none;overflow:hidden;}
@@ -1279,7 +1279,6 @@ p.ninfos{text-align:center; font-size:16px; display:block;}
 	.block-5 ul li .new-tu{ padding:0 10px;}
 	.pin-1, .eight, .nei-1, .select, .case-read{ padding:70px 100px;}
 	.pro-left{left:100px;top:70px;}
-	.about, .contact{ padding:50px 100px;}
 	.about-read{ padding-left:100px; padding-right:150px;}
 	.jobs, .xia-1{ padding:70px 100px 200px 100px;}
 	.xin-1{ padding:40px 100px 100px 100px;}
@@ -1293,7 +1292,7 @@ p.ninfos{text-align:center; font-size:16px; display:block;}
 @media (max-width: 1440px) {
 	#head .menu li{ margin:0 6px;}
 	.block-5,.block-6{padding:0;}
-	.pin-1, .eight, .nei-1, .select, .case-read, .about, .contact{ padding:50px 0; }
+	.pin-1, .eight, .nei-1, .select, .case-read, .contact{ padding:50px 0; }
 	.pro-left{left:0;top:50px;}
 	.pin-case, .pin-type, .discount-pic{ padding:0 5px;}
 	.nei-left, .nei-right{ padding:0 5px;}
@@ -1335,8 +1334,6 @@ p.ninfos{text-align:center; font-size:16px; display:block;}
 	.block-5 ul li p{ line-height:16px;margin-top:2px; max-height:32px;}
 	.xiang-con p{ line-height:16px; padding-bottom:10px;}
 	.select-case li .case-name{ font-size:13px;}
-	.about li .about-con .about-name{ font-size:20px; line-height:22px;}
-	.about li .about-con p{ font-size:14px; line-height:18px; padding-top:15px;}
 	.about-read{ padding-left:0; padding-right:220px;}
 	.contact-dan{ padding:30px 20px;}
 	.contact-fang{ padding:30px 10px;}
