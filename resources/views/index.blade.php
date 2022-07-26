@@ -87,10 +87,10 @@
             <div class="clearfix"></div>
         </div>
         <div class="xxx">
-            <a id="left_arrow" class="banner_left"><img src="{{ url('static/home/left.png') }}"></a>
-            <a id="right_arrow" class="banner_right"><img src="{{ url('static/home/right.png') }}"></a>
+            <a id="left_arrow" class="banner_left"><img src="{{ url('static/home/images/banner-left.png') }}"></a>
+            <a id="right_arrow" class="banner_right"><img src="{{ url('static/home/images/banner-right.png') }}"></a>
         </div>
-        <div class="point" id="num"></div>
+        <div class="point" id="num" style="display: none;"></div>
         <div class="clearfix"></div>
     </section>
 

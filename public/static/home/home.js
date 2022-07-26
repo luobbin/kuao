@@ -48,13 +48,6 @@ function initHomeBanner(){
 /**顶部广告Banner轮转*/
 function initHomeBannerSlider(){
 	var heiii,weighh ,winwei,ifat = true,sindex = 0,loaded = false;
-	/*
-	$('#slider li').eq(0).show();
-
-	$('#slider li').eq(0).find('.ban-con h2').addClass('anit');
-	$('#slider li').eq(0).find('.ban-con p').addClass('anit');
-	$('#slider li').eq(0).find('.ban-con a').addClass('anit');
-	*/
 	var lenThumb = $('#slider li').length;
 	for(var i=1;i<=lenThumb;i++){
 		$('#num').append('<span>'+i+'</span>');
@@ -160,37 +153,6 @@ function initHomeProduct(){
 			}
 		}
 	});
-	/*
-	var jsonText = '[{"id":"8a8a80","hi02":"4028818958719ea80158750851fd0396","hi08":"","hi10":"static/home/lo (1).jpg"},' +
-		'{"id":"100695","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (2).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (3).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (4).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (5).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (6).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (7).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (8).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (9).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (10).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (11).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (12).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (13).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (14).jpg"},' +
-		'{"id":"100696","hi02":"40288189632e7b2d016347780db11de3","hi08":"","hi10":"static/home/lo (15).jpg"},' +
-		'{"id":"267d38","hi02":"402881896a9c98a3016aafbf0fcb1a07","hi08":"","hi10":"static/home/lo (4).jpg"}]';
-	data = $.parseJSON(jsonText);
-	var html=[];
-	for(var i in data){
-		html.push('<li class="col-md-3 col-sm-3 col-xs-3"><a href="' + (isNotEmpty(data[i]['hi08']) ? data[i]['hi08'] : '####') + '"><img src="' + defaults.fileServerHttp + data[i]['hi10'] + '" width="100%"></a></li>');
-		// html.push('<div  style="cursor:pointer;padding-top: 27px; ">');
-		// html.push('<a href="'.concat('FLUAInventoryController.do?FLUASearch&sl=',defaults.locale,'&keyword=',data[i]['hi02'], '"> ' +
-		// 	'<img src="',defaults.fileServerHttp,data[i]['hi10'],'" style="width:100%;height:100%;" onerror="this.src=\'puri-plug/Images/Flua500x146.png\'">'));
-		// html.push('</a></div>');
-	}
-	$('#HomeProInfo').html(html.join(''));
-	if($('#HomeProInfo li').length > 0){
-		$('.block-2').removeClass('hide');
-	}
-	*/
 }
 /**初始化新闻信息*/
 function initHomeNews(){
@@ -324,14 +286,14 @@ function initHomeVideoSlider(){
 		sindex = $('#HomeVideoList li.active').index();
 	}
 	function toLeft(obj){
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'0',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-43%',opacity:1});
 		$(obj).click(function(e) {
             videoShow(false);
         });
 	}
 	function toRight(obj){
 		var width = $('#HomeVideoList').width();
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-587px',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-16%',opacity:1});
 		$(obj).click(function(e) {
             videoShow(true);
         });

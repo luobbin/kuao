@@ -126,7 +126,7 @@
 <div class="clearfix"></div>
 
 <footer id="footer">
-    <div class="di-xin">
+    <div class="di-xin w83">
         <div class="di-link-ban">
             @foreach ($common['footer_menu_setting'] as $menu)
                 <div class="di-link">
@@ -140,20 +140,43 @@
             <div class="clearfix"></div>
         </div>
         <div class="di-qrcode-fen">
-            <div class="di-fen-ban">
-                <p title="社交分享">社交分享</p>
-                <div class="di-fen" data-id="S">
-                    {!! $common['share_code'] !!}
+            <div class="di-fen-ban gzh">
+                <p title="公众号"></p>
+                <div class="di-fen">
+                    <div class="qrcode" >
+                        <img src="{{ $common['public_account_img'] }}">
+                    </div>
                 </div>
             </div>
-            <div class="di-qrcode">
-                <div class="qrcode qrcode1" style="display: block;">
-                    <img src="{{ $common['public_account_img'] }}">
-{{--                    <p title="KA公众号">KA公众号</p>--}}
-                </div>
-                <div class="qrcode qrcode2">
-                    <img src="{{ $common['wechat_connect_img'] }}">
-{{--                    <p title="微信二维码">微信二维码</p>--}}
+            <div class="di-fen-ban share">
+                <p title="社交分享">社交分享</p>
+                <div class="di-fen">
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_01.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_03.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_05.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_07.png" />
+                    </a>
+                    <br>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_12.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_13.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_14.png" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/static/img_topic/share_icon_15.png" />
+                    </a>
+                    {{--                    {!! $common['share_code'] !!}--}}
                 </div>
             </div>
             <div class="clearfix"></div>
