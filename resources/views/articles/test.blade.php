@@ -9,61 +9,61 @@
 
 @section('content')
 
-<!-- 内页banner -->
-<div class="ny-banner aa">
-    <div class="img">
-        <img src="http://api.kalighting.cn//static/img_topic/contact.jpg" class="pc">
-        <img src="http://api.kalighting.cn//static/img_topic/contact_m.jpg" class="m">
-    </div>
-    <div class="word1">
-        <h3 class="wow fadeInUp">联系我们</h3>
-        <p class="wow fadeInUp">先进的制造，贴心的服务，真诚与您合作。</p>
-    </div>
-</div>
-<!-- 内页banner End -->
-<div class="clearfix"></div>
-
-<div class="news w83">
-    <!--开始:联系我们-->
-    <div class="about p110">
-        <div class="col-title block-title">
-            <div class="tit-ban">联系我们</div>
+    <!-- 内页banner -->
+    <div class="ny-banner aa">
+        <div class="img">
+            <img src="/static/img_topic/contact.jpg" class="pc">
+            <img src="/static/img_topic/contact_m.jpg" class="m">
         </div>
-        <div class="clearfix"></div>
-        <div class="col-info" style="color: white;">
-            <div style="width: 100%; border-bottom: 2px solid #efefef;">
-                <div style="padding: 20px 0;">
-                    <img src="http://api.kalighting.cn//static/home/puri-plug/Images/dingwei.png" style="float: left;">
-                    <span style="margin-left: 3%;">广东省深圳市宝安区新湖路华美居 A区C座415-418</span>
-                </div>
-                <div style="padding: 20px 0;">
-                    <img src="http://api.kalighting.cn//static/home/puri-plug/Images/email.png" style="float: left;">
-                    <span style="margin-left: 3%;">邮箱:zwb@kalighting.com </span>
-                </div>
-                <div style="padding: 20px 0; margin-bottom: 50px;">
-                    <img src="http://api.kalighting.cn//static/home/puri-plug/Images/phone-yellow.png" style="float: left;width: 15px;">
-                    <span style="margin-left: 3%;">电话：13927472536 / （周一至周五 9:00-18:00） </span>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div style="width: 100%; margin-top: 50px;">
-                <div style="padding: 20px 0;">
-                    <img src="http://api.kalighting.cn//static/home/puri-plug/Images/dingwei.png" style="float: left;">
-                    <span style="margin-left: 3%;">广东省惠州市惠城区惠民大道辅路康卓大楼5楼（工厂）</span>
-                </div>
-                <div style="padding: 20px 0;">
-                    <img src="http://api.kalighting.cn//static/home/puri-plug/Images/phone-yellow.png" style="float: left;width: 15px;">
-                    <span style="margin-left: 3%;">电话：0755-86575946 （工厂） </span>
-                </div>
-            </div>
-
+        <div class="word1">
+            <h3 class="wow fadeInUp">联系我们</h3>
+            <p class="wow fadeInUp">先进的制造，贴心的服务，真诚与您合作。</p>
         </div>
     </div>
+    <!-- 内页banner End -->
     <div class="clearfix"></div>
 
-    <!--结束:联系我们-->
+    <div class="news w83">
+        <!--开始:联系我们-->
+        <div class="about p110">
+            <div class="col-title block-title">
+                <div class="tit-ban">联系我们</div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-info" style="color: white;">
+                <div style="width: 100%; border-bottom: 2px solid #efefef;">
+                    <div style="padding: 20px 0;">
+                        <img src="/static/img_topic/dingwei.png" style="float: left;">
+                        <span style="margin-left: 3%;">广东省深圳市宝安区新湖路华美居 A区C座415-418</span>
+                    </div>
+                    <div style="padding: 20px 0;">
+                        <img src="/static/img_topic/email.png" style="float: left;width: 15px;">
+                        <span style="margin-left: 3%;">邮箱:zwb@kalighting.com </span>
+                    </div>
+                    <div style="padding: 20px 0; margin-bottom: 50px;">
+                        <img src="/static/img_topic/phone-yellow.png" style="float: left;width: 15px;">
+                        <span style="margin-left: 3%;">电话：13927472536 / （周一至周五 9:00-18:00） </span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div style="width: 100%; margin-top: 50px;">
+                    <div style="padding: 20px 0;">
+                        <img src="/static/img_topic/dingwei.png" style="float: left;">
+                        <span style="margin-left: 3%;">广东省惠州市惠城区惠民大道辅路康卓大楼5楼（工厂）</span>
+                    </div>
+                    <div style="padding: 20px 0;">
+                        <img src="/static/img_topic/phone-yellow.png" style="float: left;width: 15px;">
+                        <span style="margin-left: 3%;">电话：0755-86575946 （工厂） </span>
+                    </div>
+                </div>
 
-</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!--结束:联系我们-->
+
+    </div>
 
 @endsection
 
