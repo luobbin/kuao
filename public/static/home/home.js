@@ -286,14 +286,14 @@ function initHomeVideoSlider(){
 		sindex = $('#HomeVideoList li.active').index();
 	}
 	function toLeft(obj){
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-43%',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-434px',opacity:1});
 		$(obj).click(function(e) {
             videoShow(false);
         });
 	}
 	function toRight(obj){
 		var width = $('#HomeVideoList').width();
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-16%',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-153px',opacity:1});
 		$(obj).click(function(e) {
             videoShow(true);
         });
