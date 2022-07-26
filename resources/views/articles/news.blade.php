@@ -124,6 +124,15 @@
         sr.reveal('.about .col-bottom', {
             delay: 300
         });
+        sr.reveal('.about .col-info', {
+            delay: 300
+        });
+        sr.reveal('.about .col-title', {
+            delay: 300
+        });
+        sr.reveal('.about .col-middle', {
+            delay: 300
+        });
         sr.reveal('.about1 .tit', {
             delay: 100
         });
