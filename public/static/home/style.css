@@ -277,7 +277,7 @@ a:link{ text-decoration:none;}
 .Home-body .home-title span{width: 50px;height: 1px;border-bottom: 3px solid #e5ae49;display: inline-block;}
 
 .block-title{position:relative;width:100%;z-index: 4}
-.block-title .fr{width: 50%; text-align: right}
+.block-title .fr{width: 65%; text-align: right}
 .block-title .fr a{ padding:0 3%; border-right: 2px solid #EEEEEE; line-height: 40px;}
 .block-title .fr a:last-child{border: none;}
 .block-1{ position:relative;overflow:hidden; width:100%; z-index: 4;}
@@ -998,6 +998,7 @@ a:link{ text-decoration:none;}
 	#footer .di-xin .di-fen-ban .di-fen a{margin-right: 10px;}
 	#footer .di-xin .di-fen-ban.gzh{display: none;}
 	#footer .di-xin .di-foot .address {padding-top: 0.8%;}
+	.block-title .fr a{font-size: 12px; padding: 0 1.5%;}
 }
 
 @media (max-width: 768px) {
@@ -1067,6 +1068,7 @@ a:link{ text-decoration:none;}
 	#footer .di-xin .di-fen-ban{margin-left: 0; margin-right: 0px; float: left;}
 	#footer .di-xin .di-fen-ban .di-fen a{margin-right: 0px;}
 	#footer .di-xin .di-foot .address {padding-top: 0.5%;}
+	.block-title .fr a{font-size: 12px; padding: 0 1%;}
 }
 
 @media (max-width: 640px) {
@@ -1104,6 +1106,7 @@ a:link{ text-decoration:none;}
 	.tit-ban{font-size: 26px;}
 	#footer .di-xin .di-fen-ban{display: none;}
 	#footer .di-xin .di-foot .address {padding-top: 0;}
+	.block-title .fr a{font-size: 12px; padding: 0 0.5%;}
 }
 
 /**endregion响应样式*/
