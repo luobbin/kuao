@@ -12,8 +12,8 @@
 <!-- 内页banner -->
 <div class="ny-banner aa">
     <div class="img">
-        <img src="/static/images/index_banner02.jpg" class="pc">
-        <img src="/static/images/index_bannerm02.jpg" class="m">
+        <img src="http://api.kalighting.cn/static/images/index_banner02.jpg" class="pc">
+        <img src="http://api.kalighting.cn/static/images/index_bannerm02.jpg" class="m">
     </div>
     <div class="word1">
         <h3 class="wow fadeInUp">关于我们</h3>
@@ -40,7 +40,7 @@
         <div class="col-middle" style="background-color: #EFEFEF;float: left;padding: 50px 0;">
             <div class="info">
                 <div class="limg">
-                    <img src="/static/img_topic/about_usinfo_01.jpg">
+                    <img src="http://api.kalighting.cn//static/img_topic/about_usinfo_01.jpg">
                 </div>
                 <div class="rtxt">
                     <h3>库奥（深圳）照明技术有限公司</h3>
@@ -58,7 +58,7 @@
                     </p>
                 </div>
                 <div class="rimg">
-                    <img src="/static/img_topic/about_usinfo_04.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/about_usinfo_04.jpg">
                 </div>
             </div>
 
@@ -77,28 +77,28 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_01.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_01.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_02.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_02.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_03.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_03.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_04.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_04.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_05.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_05.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_06.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_06.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_07.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_07.jpg">
                 </div>
                 <div class="swiper-slide c-flex">
-                        <img src="/static/img_topic/about_usfzlc_08.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_08.jpg">
                 </div>
                 <div class="bg"></div>
                 <div class="bg1"></div>
@@ -118,7 +118,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us03.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
                     </div>
                     <div class="word">
                         <h3>展陈展示空间</h3>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us04.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
                     </div>
                     <div class="word">
                         <h3>酒店照明</h3>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us05.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
                     </div>
                     <div class="word">
                         <h3>会展空间</h3>
@@ -142,7 +142,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us06.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
                     </div>
                     <div class="word">
                         <h3>商业高空间</h3>
@@ -163,7 +163,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us03.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
                     </div>
                     <div class="word">
                         <h3>酒店案例</h3>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us04.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
                     </div>
                     <div class="word">
                         <h3>博物馆案例</h3>
@@ -179,7 +179,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us05.png">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
                     </div>
                     <div class="word">
                         <h3>商业空间案例</h3>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
-                        <img src="/static/img_topic/about_us06.jpg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
                     </div>
                     <div class="word">
                         <h3>别墅豪宅案例</h3>
