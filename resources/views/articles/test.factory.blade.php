@@ -12,8 +12,8 @@
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
-            <img src="/static/img_topic/factory_bg.jpg" class="pc">
-            <img src="/static/img_topic/factory_bg_m.jpg" class="m">
+            <img src="http://api.kalighting.cn/static/img_topic/factory_bg.jpg" class="pc">
+            <img src="http://api.kalighting.cn/static/img_topic/factory_bg_m.jpg" class="m">
         </div>
         <div class="word1">
             <h3 class="wow fadeInUp">关于工厂</h3>
@@ -33,54 +33,54 @@
             <div class="col-middle">
                 <div class="left">
                     <h3>车间生产线</h3>
-                    <img src="/static/img_topic/factory_03.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_03.jpg">
                     <p></p>
                 </div>
                 <div class="right">
                     <h3>拼装生产线</h3>
-                    <img src="/static/img_topic/factory_05.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_05.jpg">
                     <p></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="left">
                     <h3>老化生产线</h3>
-                    <img src="/static/img_topic/factory_09.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_09.jpg">
                     <p></p>
                 </div>
                 <div class="right">
                     <h3>老化生产线</h3>
-                    <img src="/static/img_topic/factory_10.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_10.jpg">
                     <p></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="left">
                     <h3>电热恒温鼓风干燥箱</h3>
-                    <img src="/static/img_topic/factory_13.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_13.jpg">
                     <p></p>
                 </div>
                 <div class="right">
                     <h3>光谱测试仪</h3>
-                    <img src="/static/img_topic/factory_14.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_14.jpg">
                     <p></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="left">
                     <h3>原料仓</h3>
-                    <img src="/static/img_topic/factory_17.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_17.jpg">
                     <p></p>
                 </div>
                 <div class="right">
                     <h3>成品仓</h3>
-                    <img src="/static/img_topic/factory_18.jpg">
+                    <img src="http://api.kalighting.cn/static/img_topic/factory_18.jpg">
                     <p></p>
                 </div>
 
             </div>
             <div class="clearfix"></div>
             <div class="col-bottom">
-                <img src="/static/img_topic/factory_21.jpg">
+                <img src="http://api.kalighting.cn/static/img_topic/factory_21.jpg">
                 <p></p>
-                <img src="/static/img_topic/factory_23.jpg">
+                <img src="http://api.kalighting.cn/static/img_topic/factory_23.jpg">
                 <p></p>
                 <h3>库奥工厂位于广东省惠州市惠城区惠民大道辅路康卓大楼</h3>
             </div>
