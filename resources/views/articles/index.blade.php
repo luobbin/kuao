@@ -11,13 +11,12 @@
     <!-- 内页banner -->
     <div class="ny-banner">
         <div class="img">
-            <img src="/static/202108/4932fb9df849b9eefc0880cbca468852.jpg" class="pc">
-            <img src="/static/202108/207810df92d8c98439be3ae91ddd52c0.jpg" class="m">
+            <img src="{{ $common['articles_background_pc_img'] }}" class="pc">
+            <img src="{{ $common['articles_background_mob_img'] }}" class="m">
         </div>
         <div class="word1">
             <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">新闻资讯</h3>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                最新、最全{{ $common['web_name'] }}资讯平台</p>
+            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">{{ $common['articles_background_info'] }}</p>
         </div>
     </div>
     <!-- 内页banner End -->
