@@ -1592,7 +1592,7 @@ footer .foot2 .fl a {padding-right:0;}
 .product dl dd a.item:nth-child(5n){margin-right:5.2px;}
 .product dl dd a.item:nth-child(4n){margin-right:5.2px;}
 .product dl dd a.item:nth-child(3n){margin-right:0;}
-.case .col-top .right .tab{display: none;}
+.case .col-top .right .tab,.index-banner .index-p{display: none;}
 }
 @media (max-width:640px) {
 .p-part1 .p-prev{left:5%;}
