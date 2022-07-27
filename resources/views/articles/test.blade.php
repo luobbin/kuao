@@ -12,12 +12,12 @@
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
-            <img src="/static/img_topic/factory_bg.jpg" class="pc">
-            <img src="/static/img_topic/factory_bg_m.jpg" class="m">
+            <img src="/static/img_topic/products_bg.jpg" class="pc">
+            <img src="/static/img_topic/products_bg_m.jpg" class="m">
         </div>
         <div class="word1">
-            <h3 class="wow fadeInUp">关于工厂</h3>
-            <p class="wow fadeInUp">库奥生产厂区坐落于惠州，是集产品研发、设计、生产为一体的高新技术企业。</p>
+            <h3 class="wow fadeInUp">产品中心</h3>
+            <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
         </div>
     </div>
     <!-- 内页banner End -->
@@ -25,67 +25,54 @@
 
     <div class="news w83">
         <div class="about p110">
-            <div class="block-title">
-                <div class="tit-ban">关于工厂</div>
+            <div class="col-top block-title">
+                <div class="tit-ban">产品筛选</div>
+                <div class="fr">
+                    <a href="/products?cid=1">室内专业类</a>
+                    <a href="/products?cid=2">室内设计类</a>
+                    <a href="/products?cid=3">博物馆照明</a>
+                    <a href="/products?cid=4">展示箱</a>
+                </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="col-middle">
                 <div class="left">
-                    <h3>车间生产线</h3>
-                    <img src="/static/img_topic/factory_03.jpg">
+                    <a href="/products?cid=1"><img src="/static/img_topic/product_center_01.jpg"></a>
                     <p></p>
                 </div>
                 <div class="right">
-                    <h3>拼装生产线</h3>
-                    <img src="/static/img_topic/factory_05.jpg">
+                    <a href="/products?cid=2"><img src="/static/img_topic/product_center_02.jpg"></a>
                     <p></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="left">
-                    <h3>老化生产线</h3>
-                    <img src="/static/img_topic/factory_09.jpg">
+                    <a href="/products?cid=3"><img src="/static/img_topic/product_center_03.jpg"></a>
                     <p></p>
                 </div>
                 <div class="right">
-                    <h3>老化生产线</h3>
-                    <img src="/static/img_topic/factory_10.jpg">
+                    <a href="/products?cid=4"><img src="/static/img_topic/product_center_04.jpg"></a>
                     <p></p>
                 </div>
                 <div class="clearfix"></div>
-                <div class="left">
-                    <h3>电热恒温鼓风干燥箱</h3>
-                    <img src="/static/img_topic/factory_13.jpg">
-                    <p></p>
-                </div>
-                <div class="right">
-                    <h3>光谱测试仪</h3>
-                    <img src="/static/img_topic/factory_14.jpg">
-                    <p></p>
-                </div>
-                <div class="clearfix"></div>
-                <div class="left">
-                    <h3>原料仓</h3>
-                    <img src="/static/img_topic/factory_17.jpg">
-                    <p></p>
-                </div>
-                <div class="right">
-                    <h3>成品仓</h3>
-                    <img src="/static/img_topic/factory_18.jpg">
-                    <p></p>
-                </div>
-
-            </div>
-            <div class="clearfix"></div>
-            <div class="col-bottom">
-                <img src="/static/img_topic/factory_21.jpg">
-                <p></p>
-                <img src="/static/img_topic/factory_23.jpg">
-                <p></p>
-                <h3>库奥工厂位于广东省惠州市惠城区惠民大道辅路康卓大楼</h3>
             </div>
         </div>
         <div class="clearfix"></div>
+        <div class="block-title" >
+            <div class="tit-ban">产品目录申请</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about3">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="/static/img_topic/product_center_cate_01.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="/static/img_topic/product_center_cate_02.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection
@@ -167,14 +154,24 @@
             },
         });
 
-        $(document).ready(function () {
-            $(".about3 .col-middle").scrollBar();
-        });
-
-        $('.about3 .col-middle li').hover(function () {
-            var i = $(this).index(); //下标第一种写法
-            $(this).addClass('active').siblings().removeClass('active');
-            $('.about3 .col-bottom .adr dl').eq(i).addClass('active').siblings().removeClass('active');
+        /*2个切换*/
+        var swiper3 = new Swiper('.about3 .swiper-container', {
+            slidesPerView: 2,
+            spaceBetween: 40,
+            pagination: {
+                el: '.about3 .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+            }
         });
 
 

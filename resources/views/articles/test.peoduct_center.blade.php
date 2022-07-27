@@ -8,7 +8,73 @@
 
 
 @section('content')
-{!! $data['content'] !!}
+
+    <!-- 内页banner -->
+    <div class="ny-banner aa">
+        <div class="img">
+            <img src="http://api.kalighting.cn/static/img_topic/products_bg.jpg" class="pc">
+            <img src="http://api.kalighting.cn/static/img_topic/products_bg_m.jpg" class="m">
+        </div>
+        <div class="word1">
+            <h3 class="wow fadeInUp">产品中心</h3>
+            <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
+        </div>
+    </div>
+    <!-- 内页banner End -->
+    <div class="clearfix"></div>
+
+    <div class="news w83">
+        <div class="about p110">
+            <div class="col-top block-title">
+                <div class="tit-ban">产品筛选</div>
+                <div class="fr">
+                    <a href="/products?cid=1">室内专业类</a>
+                    <a href="/products?cid=2">室内设计类</a>
+                    <a href="/products?cid=3">博物馆照明</a>
+                    <a href="/products?cid=4">展示箱</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-middle">
+                <div class="left">
+                    <a href="/products?cid=1"><img src="http://api.kalighting.cn/static/img_topic/product_center_01.jpg"></a>
+                    <p></p>
+                </div>
+                <div class="right">
+                    <a href="/products?cid=2"><img src="http://api.kalighting.cn/static/img_topic/product_center_02.jpg"></a>
+                    <p></p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="left">
+                    <a href="/products?cid=3"><img src="http://api.kalighting.cn/static/img_topic/product_center_03.jpg"></a>
+                    <p></p>
+                </div>
+                <div class="right">
+                    <a href="/products?cid=4"><img src="http://api.kalighting.cn/static/img_topic/product_center_04.jpg"></a>
+                    <p></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="block-title" >
+            <div class="tit-ban">产品目录申请</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about3">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="http://api.kalighting.cn/static/img_topic/product_center_cate_01.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="http://api.kalighting.cn/static/img_topic/product_center_cate_02.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('footer_js')
@@ -26,7 +92,7 @@
 @section('content_js')
 
     <script>
-
+        /*发展历程*/
         var swiper1 = new Swiper('.about1 .swiper-container', {
             slidesPerView: "auto",
             speed: 1000,
@@ -56,9 +122,9 @@
             },
         });
 
-
+        /*服务领域*/
         var swiper2 = new Swiper('.about2 .swiper-container', {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 40,
             pagination: {
                 el: '.about2 .swiper-pagination',

@@ -902,11 +902,11 @@ to {opacity:1;stroke-dasharray:371 371}
 .about .col-top .right{font-size:16px;line-height: 26px;color:#333;width: 75%;float:right;}
 .about .col-middle{margin-bottom: 80px;}
 .about .col-middle .info{width: 100%; clear: both;}
-.about .col-middle .info .limg{width: 50%; float: left;}
-.about .col-middle .info .rimg{width: 50%; float: right;}
+.about .col-middle .info .limg{width: 50%; float: left;overflow: hidden;}
+.about .col-middle .info .rimg{width: 50%; float: right;overflow: hidden;}
 .about .col-middle .info .ltxt{width: 50%; float: left;}
 .about .col-middle .info .rtxt{width: 50%; float: right;}
-.about .col-middle .info img{width: 100%;overflow: hidden;}
+.about .col-middle .info img{width: 100%;}
 .about .col-middle .info h3{font-size:28px;color:#C89F62;margin-bottom: 20px; padding-left: 20px;}
 .about .col-middle .info p{padding: 20px;color:#333;font-size:16px;line-height: 26px;}
 .about .col-middle .left{width: 48%;float: left; overflow: hidden;}
@@ -958,7 +958,6 @@ to {opacity:1;stroke-dasharray:371 371}
 .about2 .swiper-pagination-bullet{background-color: #E0E0E0;opacity: 1;}
 .about2 .swiper-pagination-bullet-active{background-color: #C8A063;}
 
-.about3{background-color: #F9F9F9;padding:35px 0;min-height: 870px;}
 .about3 .w83{position: relative;}
 .about3 .col-top{color:#333;font-size:16px;line-height: 26px;max-width: 555px;padding-top:80px;}
 .about3 .col-top .tit{color:#333;font-size:40px;font-weight: bold;margin-bottom: 40px;line-height: 40px;}
@@ -1259,7 +1258,7 @@ button.more:hover i {background-image:url(../images/more-ico1.png);}
 .i-product1 a.item:hover .img img {transform:scale(1.05);}
 .i-product1 a.item:hover .word h3 {color:#C8A063;}
 footer .foot1 .left dl dd a:hover,footer .foot2 a:hover {color:#333;}
-.i-case .right .i-case-b .swiper-slide .img:hover img,.i-product .oa .swiper-slide .img:hover img,.i-product .ob .swiper-slide .img:hover img,.about2 .img:hover img,.about .col-middle .left .img:hover img,.about .col-middle .right:hover img,.about .col-bottom .img:hover img {transform:scale(1.05);}
+.i-case .right .i-case-b .swiper-slide .img:hover img,.i-product .oa .swiper-slide .img:hover img,.i-product .ob .swiper-slide .img:hover img,.about2 .img:hover img,.about .col-middle .info:hover img,.about .col-middle .left:hover img,.about .col-middle .right:hover img,.about .col-bottom:hover img {transform:scale(1.05);}
 .i-case .right .tit .tab a:hover,.case .col-top .right .tab a:hover {background-color:#C8A063;color:#fff;}
 header .lang .xl a:hover {background-color:#C8A063;color:#fff!important;}
 footer .foot1 .right .fx span:nth-child(1):hover {background-image:url(../images/wx-ico1.png);}
