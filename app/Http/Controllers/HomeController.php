@@ -129,6 +129,9 @@ class HomeController extends Controller
             case 5://logo墙
                 $res->application = json_decode($block->application,true);
                 break;
+            case 7://logo墙
+                $res->application = json_decode($block->application,true);
+                break;
             default:
                 break;
         }
