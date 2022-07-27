@@ -287,7 +287,7 @@ a:link{ text-decoration:none;}
 .block-1 li .ban-con .anit{webkit-transform: translate3d(0,0,0) !important;transform: translate3d(0,0,0) !important;opacity: 1 !important;}
 .block-1 .ban, .block-1 .slider{ width:100%;}
 .block-1 .xxx a{background-color:rgba(255,255,255,0.8); width: 60px; height: 60px; text-align: center; line-height: 60px; border-radius: 30px;}
-.block-1 .xxx a img{width: auto; height: 40px;}
+.block-1 .xxx a img{width: auto; height: 65%;}
 
 .ban-con h2{ color:#fff; font-size:56px; line-height:54px; font-weight:100;-transition: all 0.5s ease-out 0.6s;transition: all 0.5s ease-out 0.6s;-webkit-transform: translate3d(0,30px,0); transform: translate3d(0,30px,0); opacity: 0; width:560px;}
 .ban-con p{ color:#fff; font-size:14px; line-height:20px; padding-top:10px; padding-bottom:60px;-transition: all 0.7s ease-out 1s;transition: all 0.7s ease-out 1s;-webkit-transform: translate3d(0,50px,0); transform: translate3d(0,50px,0); opacity: 0; width:400px;}
@@ -1069,6 +1069,7 @@ a:link{ text-decoration:none;}
 	#footer .di-xin .di-fen-ban .di-fen a{margin-right: 0px;}
 	#footer .di-xin .di-foot .address {padding-top: 0.5%;}
 	.block-title .fr a{font-size: 12px; padding: 0 1%;}
+	.block-1 .xxx a{width: 40px;height: 40px;line-height: 40px;border-radius: 20px;}
 }
 
 @media (max-width: 640px) {
@@ -1103,6 +1104,7 @@ a:link{ text-decoration:none;}
 	.owl-theme .owl-controls .owl-pagination{ display:none;}
 	.di-xin .di-foot .address {padding-top: 5px;}
 	.di-left{display:none}
+	.block-title .fr{display: none}
 	.tit-ban{font-size: 16px;max-width: 50%;}
 	#footer .di-xin .di-fen-ban{display: none;}
 	#footer .di-xin .di-foot .address {padding-top: 0;}
