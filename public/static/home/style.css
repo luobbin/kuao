@@ -278,7 +278,7 @@ a:link{ text-decoration:none;}
 
 .block-title{position:relative;width:100%;z-index: 4}
 .block-title .fr{width: 65%; text-align: right}
-.block-title .fr a{ padding:0 3%; border-right: 2px solid #EEEEEE; line-height: 40px;}
+.block-title .fr a{ padding:0 3%; border-right: 2px solid #EEEEEE; line-height: 40px; font-size: 15px;}
 .block-title .fr a:last-child{border: none;}
 .block-1{ position:relative;overflow:hidden; width:100%; z-index: 4;}
 .block-1 li{ position:absolute; top:0; left:0; width:100%;  display:none;}
@@ -1103,7 +1103,7 @@ a:link{ text-decoration:none;}
 	.owl-theme .owl-controls .owl-pagination{ display:none;}
 	.di-xin .di-foot .address {padding-top: 5px;}
 	.di-left{display:none}
-	.tit-ban{font-size: 26px;}
+	.tit-ban{font-size: 16px;max-width: 50%;}
 	#footer .di-xin .di-fen-ban{display: none;}
 	#footer .di-xin .di-foot .address {padding-top: 0;}
 	.block-title .fr a{font-size: 12px; padding: 0 0.5%;}

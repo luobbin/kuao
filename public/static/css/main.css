@@ -1460,7 +1460,7 @@ footer .foot2 .fl a {padding-right:0;}
 .news .n-tab{display: none;}
 .news .n-list{padding-right:10px;}
 .news .n-list a.item{position: relative;}
-.news .n-list a.item .word{width: 100%;padding-top:178px;}
+.news .n-list a.item .word{width: 100%;padding-top:178px;padding-left: 10px}
 .news .n-list a.item .img{width: 100%;margin-left: 0;height:168px;position: absolute;top:20px;left:0;}
 .news .n-list a.item .word .more{display: none;}
 .fy{padding:20px 0;}
@@ -1479,6 +1479,8 @@ footer .foot2 .fl a {padding-right:0;}
 .about .col-top .left{width: 100%;float: none;max-width: 100%;margin-bottom: 10px;}
 .about .col-top .right{width: 100%;float: none;}
 .about .col-top{margin-bottom: 20px;}
+.about .col-top .tit-ban{margin-top: 10px; max-width: 50%;}
+.block-title .tit-ban{max-width: 50%;}
 
 .about .col-middle{margin-bottom: 0;}
 .about .col-middle .left{width: 100%;float: none;}
@@ -1491,7 +1493,6 @@ footer .foot2 .fl a {padding-right:0;}
 .about .col-middle .right,
 .about .col-middle .info .limg,.about .col-middle .info .rimg,.about .col-middle .info .ltxt, .about .col-middle .info .rtxt{width: 100%;float: none;}
 .about .col-middle .info h3{margin-top: 20px;}
-.news .tit-ban{font-size: 26px;}
 
 .about .col-bottom{display: none;}
 .ny-banner .word1 p,.ny-banner .word2 p{display: none;}
@@ -1526,7 +1527,6 @@ footer .foot2 .fl a {padding-right:0;}
 .case .col-top .left p{font-size:24px;line-height: 30px;}
 .case .col-top .right{width: 100%;float: none;margin-top:15px;}
 .case .col-top .right h3{display: none;}
-.case .col-top .right .tab{display: none;}
 .case .col-bottom a.item{width: 100%;margin-right: 0;margin-bottom: 20px;}
 .case .col-bottom a.item:nth-child(2n){margin-top:0px;}
 
@@ -1543,7 +1543,7 @@ footer .foot2 .fl a {padding-right:0;}
 
 .case-show .col-middle .word .swiper-pagination{width:100%;position:relative;left:0;bottom:0;margin-top:20px;padding-bottom:20px; text-align:center;}
 
-.about1 .tit, .about2 .tit, .about3 .col-top .tit, .about4 .tit, .case-show .p-part3 .tit, .case-show1 .tit, .case-show2 h3{font-size:24px;margin-bottom: 20px;}
+.about1 .tit, .about2 .tit, .about3 .col-top .tit, .about4 .tit, .case-show .p-part3 .tit, .case-show1 .tit, .case-show2 h3{font-size:18px;margin-bottom: 20px;}
 
 .case-show1 a.item {width:80%;float:none;display:inline-block;padding:20px 0;margin-bottom:20px;}
 .case-show1 a.item .word {padding:20px 15px 0 15px;}
@@ -1610,6 +1610,6 @@ footer .foot2 .fl a {padding-right:0;}
 .product dl dd a.item .word {padding:20px 15px 0 15px;}
 .product dl dd a.item:nth-child(3n) {margin-right:3.5%;}
 .p-sx.active{opacity:1;}
-
+.case .col-top .right .form{margin-top: 0;}
 .search .product dl dd{display: block;}
 }

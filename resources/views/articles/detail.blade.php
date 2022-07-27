@@ -43,7 +43,7 @@
                 <a href="{{ url("articles") }}" class="buttonface">返回列表 >>></a>
             </div>
         </div>
-
+        <div class="clearfix"></div>
     </div>
     <!-- 新闻详细End -->
     <div style="height:100px;"></div>
