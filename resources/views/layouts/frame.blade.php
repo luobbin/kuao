@@ -151,32 +151,7 @@
             <div class="di-fen-ban share">
                 <p title="社交分享">社交分享</p>
                 <div class="di-fen">
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_01.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_03.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_05.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_07.png" />
-                    </a>
-                    <br>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_12.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_13.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_14.png" />
-                    </a>
-                    <a href="#" target="_blank" rel="noopener">
-                        <img src="/static/img_topic/share_icon_15.png" />
-                    </a>
-                    {{--                    {!! $common['share_code'] !!}--}}
+                    {!! $common['share_code'] !!}
                 </div>
             </div>
             <div class="clearfix"></div>

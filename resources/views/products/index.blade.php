@@ -40,7 +40,7 @@
                 </div>
                 <ul class="pro-promotion-well">
                     @foreach ($hot_products as $product)
-                    <a href="{{$product['url']}}">
+                    <a href="{{ url("product_detail",["id"=>$product['id']]) }}">
                     <li title="{{ $product['name'] }}" class="pro-left-pro" data-pid="{{ $product['cate_id'] }}" data-diy="N">
                         <img src="{{ $product['index_img'] }}" data-src="{{ $product['index_img'] }}">
                         <div class="text">
