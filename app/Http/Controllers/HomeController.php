@@ -36,7 +36,8 @@ class HomeController extends Controller
     {
         $block = $this->resp->find(7);
         //顶部视频
-        $banner = json_decode($block->application,true);
+        $banner = json_decode(json_decode($block->application,true),true);
+        //print_r($banner);exit;
         return view('index',[
             'common'=>$this->commonData,
             'homeNames' => $this->resp->getAllName(),
@@ -127,6 +128,9 @@ class HomeController extends Controller
                 $res->application = json_decode($block->application,true);
                 break;
             case 5://logo墙
+                $res->application = json_decode($block->application,true);
+                break;
+            case 7://logo墙
                 $res->application = json_decode($block->application,true);
                 break;
             default:
