@@ -8,55 +8,195 @@
 
 
 @section('content')
-    <!-- 新闻详细 -->
-    <div class="news-show w75">
-        <div class="tit">
-            <h1>KA四月团建活动。</h1>
-            <p class="time">发布时间：2022-07-28</p>
-
+    <!-- 内页banner -->
+    <div class="ny-banner aa">
+        <div class="img">
+            <img src="http://api.kalighting.cn/static/img_topic/about_us_bg.jpg" class="pc">
+            <img src="http://api.kalighting.cn/static/img_topic/about_us_bg_m.jpg" class="m">
         </div>
+        <div class="word1">
+            <h3 class="wow fadeInUp">关于我们</h3>
+            <p class="wow fadeInUp">以创新的技术、卓越的品质和一流的服务，通过灯具对光信息的演绎来诠释照明美学，创造美好的光环境。</p>
+        </div>
+    </div>
+    <!-- 内页banner End -->
+    <div class="clearfix"></div>
 
-        <div class="ms">
-            <article>
-                <div style="clear: both;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_03.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_05.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_06.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_07.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_08.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_09.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_10.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_11.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_12.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_13.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_14.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_15.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_16.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_17.jpg" style="width: 100%;">
-                    <img src="http://api.kalighting.cn/static/202108/tuanjian_18.jpg" style="width: 100%;">
+    <div class="news w83">
+        <!--开始:库奥照明简介-->
+        <div class="about">
+            <div class="col-top block-title">
+                <div class="tit-ban">库奥照明简介</div>
+                <div class="fr">
+                    <a href="#about">公司介绍</a>
+                    <a href="#about1">发展历程</a>
+                    <a href="#about2">服务领域</a>
+                    <a href="#about4">关联案例分类</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="about"></div>
+            <div class="col-middle" style="background-color: #EFEFEF;float: left;padding: 50px 0;">
+                <div class="info">
+                    <div class="limg">
+                        <img src="http://api.kalighting.cn//static/img_topic/about_usinfo_01.jpg">
+                    </div>
+                    <div class="rtxt">
+                        <h3>库奥（深圳）照明技术有限公司</h3>
+                        <p>
+                            库奥（深圳）照明技术有限公司专注于LED整体照明方案的个性化定制，是国内倡导整体照明定制的科技企业。公司创建于2009年，公司创始团队一直从事LED照明产品的设计、开发和营销工作。丰富的从业经验，对照明行业的热爱和对光照艺术的不懈追求，是库奥人敢于走在行业前端的主要动力。
+                        </p>
+                    </div>
                 </div>
 
-            </article>
-        </div>
+                <div class="info">
+                    <div class="ltxt">
+                        <p>
+                            经过多年的发展，现已拥有超过600名员工，25名经验丰富的工程师，拥有独立的LED驱动部门、光学设计部门和照明设计部门。<br><br>
+                            库奥照明自成立以来，以专业的照明解决方案，为商业照明提供专业的照明解决方案。我们始终以产品质量和客户需求为主导。公司致力于为客户提供专业服务，开发了系列LED照明产品，满足不同的需求，符合CE、CCC、RoHS的要求，可广泛应用于服装零售、食品杂货店、餐饮及商店、珠宝、奢侈品商店等。
+                        </p>
+                    </div>
+                    <div class="rimg">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usinfo_04.jpg">
+                    </div>
+                </div>
 
-        <div class="show_next clearfix">
-            <div class="fl">
-                <p>上一篇：
-                    沒有了
-                </p>
-                <p>下一篇：
-                    沒有了
-                </p>
-            </div>
-            <div class="fr">
-                <a href="{{ url("articles") }}" class="buttonface">返回列表 >>></a>
             </div>
         </div>
         <div class="clearfix"></div>
-    </div>
-    <!-- 新闻详细End -->
-    <div style="height:100px;"></div>
 
+        <!--结束:库奥照明简介-->
+        <!--开始:发展历程-->
+        <div id="about1"></div>
+        <div class="block-title" id="about2">
+            <div class="tit-ban">发展历程</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about1" style="margin-bottom: 80px;">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_01.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_02.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_03.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_04.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_05.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_06.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_07.jpg">
+                    </div>
+                    <div class="swiper-slide c-flex">
+                        <img src="http://api.kalighting.cn/static/img_topic/about_usfzlc_08.jpg">
+                    </div>
+                    <div class="bg"></div>
+                    <div class="bg1"></div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <!--结束:发展历程-->
+        <!--开始:服务领域-->
+        <div id="about2"></div>
+        <div class="block-title" >
+            <div class="tit-ban">服务领域</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about2" style="margin-bottom: 80px;">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
+                        </div>
+                        <div class="word">
+                            <h3>展陈展示空间</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
+                        </div>
+                        <div class="word">
+                            <h3>酒店照明</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
+                        </div>
+                        <div class="word">
+                            <h3>会展空间</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
+                        </div>
+                        <div class="word">
+                            <h3>商业高空间</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--结束:服务领域-->
+        <!--开始:关联案例分类-->
+        <div id="about4"></div>
+        <div class="block-title" >
+            <div class="tit-ban">关联案例分类</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about4">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
+                        </div>
+                        <div class="word">
+                            <h3>酒店案例</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
+                        </div>
+                        <div class="word">
+                            <h3>博物馆案例</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
+                        </div>
+                        <div class="word">
+                            <h3>商业空间案例</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
+                        </div>
+                        <div class="word">
+                            <h3>别墅豪宅案例</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--结束:关联案例分类-->
+    </div>
 @endsection
 
 @section('footer_js')

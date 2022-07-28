@@ -360,10 +360,10 @@ footer .foot2 .fr{display:none;}
 .ny-banner .word {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;}
 .ny-banner .word h3 {font-size:48px;font-weight:bold;margin-bottom:36px;overflow:hidden;}
 .ny-banner .word p {font-size:20px;line-height:28px;height:56px;overflow:hidden;width:582px;max-width:94%;}
-.ny-banner .word1 {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;background-color: rgba(235,235,235,0.4);padding: 1%;}
+.ny-banner .word1 {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;background-color: rgba(235,235,235,0.4);padding: 1.5%;}
 .ny-banner .word1 h3 {font-size:40px;font-weight:bold;margin-bottom:24px;}
-.ny-banner .word1 p {font-size:20px;line-height:28px;overflow:hidden;width:582px;max-width:94%;position:relative;padding-bottom:100px;}
-.ny-banner .word1 p::after {content:'';width:26px;height:2px;background-color:#fff;position:absolute;left:0;bottom:0;}
+.ny-banner .word1 p {font-size:20px;line-height:28px;overflow:hidden;min-width:384px;max-width:94%;position:relative;}
+/*.ny-banner .word1 p::after {content:'';width:26px;height:2px;background-color:#fff;position:absolute;left:0;bottom:0;}*/
 .ny-banner .word2 {position:absolute;left:8.5%;color:#333;z-index:2;top:50%;margin-top:-70px;}
 .ny-banner .word2 h3 {font-size:40px;font-weight:bold;margin-bottom:24px;}
 .ny-banner .word2 p {font-size:20px;line-height:28px;overflow:hidden;width:582px;max-width:94%;position:relative;padding-bottom:100px;}
@@ -907,8 +907,8 @@ to {opacity:1;stroke-dasharray:371 371}
 .about .col-middle .info .ltxt{width: 50%; float: left;}
 .about .col-middle .info .rtxt{width: 50%; float: right;}
 .about .col-middle .info img{width: 100%;}
-.about .col-middle .info h3{font-size:28px;color:#C89F62;margin-bottom: 20px; padding-left: 20px;}
-.about .col-middle .info p{padding: 20px;color:#333;font-size:16px;line-height: 26px;}
+.about .col-middle .info h3{font-size:24px;color:#C89F62;margin-bottom: 20px; padding-left: 8%;}
+.about .col-middle .info p{padding: 8%;color:#666;font-size:18px;line-height: 36px;}
 .about .col-middle .left{width: 48%;float: left; overflow: hidden;}
 .about .col-middle .left .img{width: 100%;overflow: hidden;}
 .about .col-middle .left img{display: block;width: 100%;transition: all .3s;}
@@ -1027,6 +1027,7 @@ to {opacity:1;stroke-dasharray:371 371}
 @media (max-width:1680px) {
 	.i-product .ob .swiper-slide .word {margin-top:40px;}
 	.i-product1 a.item .img{max-height:350px;}
+    .about .col-middle .info p{font-size: 18px;}
 }
 @media (max-width:1600px) {
 	.i-case .right .tit h3 {font-size:30px;}
@@ -1063,7 +1064,7 @@ header .left .lang p {font-size:16px;}
 .ny-banner .word p {font-size:16px;padding-bottom:50px;}
 .ny-banner .word1 {margin-top:-62px;left:7.5%;}
 .ny-banner .word1 h3 {font-size:30px;}
-.ny-banner .word1 p {font-size:16px;padding-bottom:50px;}
+.ny-banner .word1 p {font-size:16px;}
 .ny-banner .word2 {margin-top:-62px;left:7.5%;}
 .ny-banner .word2 h3 {font-size:30px;}
 .ny-banner .word2 p {font-size:16px;padding-bottom:50px;}
@@ -1152,7 +1153,7 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .case-show .col-top .right::-webkit-scrollbar {width:4px;height:1px;}
 .case-show .col-top .right::-webkit-scrollbar-thumb {background:#C8A063;}
 .case-show .col-top .right::-webkit-scrollbar-track {background:#fff;}
-
+.about .col-middle .info p{font-size: 16px;}
 .tabaa a{width: 100px;}
 }
 @media (max-width:1440px) {
@@ -1197,7 +1198,7 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .down .right ul.act li .word h3{font-size:20px;}
 .down .right ul.act li .word p{font-size:14px;}
 .case-show .col-top{margin-bottom: 60px;}
-
+.about .col-middle .info p{font-size: 14px; line-height: 28px;}
 .tabaa a{margin-right: 10px;width: 95px;}
 }
 @media (max-width:1200px) {
@@ -1491,6 +1492,7 @@ footer .foot2 .fl a {padding-right:0;}
 .about .col-middle .right,
 .about .col-middle .info .limg,.about .col-middle .info .rimg,.about .col-middle .info .ltxt, .about .col-middle .info .rtxt{width: 100%;float: none;}
 .about .col-middle .info h3{margin-top: 20px;}
+.about .col-middle .info p{font-size: 14px; line-height: 24px; padding: 3%;}
 
 .about .col-bottom h3{ font-size: 16px;}
 .ny-banner .word1 p,.ny-banner .word2 p{display: none;}

@@ -63,7 +63,7 @@ a:link{ text-decoration:none;}
 .text-through{text-decoration: line-through !important;}
 .show-more-data-btn{width:100%;margin:20px 20px 0;text-align:center;display:block;font-size:18px;color:#FFFFFF;background:#565656;height:50px;line-height:50px;cursor:pointer;}
 .show-more-data-btn.hide{display: none;}
-.tit-ban{float: left;color:#9FA0A0;font-size:30px;font-weight: bold;margin-bottom: 40px;max-width: 28%;line-height: 1.2;border-right: 3px solid #C8A063;padding-right: 1%;}
+.tit-ban{float: left;color:#9FA0A0;font-size:30px;font-weight: bold;margin-bottom: 40px;max-width: 28%;line-height: 1;border-right: 3px solid #C8A063;padding-right: 1%;}
 
 /**固定比例的正方形*/
 .rectangle>div{text-decoration:none;list-style-type:none;overflow:hidden;}
@@ -326,7 +326,7 @@ a:link{ text-decoration:none;}
 .block-5 ul li a{color: #FEFFFF}
 .block-5 ul li a:hover{color: #e5e5e5}
 
-.block-4{width:100%;height:500px;background-size:cover;position:relative;padding:0 300px; z-index: 4; margin-bottom: 80px;}
+.block-4{width:100%;height:500px;background-size:cover;position:relative;padding:0; z-index: 4;}
 .block-4 .home-title{padding:45px 0 40px 0;}
 .block-4 .home-title h2{color:#F5F5F5;}
 .block-4 ul{width:100%;height:425px;position:relative;}
@@ -873,7 +873,6 @@ a:link{ text-decoration:none;}
 
 }
 @media (max-width: 1680px) {
-	.block-4{padding:0 100px;}
 	.block-4 .video-switch-btn.last-video{left:30px;}
 	.block-4 .video-switch-btn.next-video{right:30px;}
 	.pin-1, .eight, .nei-1, .select, .case-read{ padding:70px 100px;}
@@ -990,9 +989,9 @@ a:link{ text-decoration:none;}
 	.video-ti{ padding-top:30px; padding-bottom:10px;}
 	#returnTop,.RightFixed{ right:0;}
 
-	.block-4{padding:0 5px;}
 	.block-4 li.active{width:100% !important;left:0 !important;margin-left:0 !important;}
 	#head .logo img{ height:35px; width:auto;}
+	.block-1{margin-bottom: 50px;}
 	.block-1 li .ban-con{ height:200px; margin-top:-100px;}
 	.ban-con h2{ font-size:34px; line-height:35px;}
 	.ban-con p{ font-size:13px; padding-bottom:30px;}

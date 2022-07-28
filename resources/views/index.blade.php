@@ -70,7 +70,7 @@
     <!-- banner高度End -->
     <div class="clearfix"></div>
 
-<div class="w83 p110">
+<div class="w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
         <div class="tit-ban">{{$homeNames[1]}}</div>
