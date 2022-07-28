@@ -141,7 +141,7 @@ function initHomeProduct(){
 			html.push('<ul>');
 			for(var i in data){
 				var item = $.parseJSON(data[i]);
-				html.push('<li class="col-md-3 col-sm-3 col-xs-3">' +
+				html.push('<li class="col-md-3 col-sm-6 col-xs-6">' +
 					'<a href="' + (isNotEmpty(item['url']) ? item['url'] : '####') + '">' +
 					'<img src="' + item['img'] + '" width="100%">' +
 					'</a></li>');
@@ -167,12 +167,12 @@ function initHomeNews(){
 				html = '<li class="col-md-6 col-sm-12 col-xs-12">' +
 					'	<a href="' + item['url'] + '">' +
 					'		<div class="new-article">' +
-					'			<img src="' + item['index_img'] + '" onerror="this.src=\'' + defaults.default_img + '\'">' +
-					'			<div class="new-nei col-md-6 col-sm-6 col-xs-6">' +
+					'			<div class="img"><img src="' + item['index_img'] + '" onerror="this.src=\'' + defaults.default_img + '\'"></div>' +
+					'			<div class="new-nei">' +
 					'				<h3>' + item['date'] + '</h3>' +
 					'				<P>' + item['title'] + '</P>' +
 					'				<div class="clearfix"></div>' +
-					'				<span>了解更多 >>></span>' +
+					'				<b>>>> 了解更多</b>' +
 					'			</div>' +
 					'		</div>' +
 					'	</a>' +
@@ -286,14 +286,14 @@ function initHomeVideoSlider(){
 		sindex = $('#HomeVideoList li.active').index();
 	}
 	function toLeft(obj){
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-434px',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-453px',opacity:1});
 		$(obj).click(function(e) {
             videoShow(false);
         });
 	}
 	function toRight(obj){
 		var width = $('#HomeVideoList').width();
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-153px',opacity:1});
+		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-147px',opacity:1});
 		$(obj).click(function(e) {
             videoShow(true);
         });
