@@ -87,7 +87,6 @@ class CasesController extends Controller
 //            ['img'=>"/static/202108/c5abdeb04991aa8049ffe9d219c470be.jpg","title"=>"上海天文馆","info"=>"从家园启程踏入璀璨星空，围绕“日月地”展开银河系，逐渐打开浩瀚宇宙，了解人类对宇宙探索的历程和取得的成就。展陈设计将人文与科学进行了有机融合，把深奥的天文理论转化为艺术形态，以一种寓教于乐的方式打开天体和宇宙的奥秘，将神秘的宇宙星空带到身边。"],
 //            ['img'=>"/static/202108/9ea56a32d559f75fb7f8e7beef945583.jpg","title"=>"上海天文馆","info"=>"征程-经历了漫长岁月的积累，人类对宇宙的探索不断加深，从卷卷书页到天文望远镜，灯光对不同展品采用了不同的照明方式，通过立体布灯的方法来表现三维展品的完整面貌,大型展品和布景以切合主题的灯光场景来表达内涵。"]
 //        ];
-
         $case->imgs = empty($case->imgs)?[]:json_prase($case->imgs);
         if (!empty($case->product_ids)){
             $case->products = $repProduct->findByIds($case->product_ids);

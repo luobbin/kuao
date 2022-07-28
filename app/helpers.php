@@ -770,7 +770,7 @@ if(!function_exists('json_prase')) {
     {
         $data = json_decode($content,true);
         foreach ( $data as $k=>$v){
-            $data[$k] = json_decode($v,true);
+            $data[$k] = is_array($v)?$v : json_decode($v,true);
         }
         return $data;
     }
