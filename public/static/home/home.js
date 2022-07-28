@@ -123,7 +123,7 @@ function initHomeBannerSlider(){
 		var _li = $('.block-1 li').eq(sindex);
 		heiii = parseInt(_li.find('img').height()),weighh = parseInt(_li.find('img').width());
 		winwei = parseInt($(document.body).width());
-		$('.block-1,.block-1 li').css({'height':heiii*winwei*0.9/weighh});
+		$('.block-1,.block-1 li').css({'height':heiii*winwei*0.8/weighh});
 	}
 	setTimeout(function(){
 		picShow(0);
