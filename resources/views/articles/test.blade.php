@@ -8,72 +8,54 @@
 
 
 @section('content')
+    <!-- 新闻详细 -->
+    <div class="news-show w75">
+        <div class="tit">
+            <h1>KA四月团建活动。</h1>
+            <p class="time">发布时间：2022-07-28</p>
 
-    <!-- 内页banner -->
-    <div class="ny-banner aa">
-        <div class="img">
-            <img src="/static/img_topic/products_bg.jpg" class="pc">
-            <img src="/static/img_topic/products_bg_m.jpg" class="m">
         </div>
-        <div class="word1">
-            <h3 class="wow fadeInUp">产品中心</h3>
-            <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
-        </div>
-    </div>
-    <!-- 内页banner End -->
-    <div class="clearfix"></div>
 
-    <div class="news w83">
-        <div class="about p110">
-            <div class="col-top block-title">
-                <div class="tit-ban">产品筛选</div>
-                <div class="fr">
-                    <a href="/products?cid=1">室内专业类</a>
-                    <a href="/products?cid=2">室内设计类</a>
-                    <a href="/products?cid=3">博物馆照明</a>
-                    <a href="/products?cid=4">展示箱</a>
+        <div class="ms">
+            <article>
+                <div style="clear: both;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_03.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_05.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_06.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_07.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_08.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_09.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_10.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_11.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_12.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_13.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_14.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_15.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_16.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_17.jpg" style="width: 100%;">
+                    <img src="http://api.kalighting.cn/static/202108/tuanjian_18.jpg" style="width: 100%;">
                 </div>
+
+            </article>
+        </div>
+
+        <div class="show_next clearfix">
+            <div class="fl">
+                <p>上一篇：
+                    沒有了
+                </p>
+                <p>下一篇：
+                    沒有了
+                </p>
             </div>
-            <div class="clearfix"></div>
-            <div class="col-middle">
-                <div class="left">
-                    <a href="/products?cid=1"><img src="/static/img_topic/product_center_01.jpg"></a>
-                    <p></p>
-                </div>
-                <div class="right">
-                    <a href="/products?cid=2"><img src="/static/img_topic/product_center_02.jpg"></a>
-                    <p></p>
-                </div>
-                <div class="clearfix"></div>
-                <div class="left">
-                    <a href="/products?cid=3"><img src="/static/img_topic/product_center_03.jpg"></a>
-                    <p></p>
-                </div>
-                <div class="right">
-                    <a href="/products?cid=4"><img src="/static/img_topic/product_center_04.jpg"></a>
-                    <p></p>
-                </div>
-                <div class="clearfix"></div>
+            <div class="fr">
+                <a href="{{ url("articles") }}" class="buttonface">返回列表 >>></a>
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="block-title" >
-            <div class="tit-ban">产品目录申请</div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="about3">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img style="width: 100%; height: auto;" src="/static/img_topic/product_center_cate_01.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img style="width: 100%; height: auto;" src="/static/img_topic/product_center_cate_02.jpg">
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <!-- 新闻详细End -->
+    <div style="height:100px;"></div>
 
 @endsection
 

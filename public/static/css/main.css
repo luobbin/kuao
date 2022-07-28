@@ -416,7 +416,7 @@ footer .foot2 .fr{display:none;}
 .product dl dd a.item .tip {font-size:14px;color:#333;padding:0 40px;line-height:14px;height:16px; text-align: center;}
 .product dl dd a.item .img {width:100%;padding:0 40px;overflow:hidden;background-color:#fff;border:none;}
 .product dl dd a.item .img img {display:block;width:100%;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
-.product dl dd a.item .word {line-height: 20px;padding:10px 10px 0 10px;position:relative;}
+.product dl dd a.item .word {line-height: 20px;padding:10px 10px 0 10px;position:relative;overflow: hidden; text-overflow: ellipsis;}
 .product dl dd a.item .word::before{content:'';display:block;width:100%;height:1px;background-color:#f4f4f4;position:absolute;top:0;left:0;}
 .product dl dd a.item .word h3 {color:#333;font-size:16px;margin-bottom:10px;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .product dl dd a.item .word p {color:#666;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none;}
