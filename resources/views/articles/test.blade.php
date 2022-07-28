@@ -72,7 +72,7 @@
             <div class="tit-ban">发展历程</div>
         </div>
         <div class="clearfix"></div>
-        <div class="about1" style="margin-bottom: 80px;">
+        <div class="about1">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide c-flex">
@@ -112,7 +112,7 @@
             <div class="tit-ban">服务领域</div>
         </div>
         <div class="clearfix"></div>
-        <div class="about2" style="margin-bottom: 80px;">
+        <div class="about2">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
