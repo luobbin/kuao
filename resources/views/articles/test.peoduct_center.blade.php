@@ -8,7 +8,6 @@
 
 
 @section('content')
-
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
@@ -24,7 +23,7 @@
     <div class="clearfix"></div>
 
     <div class="news w83">
-        <div class="about p110">
+        <div class="about">
             <div class="col-top block-title">
                 <div class="tit-ban">产品筛选</div>
                 <div class="fr">
@@ -47,11 +46,9 @@
                 <div class="clearfix"></div>
                 <div class="left">
                     <a href="/products?cid=3"><img src="http://api.kalighting.cn/static/img_topic/product_center_03.jpg"></a>
-                    <p></p>
                 </div>
                 <div class="right">
                     <a href="/products?cid=4"><img src="http://api.kalighting.cn/static/img_topic/product_center_04.jpg"></a>
-                    <p></p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -74,7 +71,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @section('footer_js')

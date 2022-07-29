@@ -24,7 +24,7 @@
     <div class="clearfix"></div>
 
     <div class="news w83">
-        <div class="about p110">
+        <div class="about factory p110">
             <div class="block-title">
                 <div class="tit-ban">关于工厂</div>
             </div>

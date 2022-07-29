@@ -63,7 +63,7 @@ a:link{ text-decoration:none;}
 .text-through{text-decoration: line-through !important;}
 .show-more-data-btn{width:100%;margin:20px 20px 0;text-align:center;display:block;font-size:18px;color:#FFFFFF;background:#565656;height:50px;line-height:50px;cursor:pointer;}
 .show-more-data-btn.hide{display: none;}
-.tit-ban{float: left;color:#9FA0A0;font-size:30px;font-weight: bold;margin:40px 0;max-width: 28%;line-height: 1;border-right: 3px solid #C8A063;padding-right: 1%;}
+.tit-ban{float: left;color:#9FA0A0;font-size:32px;font-weight: bold;margin:40px 0;max-width: 28%;line-height: 1;border-right: 3px solid #C8A063;padding-right: 1%;}
 
 /**固定比例的正方形*/
 .rectangle>div{text-decoration:none;list-style-type:none;overflow:hidden;}
@@ -314,7 +314,7 @@ a:link{ text-decoration:none;}
 .block-5{padding:0;transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; position: relative; z-index: 4;}
 .block-5 ul .new-case{ border:1px solid #E6E6E6;}
 .new-case .new-con{ padding:21px 0; border-left:1px solid #E6E6E6;}
-.block-5 ul li{margin-bottom: 10px; margin-right: 10px; margin-left: -10px;}
+.block-5 ul li{margin-bottom: 10px; margin-right: 0px; margin-left: 0px; padding-left: 0px; padding-right: 10px;}
 .block-5 ul li .new-article{ width: 100%; clear: both;}
 .block-5 ul li .new-article .img{float: left; width: 50%; max-height: 180px;overflow: hidden;}
 .block-5 ul li .new-article .img img{width: 100%; min-height: 180px;}
@@ -375,14 +375,14 @@ a:link{ text-decoration:none;}
 
 #footer .di-xin .di-link-ban{float:left;display:flex;}
 #footer .di-xin .di-link-ban .di-link{float:left;padding:0 60px;margin-top:65px;min-height:200px;}
-#footer .di-xin .di-link-ban .di-link .di-link-title{font-size:15px;margin-bottom:30px;text-align:left;}
-#footer .di-xin .di-link-ban .di-link .di-link-nei{font-size:14px;margin-bottom:16px;text-align:left;display:block;}
+#footer .di-xin .di-link-ban .di-link .di-link-title{font-size:15px;margin-bottom:16px;text-align:left;}
+#footer .di-xin .di-link-ban .di-link .di-link-nei{font-size:14px;margin-bottom:16px;text-align:left;display:block;max-width: 82px; white-space: nowrap;}
 #footer .di-xin .di-link-ban .di-link .di-link-nei:visited{color: #9E9F9F;}
 #footer .di-xin .di-link-ban .di-link .di-link-nei:hover{color: #fff;}
 #footer .di-xin .di-link-ban .di-link:first-child{padding-left: 10px;}
 
-#footer .di-xin .di-fen-ban{float:right;margin:0 3%;margin-top:65px; text-align: left;}
-#footer .di-xin .di-fen-ban p{font-size:15px;margin-bottom:30px;}
+#footer .di-xin .di-fen-ban{float:right;margin:0 10px 0 5%;margin-top:65px; text-align: left;}
+#footer .di-xin .di-fen-ban p{font-size:15px;margin-bottom:16px;}
 #footer .di-xin .di-fen-ban .di-fen a{width: 38px;height: 32px; float: left; margin-right:20px;}
 #footer .di-xin .di-fen-ban .di-fen a img{height: 26px;width: auto;}
 #footer .di-xin .di-fen-ban.gzh{max-width: 9%;overflow: hidden;}
@@ -902,7 +902,7 @@ a:link{ text-decoration:none;}
 	.gou{ padding:50px 15px;}
 	.gou-content .title{ padding-left:10px;}
 	.di-xin .di-foot .address {padding-top: 35px;}
-	#footer .di-xin .di-link-ban .di-link{padding:0 30px;}
+	#footer .di-xin .di-link-ban .di-link{padding:0 35px;}
 }
 
 @media (max-width: 1300px) {
@@ -936,8 +936,8 @@ a:link{ text-decoration:none;}
 	.xin-case li .xin-nei{ padding:35px 20px;}
 	.xin-case li .xin-time{ padding-top:20px;}
 	.di-xin .di-foot .address {padding-top: 35px;}
-	.tit-ban{font-size: 36px;}
-	#footer .di-xin .di-link-ban .di-link{padding: 0 30px;}
+	.tit-ban{font-size: 30px;}
+	#footer .di-xin .di-link-ban .di-link{padding: 0 40px;}
 	#footer .di-xin .di-fen-ban{margin-left: 0; margin-right: 5px;}
 	#footer .di-xin .di-fen-ban .di-fen a{margin: 0;}
 	#footer .di-xin .di-foot .address {padding-top: 1%;}
@@ -1041,7 +1041,7 @@ a:link{ text-decoration:none;}
 	#footer .di-xin .di-link-ban .di-link .di-link-nei{font-size:12px;}
 	.tit-ban{font-size: 28px;}
 	#footer .di-xin .di-link-ban .di-link{padding: 0 10px;}
-	#footer .di-xin .di-fen-ban{margin-left: 0; margin-right: 0px; float: left;}
+	#footer .di-xin .di-fen-ban{margin-left: 0; margin-right: 0px;}
 	#footer .di-xin .di-fen-ban .di-fen a{margin-right: 0px;}
 	#footer .di-xin .di-foot .address {padding-top: 0.5%;}
 	.block-title .fr a{font-size: 12px; padding: 0 1%;}
