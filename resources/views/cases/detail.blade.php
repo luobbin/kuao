@@ -21,7 +21,7 @@
     </div>
     <!-- 内页banner End -->
     <!-- 案例详细 -->
-    <div class="case-show p110 w83">
+    <div class="case-show p80 w83">
         <div class="col-top clearfix">
             <div class="left">
                 {{ $data['name'] }}
@@ -90,7 +90,7 @@
         <!-- 案例视频End -->
         <div class="clearfix"></div>
         @if($data['products'])
-        <div class="case-show1 p110">
+        <div class="case-show1">
             <div class="tit">案例产品</div>
             <div class="clearfix"></div>
             <div class="bg-white">
@@ -117,7 +117,7 @@
         @endif
 
         <div class="clearfix"></div>
-        <div class="case-show1 p110">
+        <div class="case-show1">
             <div class="tit">联系我们</div>
             <a href="{{ url("/news/contact_us") }}">
                 <img src="{{ $common['case_contact_us_img'] }}" style="width: 100%">

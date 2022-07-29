@@ -23,7 +23,7 @@
     <!-- 内页banner End -->
 
     <!-- 工程案例 -->
-    <div class="case p110 w83">
+    <div class="case p80 w83">
         <div class="col-top clearfix" style=" height: auto;">
             <div class="left">
                 <h3><span style="color:#A1A09E;">项目案例</span> | </h3>
@@ -48,10 +48,16 @@
 
             <div class="pull-left show-more-data-btn hide" data-langkey="ShowMore" title="显示更多">显示更多</div>
         </div>
+        <div class="clearfix"></div>
+        <div class="case-show1">
+            <div class="tit">联系我们</div>
+            <a href="{{ url("/news/contact_us") }}">
+                <img src="{{ $common['case_contact_us_img'] }}" style="width: 100%">
+            </a>
+        </div>
     </div>
     <!-- 工程案例End -->
-    <div style="height:100px;clear: both;"></div>
-    <div class="clearfix"></div>
+
 @endsection
 
 
