@@ -1321,8 +1321,8 @@ header .right li:hover::before {width:70%;}
 }
 /* 移动端 */
 @media (max-width:1024px) {
-.w83 {width:90%; overflow: hidden;}
-.w75{width:90%;overflow: hidden;}
+.w83 {width:100%; overflow: hidden;}
+.w75{width:100%;overflow: hidden;}
 .news{margin-top: 0}
 .news .block-title .fr{margin-top: 1rem;}
 header {display:none;}
@@ -1499,7 +1499,7 @@ footer .foot2 .fl a {padding-right:0;}
 .about .col-top .right{width: 100%;float: none;}
 .about .col-top{margin-bottom: 20px;}
 .about .col-top .tit-ban{margin-top: 10px; max-width: 50%;}
-.block-title .tit-ban{max-width: 50%;}
+.block-title .tit-ban{max-width: 50%;padding-left: 2%;}
 
 .about .col-middle{margin-bottom: 0;}
 .about .col-middle .left{width: 100%;float: none;}

@@ -35,6 +35,8 @@
             scrollbar: {
                 el: '.about1 .swiper-scrollbar',
                 draggable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
             },
             mousewheel: {
                 eventsTarged: '.about1 .swiper-container',
@@ -63,6 +65,8 @@
             pagination: {
                 el: '.about2 .swiper-pagination',
                 clickable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
             },
             breakpoints: {
                 640: {
@@ -85,6 +89,8 @@
             pagination: {
                 el: '.about4 .swiper-pagination',
                 clickable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
             },
         });
 
@@ -95,6 +101,8 @@
             pagination: {
                 el: '.about3 .swiper-pagination',
                 clickable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
             },
             breakpoints: {
                 640: {
