@@ -1038,7 +1038,7 @@ a:link{ text-decoration:none;}
 	.savebtn-plus{width:100%; float:none; margin-left:5px;}
 	.di-xin .di-foot .address {padding-top: 25px;}
 	#footer .di-xin .di-link-ban .di-link .di-link-title{font-size: 13px;}
-	#footer .di-xin .di-link-ban .di-link .di-link-nei{font-size:12px;}
+	#footer .di-xin .di-link-ban .di-link .di-link-nei{font-size:12px;text-overflow:ellipsis;}
 	.tit-ban{font-size: 28px;}
 	#footer .di-xin .di-link-ban .di-link{padding: 0 10px;}
 	#footer .di-xin .di-fen-ban{margin-left: 0; margin-right: 0px;}
