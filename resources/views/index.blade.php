@@ -17,8 +17,9 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-swiper-autoplay="15000">
-                        <video src="{{ $banner['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
-                               loop="loop" muted="muted" style="object-fit: fill;display: block;width:100vw;"></video>
+                        <video id="videoPlay" src="{{ $banner['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
+                               loop="loop" muted="muted" controls="controls" x5-video-player-type="h5" preload="metadata" playsinline="true"
+                               webkit-playsinline="true"  x-webkit-airplay="true"x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="object-fit: fill;display: block;width:100vw;"></video>
                         <div class="mm">
                             <img src="{{ $banner['mob_img_url'] }}" class="mm">
                             <div class="word">
@@ -70,7 +71,7 @@
     <!-- banner高度End -->
     <div class="clearfix"></div>
 
-<div class="w83">
+<div class="home w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
         <div class="tit-ban">{{$homeNames[1]}}</div>
@@ -180,6 +181,8 @@
                 pagination: {
                     el: '.index-p',
                     clickable: true,
+                    observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                    observeParents:true,//修改swiper的父元素时，自动初始化swiper
                 },
                 navigation: {
                     nextEl: '.index-next',
@@ -233,6 +236,24 @@
                         break;
                 }
                 return animName;
+            }
+            //视频自动播放
+            var voice = document.getElementById('videoPlay');
+            if(typeof WeixinJSBrdgeReady=="object" && typeof WeixinJSBridge.invoke == "function"){
+                voice.play()
+            }else{
+                if (document.addEventListener) {
+                    document.addEventListener("WeixinJSBridgeReady", function () {
+                        voice.play();
+                    }, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent("WeixinJSBridgeReady", function () {
+                        voice.play();
+                    });
+                    document.attachEvent("onWeixinJSBridgeReady", function () {
+                        voice.play();
+                    });
+                }
             }
             //其他模块加载
             initHome();

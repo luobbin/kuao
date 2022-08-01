@@ -26,7 +26,7 @@
 @section('content_js')
 
     <script>
-
+        /*发展历程*/
         var swiper1 = new Swiper('.about1 .swiper-container', {
             slidesPerView: "auto",
             speed: 1000,
@@ -58,7 +58,7 @@
             },
         });
 
-
+        /*服务领域*/
         var swiper2 = new Swiper('.about2 .swiper-container', {
             slidesPerView: 5,
             spaceBetween: 40,

@@ -1321,6 +1321,7 @@ header .right li:hover::before {width:70%;}
 }
 /* 移动端 */
 @media (max-width:1024px) {
+.home{position:relative;z-index: 9}
 .w83 {width:100%; overflow: hidden;}
 .w75{width:100%;overflow: hidden;}
 .news{margin-top: 0}
