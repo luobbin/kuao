@@ -11,8 +11,8 @@
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
-            <img src="{{ $common['case_background_pc_img'] }}" class="pc">
-            <img src="{{ $common['case_background_mob_img'] }}" class="m">
+            <img src="{{ $data['index_img'] }}" class="pc">
+            <img src="{{ $data['index_img'] }}" class="m">
         </div>
         <div class="word1">
             <h3 class="wow fadeInUp">项目案例</h3>

@@ -1357,16 +1357,18 @@ footer .foot2 {height:40px;line-height:40px;text-align:center;}
 footer .foot2 .fl {float:none;}
 footer .foot2 .fl a:nth-child(1),footer .foot2 .fl a:nth-child(2) {display:none;}
 footer .foot2 .fr {display:none;}
-.index-banner .swiper-slide .mm{display:block;}
-.index-banner .swiper-slide .img img.pc {display:none;}
-.index-banner .swiper-slide .img img.m {display:block;}
-.index-banner .swiper-slide video{display:none!important}
-.index-banner .swiper-slide img.mm{display:block;}
-.index-banner .swiper-slide .word {margin-top:-112px;}
-.index-banner .swiper-slide .word h3 {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;font-size:20px;margin-bottom:20px;}
-.index-banner .swiper-slide .word p {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;font-size:12px;max-width:70%;margin-bottom:60px;}
-.index-banner .swiper-slide .word a.more {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;}
-.index-banner .index-p {left:0%;text-align:center;bottom:40px;}
+.oo{height: 15vh;}
+.index-banner{background:none; height: 40vh;}
+/*.index-banner .swiper-slide .mm{display:block;}*/
+/*.index-banner .swiper-slide .img img.pc {display:none;}*/
+/*.index-banner .swiper-slide .img img.m {display:block;}*/
+/*.index-banner .swiper-slide video{display:none!important}*/
+/*.index-banner .swiper-slide img.mm{display:block;}*/
+/*.index-banner .swiper-slide .word {margin-top:-112px;}*/
+/*.index-banner .swiper-slide .word h3 {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;font-size:20px;margin-bottom:20px;}*/
+/*.index-banner .swiper-slide .word p {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;font-size:12px;max-width:70%;margin-bottom:60px;}*/
+/*.index-banner .swiper-slide .word a.more {transform:translateY(0);opacity:1;transition-duration:0s;transition-delay:0s;}*/
+/*.index-banner .index-p {left:0%;text-align:center;bottom:40px;}*/
 .i-case .right .i-case-b .swiper-slide .word {padding:20px 2%;}
 .i-case .right .i-case-prev,.i-case .right .i-case-next,.i-product .ob .i-product-prev,.i-product .ob .i-product-next {width:40px;height:40px;}
 .i-case {padding:30px 0;background-color:#FFFFFF;}
