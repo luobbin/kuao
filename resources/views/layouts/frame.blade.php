@@ -126,47 +126,38 @@
 <div class="clearfix"></div>
 
 <footer id="footer">
-    <div class="di-xin w83">
+    <div class="di-xin w83 p40">
         <div class="di-link-ban">
-            @foreach ($common['footer_menu_setting'] as $menu)
-                <div class="di-link">
-                    <div class="di-link-title" title="{{$menu['name']}}">{{$menu['name']}}</div>
-                    @foreach ($menu['childs'] as $menuChild)
-                    <a class="di-link-nei" target="_blank" href="{{$menuChild['url']}}" title="{{$menuChild['name']}}">{{$menuChild['name']}}</a>
-                    @endforeach
-                </div>
-            @endforeach
-
-            <div class="clearfix"></div>
+            {!! $common['footer_menu_setting'] !!}
         </div>
         <div class="di-qrcode-fen">
-            <div class="di-fen-ban gzh">
-                <p title="公众号"></p>
-                <div class="di-fen">
-                    <div class="qrcode" >
-                        <img src="{{ $common['public_account_img'] }}">
-                    </div>
-                </div>
-            </div>
             <div class="di-fen-ban share">
                 <p title="社交分享">社交分享</p>
                 <div class="di-fen">
                     {!! $common['share_code'] !!}
                 </div>
             </div>
+            <div class="di-fen-ban gzh">
+                <p title="公众号"> &nbsp;</p>
+                <div class="di-fen">
+                    <div class="qrcode" >
+                        <img src="{{ $common['public_account_img'] }}">
+                    </div>
+                </div>
+            </div>
             <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-        <div class="di-foot">
-            <img src="{{ url('static/images/logo2.png') }}">
-            <div class="address">{{ $common['connect_address'] }}</div>
-            <div class="clearfix"></div>
-            <hr style="margin: 10px 0; border: 1px solid; border-color:#9E9F9F;">
-            <div class="clearfix"></div>
-            <a href="http://www.beian.miit.gov.cn/" title="{{$common['web_copyright']}}" target="_blank" class="di-beian" > {!! $common['web_copyright'] !!} </a>
-        </div>
-        <div class="clearfix"></div>
     </div>
+    <div class="clearfix"></div>
+    <div class="di-foot w83">
+        <div class="img"><img src="{{ url('static/images/logo2.png') }}"></div>
+        <div class="address">{!! $common['connect_address'] !!}</div>
+        <div class="clearfix"></div>
+        <hr style="margin: 10px 0; border: 1px solid; border-color:#9E9F9F;">
+        <div class="clearfix"></div>
+        <a href="http://www.beian.miit.gov.cn/" title="{{$common['web_copyright']}}" target="_blank" class="di-beian" > {!! $common['web_copyright'] !!} </a>
+    </div>
+    <div class="clearfix"></div>
 </footer>
 
 <!-- 置顶按钮 -->

@@ -60,7 +60,7 @@
 
         /*服务领域*/
         var swiper2 = new Swiper('.about2 .swiper-container', {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 40,
             pagination: {
                 el: '.about2 .swiper-pagination',
@@ -79,7 +79,7 @@
                 },
             }
         });
-
+        /*关联案例分类*/
         var swiper4 = new Swiper('.about4 .swiper-container', {
             slidesPerView: "auto",
             centeredSlides: true,
