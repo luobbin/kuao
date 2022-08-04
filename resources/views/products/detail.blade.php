@@ -278,15 +278,15 @@
             if ($(window).scrollTop() >= f1) {
                 $(".p-nav .c-nav a").eq(0).addClass('active').siblings().removeClass('active');
             }
-            ;
+
             if ($(window).scrollTop() >= f2) {
                 $(".p-nav .c-nav a").eq(1).addClass('active').siblings().removeClass('active');
             }
-            ;
+
             if ($(window).scrollTop() >= f3) {
                 $(".p-nav .c-nav a").eq(2).addClass('active').siblings().removeClass('active');
             }
-            ;
+
         });
     </script>
 @endsection
