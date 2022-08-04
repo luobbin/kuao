@@ -8,6 +8,7 @@
 
 
 @section('content')
+
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
@@ -161,36 +162,45 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="img">
-                            <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
-                        </div>
-                        <div class="word">
-                            <h3>酒店案例</h3>
-                        </div>
+                        <a href="/cases?cate_id=1">
+                            <div class="img">
+                                <img src="http://api.kalighting.cn/static/img_topic/about_us03.png">
+                            </div>
+                            <div class="word">
+                                <h3>酒店案例</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="img">
-                            <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
-                        </div>
-                        <div class="word">
-                            <h3>博物馆案例</h3>
-                        </div>
+                        <a href="/cases?cate_id=2">
+                            <div class="img">
+                                <img src="http://api.kalighting.cn/static/img_topic/about_us04.png">
+                            </div>
+                            <div class="word">
+                                <h3>博物馆案例</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="img">
-                            <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
-                        </div>
-                        <div class="word">
-                            <h3>商业空间案例</h3>
-                        </div>
+                        <a href="/cases?cate_id=3">
+                            <div class="img">
+                                <img src="http://api.kalighting.cn/static/img_topic/about_us05.png">
+                            </div>
+
+                            <div class="word">
+                                <h3>商业空间案例</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="img">
-                            <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
-                        </div>
-                        <div class="word">
-                            <h3>别墅豪宅案例</h3>
-                        </div>
+                        <a href="/cases?cate_id=4">
+                            <div class="img">
+                                <img src="http://api.kalighting.cn/static/img_topic/about_us06.jpg">
+                            </div>
+                            <div class="word">
+                                <h3>别墅豪宅案例</h3>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>    <!-- 如果需要导航按钮 -->
@@ -198,6 +208,7 @@
         </div>
         <!--结束:关联案例分类-->
     </div>
+
 @endsection
 
 @section('footer_js')
