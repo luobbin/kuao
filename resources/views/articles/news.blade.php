@@ -13,7 +13,13 @@
 
 @section('footer_js')
     <script>
-        window.location.reload();
+        window.sr = new ScrollReveal({
+            distance: '100px',
+            duration: 1000,
+            easing: 'ease-out',
+            viewFactor: 0.2,
+            mobile: false
+        });
     </script>
 @endsection
 
