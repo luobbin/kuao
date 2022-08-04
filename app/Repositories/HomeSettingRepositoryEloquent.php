@@ -44,10 +44,14 @@ class HomeSettingRepositoryEloquent extends BaseRepository implements HomeSettin
      */
     public function getAllName()
     {
-        $data = HomeSetting::with([])->get(['id','name','if_show']);
+        $data = HomeSetting::with([])->get(['id','application','name','if_show']);
         $resData = [];
-        foreach ($data as $k=>$v){
-            $resData[$v->id]=$v->name;
+        foreach ($data as $v){
+            $resData[$v->id]=[
+                'name'=>$v->name,
+                'if_show'=>$v->if_show,
+                'application'=>json_prase($v->application)
+            ];
         }
         return $resData;
     }

@@ -34,14 +34,13 @@ class HomeController extends Controller
      */
     public function index(CasesCateRepositoryEloquent $cateRep)
     {
-        $block = $this->resp->find(7);
-        //顶部视频
-        $banner = json_decode(json_decode($block->application,true),true);
-        //print_r($banner);exit;
+        $homeNames = $this->resp->getAllName();
+        //print_r($homeNames[1]['application']);exit;
         return view('index',[
             'common'=>$this->commonData,
-            'homeNames' => $this->resp->getAllName(),
-            'banner'    => $banner,
+            'homeNames' => $homeNames,
+            'topVideo'    => json_decode($homeNames[7]['application'],true),//顶部视频
+            'blockCases'    => $homeNames[1]['application'],//案例banner模块
             'cates' => $cateRep->all(),
             'pageTitle'=> $this->commonData['web_name']."-"."首页"
             ]);

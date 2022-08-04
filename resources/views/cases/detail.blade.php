@@ -61,8 +61,9 @@
                 <div class="next"></div>
             </div>
         </div>
+        @if($data['video_url'])
         <div class="clearfix"></div>
-        <div class="p-part3 pt110">
+        <div class="p-part3">
             <div class="tit">案例视频</div>
             <div class="clearfix"></div>
             <div class="swiper-container">
@@ -88,8 +89,10 @@
             </div>
         </div>
         <!-- 案例视频End -->
-        <div class="clearfix"></div>
+        @endif
+
         @if($data['products'])
+        <div class="clearfix"></div>
         <div class="case-show1">
             <div class="tit">案例产品</div>
             <div class="clearfix"></div>

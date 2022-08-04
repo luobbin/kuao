@@ -54,19 +54,20 @@ class CasesController extends Controller
             return response()->json($cases);
         }
 
-        $cate_id = $request->get("cate_id",1);
+        $cate_id = $request->get("cate_id",0);
         if ($request->has("search")){
             $fields = explode(";",$request->get("search"));
             $column = explode(":",$fields[0]);
             if (isset($column[1]))
                 $cate_id = $column[1];
         }
+        $data = intval($cate_id)==0?[]:$cateRep->find($cate_id);
         $commonData = $this->websetRep->getCommonData();
         return view('cases.index', [
             'common'=>$commonData,
             'cates' => $cateRep->all(),
             'cate_id' => $cate_id,
-            //'data' => $cases,
+            'data' => $data,
             'pageTitle'=> "案例列表"."-".$commonData['web_name']
         ]);
     }

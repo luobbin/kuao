@@ -9,17 +9,37 @@
 @section('content')
     <div><span></span></div>
     <!-- 内页banner -->
+    @if($cate_id == 0)
+        <div class="ny-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach ($cates as $cate)
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="{{ $cate['img'] }}">
+                        </div>
+                        <div class="word1">
+                            <h3>{{ $cate['name'] }}</h3>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>    <!-- 如果需要导航按钮 -->
+            </div>
+        </div>
+    @else
     <div class="ny-banner">
         <div class="img">
-            <img src="{{ $common['cases_background_pc_img'] }}" class="pc">
-            <img src="{{ $common['cases_background_mob_img'] }}" class="m">
+            <img src="{{ $data['img'] }}" class="pc">
+            <img src="{{ $data['img'] }}" class="m">
         </div>
         <div class="word1">
             <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">项目案例</h3>
             <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                {{ $common['cases_background_info'] }}</p>
+                {{ $data['info'] }}</p>
         </div>
     </div>
+    @endif
     <!-- 内页banner End -->
 
     <!-- 工程案例 -->
@@ -75,10 +95,27 @@
 
 @section('content_js')
     <script>
+        /**banner切换**/
+        var myswiper = new Swiper('.ny-banner .swiper-container', {
+            slidesPerView: 1,
+            initialSlide: 1,
+            loop: true,
+            autoplay: {
+                delay: 3000
+            },
+            pagination: {
+                el: '.ny-banner .swiper-pagination',
+                clickable: true,
+                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                observeParents:true,//修改swiper的父元素时，自动初始化swiper
+            },
+        });
         /**列表展示模块*/
         var listModule = {
             page:1,       //虚拟页数
             pageSize:6,        //每页个数
+            search:'',  //搜索字段
+            searchFields:'',//搜索规则
             data:{},       //当前显示的数据
             delay:true,     //显示更多按钮触发延时
             ifGettingData:false,    //是否正在获取信息
@@ -113,12 +150,14 @@
             searchDatas:function(name){
                 var that = this;
                 that.ifGettingData = true;
+                that.page = 1;
+                that.pageSize = 100;
                 $.when(this.ajaxGetList(name)).then(function(res){
                     that.data = res.data || [];
-                    console.log("获取到的搜索列表数据为：",that.data);
+                    //console.log("获取到的搜索列表数据为：",that.data);
                     that.appendData(that.data);
                 });
-                that.page++;
+                //that.page++;
             },
             /**插入产品*/
             insertDatas:function(){
@@ -126,7 +165,7 @@
                 that.ifGettingData = true;
                 $.when(this.ajaxGetList()).then(function(res){
                     that.data = res.data || [];
-                    console.log("获取到的列表数据为：",that.data);
+                    //console.log("获取到的列表数据为：",that.data);
                     that.appendData(that.data);
                 });
             },
@@ -235,38 +274,31 @@
             //获取列表
             ajaxGetList:function(name){
                 if (name){
-                    return $.ajax({
-                        url: 'cases',
-                        data: {
-                            page: this.page,
-                            limit: this.pageSize,
-                            searchJoin: 'and',
-                            search: 'name:'+ name +';',
-                            searchFields: 'name:like;',
-                            orderBy: 'id',
-                            sortedBy: 'desc',
-                            filter: ''
-                        },
-                        type: 'GET',
-                        dataType: 'json'
-                    });
+                    this.search = 'name:'+ name +'';
+                    this.searchFields = 'name:like';
                 }else {
-                    return $.ajax({
-                        url: 'cases',
-                        data: {
-                            page: this.page,
-                            limit: this.pageSize,
-                            searchJoin: 'and',
-                            search: 'cate_id:{{ $cate_id }};',
-                            searchFields: 'cate_id:=;',
-                            orderBy: 'id',
-                            sortedBy: 'desc',
-                            filter: ''
-                        },
-                        type: 'GET',
-                        dataType: 'json'
-                    });
+                    var cateId = {{ $cate_id }};
+                    console.log("cateId",cateId);
+                    if (cateId!==0){
+                        this.search = 'cate_id:{{ $cate_id }};';
+                        this.searchFields = 'cate_id:=;';
+                    }
                 }
+                return $.ajax({
+                    url: 'cases',
+                    data: {
+                        page: this.page,
+                        limit: this.pageSize,
+                        searchJoin: 'and',
+                        search: this.search,
+                        searchFields: this.searchFields,
+                        orderBy: 'id',
+                        sortedBy: 'desc',
+                        filter: ''
+                    },
+                    type: 'GET',
+                    dataType: 'json'
+                });
             },
         };
         listModule.init();

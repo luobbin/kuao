@@ -6,7 +6,7 @@ var defaults = {
 	timeStamp:new Date().getTime()
 };
 function initHome(){
-	initHomeBanner();
+	//initHomeBanner();
 	initHomeProduct();
 	initHomeNews();
 	initHomeVideo();
@@ -30,10 +30,9 @@ function initHomeBanner(){
 					'<a href="' + item['url'] + '" title="LearnMore">' +
 					'<img src="' + defaults.fileServerHttp + item['img'] + '" width="100%" onerror="' + defaults.default_img + '">' +
 					'</a>'+
-					'<div class="ban-con">' +
+					'   <div class="ban-con">' +
 				    '		<h2 title="' + item['title'] + '">' + item['title'] + '</h2>' +
 				    '		<p title="' + item['info'] + '">' + item['info'] + '</p>' +
-				       (isNotEmpty(item['url']) ? '<a href="' + item['url'] + '" title="LearnMore">了解更多</a>' : '') +
 				    '	</div>' +
 				    '	<div class="clearfix"></div>' +
 				    '</li>';
@@ -141,9 +140,9 @@ function initHomeProduct(){
 			html.push('<ul>');
 			for(var i in data){
 				var item = $.parseJSON(data[i]);
-				html.push('<li class="col-md-3 col-sm-6 col-xs-6">' +
+				html.push('<li class="col-md-3 col-sm-3 col-xs-3">' +
 					'<a href="' + (isNotEmpty(item['url']) ? item['url'] : '####') + '">' +
-					'<img src="' + item['img'] + '" width="100%">' +
+					'<img src="' + item['img'] + '">' +
 					'</a></li>');
 			}
 			html.push('</ul>');
@@ -286,25 +285,33 @@ function initHomeVideoSlider(){
 		sindex = $('#HomeVideoList li.active').index();
 	}
 	function toLeft(obj){
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-453px',opacity:1});
+		var width = $('#HomeVideoList').width();
+		console.log("Left width:",width)
+		//$(obj).animate({height:'390px',width:'587px',top:'20px',left:'0','margin-left':'-453px',opacity:1});
+		$(obj).removeAttr("class").addClass("to-left")
 		$(obj).click(function(e) {
             videoShow(false);
         });
 	}
 	function toRight(obj){
 		var width = $('#HomeVideoList').width();
-		$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-147px',opacity:1});
+		console.log("Right width:",width)
+		//$(obj).animate({height:'390px',width:'587px',top:'20px',left:'100%','margin-left':'-147px',opacity:1});
+		$(obj).removeAttr("class").addClass("to-right")
 		$(obj).click(function(e) {
             videoShow(true);
         });
 	}
 	function toCenter(obj){
 		var width = $('#HomeVideoList').width();
-		$(obj).animate({height:'425px',width:'640px',top:'0',left:'50%','margin-left':'-320px',opacity:1});
+		console.log("Center width:",width)
+		//$(obj).animate({height:'425px',width:'640px',top:'0',left:'50%','margin-left':'-320px',opacity:1});
+		$(obj).removeAttr("class").addClass("to-center")
 		$(obj).addClass('active');
 	}
 	function toHide(obj){
-		$(obj).animate({height:'355px',width:'535px',top:'40px',left:'0','margin-left':'0',opacity:0});
+		//$(obj).animate({height:'355px',width:'535px',top:'40px',left:'0','margin-left':'0',opacity:0});
+		$(obj).removeAttr("class").addClass("to-hide")
 	}
 	videoShow(false);
 }

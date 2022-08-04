@@ -17,19 +17,19 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-swiper-autoplay="15000">
-                        <video id="videoPlay" src="{{ $banner['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
+                        <video id="videoPlay" src="{{ $topVideo['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
                                loop="loop" muted="muted" controls="controls" x5-video-player-type="h5" preload="metadata" playsinline="true"
                                webkit-playsinline="true"  x-webkit-airplay="true"x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="object-fit: fill;display: block;width:100vw;"></video>
                         <div class="mm">
-                            <img src="{{ $banner['mob_img_url'] }}" class="mm">
+                            <img src="{{ $topVideo['mob_img_url'] }}" class="mm">
                             <div class="word">
                                 <h3><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"
-                                            swiper-animate-delay="0.2s">{{ $banner['mob_h3'] }}</strong></h3>
+                                            swiper-animate-delay="0.2s">{{ $topVideo['mob_h3'] }}</strong></h3>
                                 <p><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"
-                                           swiper-animate-delay="0.4s">{{ $banner['mob_p'] }}</strong>
+                                           swiper-animate-delay="0.4s">{{ $topVideo['mob_p'] }}</strong>
                                 </p>
                                 <div class="oc">
-                                    <a href="{{ $banner['mob_a_url'] }}" class="more ani" swiper-animate-effect="fadeInLeft2"
+                                    <a href="{{ $topVideo['mob_a_url'] }}" class="more ani" swiper-animate-effect="fadeInLeft2"
                                        swiper-animate-duration="1s" swiper-animate-delay="0.6s">
                                         <span>详情 >>></span>
                                     </a>
@@ -74,7 +74,7 @@
 <div class="home w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
-        <div class="tit-ban">{{$homeNames[1]}}</div>
+        <div class="tit-ban">{{ $homeNames[1]['name'] }}</div>
         <div class="fr">
             @foreach ($cates as $cate)
                 <a href="{{ url("cases") }}?cate_id={{ $cate['id'] }}">{{ $cate['name'] }}</a>
@@ -82,22 +82,30 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <section class="block-1 css3">
-        <div class="ban">
-            <ul id="slider"></ul>
-            <div class="clearfix"></div>
+    <section class="block-1">
+        <div class="swiper-container ban">
+            <div class="swiper-wrapper">
+                @foreach ($blockCases as $cat)
+                    <div class="swiper-slide">
+                        <a href="{{ $cat['url'] }}">
+                            <div class="img">
+                                <img src="{{ $cat['img'] }}">
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <div class="xxx">
-            <a id="left_arrow" class="banner_left"><img src="{{ url('static/home/images/banner-left.png') }}"></a>
-            <a id="right_arrow" class="banner_right"><img src="{{ url('static/home/images/banner-right.png') }}"></a>
-        </div>
-        <div class="point" id="num" style="display: none;"></div>
+        <div class="clearfix"></div>
+        <div id="left_arrow" class="cicle banner_left"><img src="{{ url('static/home/images/banner-left.png') }}"></div>
+        <div id="right_arrow" class="cicle banner_right"><img src="{{ url('static/home/images/banner-right.png') }}"></div>
+        <div id="num" class="point" style="display: none;"></div>
         <div class="clearfix"></div>
     </section>
 
     <!--logo墙-->
     <div class="block-title">
-        <div class="tit-ban">{{$homeNames[5]}}</div>
+        <div class="tit-ban">{{ $homeNames[5]['name'] }}</div>
     </div>
     <div class="clearfix"></div>
     <section class="block-2 hide">
@@ -118,7 +126,7 @@
 
     <!--视频展示-->
     <div class="block-title">
-        <div class="tit-ban">{{$homeNames[3]}}</div>
+        <div class="tit-ban">{{ $homeNames[3]['name'] }}</div>
     </div>
     <div class="clearfix"></div>
     <section class="block-4">
@@ -129,7 +137,7 @@
 
     <!--新闻动态-->
     <div class="block-title">
-        <div class="tit-ban">{{$homeNames[4]}}</div>
+        <div class="tit-ban">{{ $homeNames[4]['name'] }}</div>
     </div>
     <div class="clearfix"></div>
     <section class="block-5">
@@ -137,6 +145,19 @@
 
         </ul>
     </section>
+
+    <!-- 视频弹窗 -->
+    <div id="z_tanchuang" class="z_tanchuang">
+        <div class="tbox">
+            <div class="modal">
+                <div class="out alltime"></div>
+                <div class="img">
+                    <video src="#" controls></video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 视频弹窗END -->
 
 </div>
 
@@ -169,7 +190,7 @@
         // 首页banner
         $(function () {
             var bannerItem = $('.index-banner .swiper-slide');
-            var swiper1 = new Swiper('.index-banner .swiper-container', {
+            var swiper0 = new Swiper('.index-banner .swiper-container', {
                 speed: 1000,
                 effect: 'fade',
                 noSwiping: true,
@@ -213,8 +234,53 @@
                         //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
                     },
                 }
-            })
-
+            });
+            /**banner切换**/
+            var swiper1 = new Swiper('.block-1 .swiper-container', {
+                slidesPerView: 1,
+                initialSlide: 1,
+                loop: true,
+                autoplay: {
+                    delay: 5000
+                },
+                pagination: {
+                    el: '.block-1 .swiper-pagination',
+                    clickable: true,
+                    observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                    observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                },
+                navigation: {
+                    nextEl: '.block-1 .banner_right',
+                    prevEl: '.block-1 .banner_left',
+                },
+            });
+            /**视频轮播**/
+            var swiper4 = new Swiper('.block-4 .swiper-container', {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween : 10,
+                initialSlide: 1,
+                loop: true,
+                navigation: {
+                    nextEl: '.block-4 .next-video',
+                    prevEl: '.block-4 .last-video',
+                },
+            });
+            //视频弹窗
+            $(".block-4 .swiper-slide .play").on('click', function () {
+                $('.z_tanchuang').removeClass('out').addClass('one');
+                var src = $(this).attr('data-src');
+                $('html').addClass('act');
+                $(".z_tanchuang video").attr({
+                    src: src
+                }).trigger('play');
+            });
+            $('.z_tanchuang .out').on('click', function () {
+                $('.z_tanchuang').addClass('out');
+                $('html').removeClass('act');
+                $(".z_tanchuang video").trigger('pause');
+            });
+            //顶部视频轮播数字
             function createNum() {
                 var animName;
                 var num = Math.floor(Math.random() * 5);
@@ -237,7 +303,7 @@
                 }
                 return animName;
             }
-            //视频自动播放
+            //顶部视频自动播放（微信浏览器）
             var voice = document.getElementById('videoPlay');
             if(typeof WeixinJSBrdgeReady=="object" && typeof WeixinJSBridge.invoke == "function"){
                 voice.play()

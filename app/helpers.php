@@ -769,8 +769,10 @@ if(!function_exists('json_prase')) {
     function json_prase($content)
     {
         $data = json_decode($content,true);
-        foreach ( $data as $k=>$v){
-            $data[$k] = is_array($v)?$v : json_decode($v,true);
+        if (is_array($data)) {
+            foreach ($data as $k => $v) {
+                $data[$k] = is_array($v) ? $v : json_decode($v, true);
+            }
         }
         return $data;
     }

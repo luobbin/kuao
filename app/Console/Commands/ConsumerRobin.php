@@ -60,10 +60,10 @@ class ConsumerRobin extends Command
                 ],
                 ['name'=>'项目案例','url' => '/cases',
                     'childs'=>[
-                        ['name'=>'博物馆&美术馆&科技馆','url' => '/cases?cate_id=1'],
-                        ['name'=>'星级酒店','url' => '/cases?cate_id=2'],
-                        ['name'=>'家装别墅','url' => '/cases?cate_id=3'],
-                        ['name'=>'商业空间','url' => '/cases?cate_id=4']
+                        ['name'=>'博物馆&美术馆&科技馆','url' => '/cases?cate_id=2'],
+                        ['name'=>'星级酒店','url' => '/cases?cate_id=1'],
+                        ['name'=>'家装别墅','url' => '/cases?cate_id=4'],
+                        ['name'=>'商业空间','url' => '/cases?cate_id=3']
                     ]
                 ],
                 ['name'=>'公司资讯','url' => '/articles',
