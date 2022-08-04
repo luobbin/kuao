@@ -1,6 +1,7 @@
 @extends('layouts.frame')
 
 @section('header_css')
+<link rel="stylesheet" href="{{ url('static/home/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/index.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/swiper.min.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/animate.min.css') }}">
@@ -12,7 +13,14 @@
 @endsection
 
 @section('footer_js')
+    <script src="{{ asset('static/home/bootstrap.js') }}"></script>
     <script>
+        $(function () {
+            //绑定目录申请弹窗事件
+            $('.about3 .swiper-container .swiper-slide,.about3 .swiper-container .swiper-slide img').click(function(e) {
+                $('#InventoryCatalogModal').modal({show: true});
+            });
+        });
         window.sr = new ScrollReveal({
             distance: '100px',
             duration: 1000,

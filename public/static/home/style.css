@@ -691,16 +691,16 @@ a:link{ text-decoration:none;}
 /**endregion 产品中心-右侧栏样式  */
 
 /**region 产品中心-目录申请弹窗 */
-.catalog-modal .modal-dialog{width:700px !important;}
+.catalog-modal .modal-dialog{width:80% !important; max-width: 700px;}
 .catalog-modal .modal-content{background-color:transparent !important;box-shadow:none !important;border:none !important;margin-top:80px;width:100%;}
-.catalog-modal .modal-content .modal-body{background-color:#FFFFFF;padding:20px 150px;text-align:center;vertical-align:top;position:relative;width:100%;font-size:0;}
+.catalog-modal .modal-content .modal-body{background-color:#FFFFFF;padding:20px 20%;text-align:center;vertical-align:top;position:relative;width:100%;font-size:0;}
 .catalog-modal .modal-content .modal-body .catalog-modal-title{width:100%;font-size:160px;font-weight:bold;line-height:170px;}
 .catalog-modal .modal-content .modal-body .catalog-modal-subtitle{width:100%;font-size:48px;font-weight:bold;line-height:60px;}
 .catalog-modal .modal-content .modal-body .catalog-modal-year{width:100%;font-size:80px;font-weight:bold;text-align:left;padding-left:10px;line-height:100px;}
 .catalog-modal .modal-content .modal-body .catalog-modal-text{width:50%;height:200px;font-size:18px;line-height:200px;text-align:left;padding-left:10px;}
 .catalog-modal .modal-content .modal-body .catalog-modal-text span{display:inline-block;vertical-align:middle;font-size:18px;line-height:22px;}
-.catalog-modal .modal-content .modal-body .catalog-modal-QRcode{width:50%;height:200px;}
-.catalog-modal .modal-content .modal-body .catalog-modal-QRcode img{width:100%;height:100%;}
+.catalog-modal .modal-content .modal-body .catalog-modal-QRcode{width:50%; height:200px;}
+.catalog-modal .modal-content .modal-body .catalog-modal-QRcode img{width:100%;height:auto; max-height: 200px;}
 .catalog-modal .modal-content .modal-body .catalog-modal-phone{width:100%;font-size:18px;text-align:left;padding-left:10px;}
 .catalog-modal .modal-content .modal-body .close{width:60px;height:60px;border-radius:30px;border:#FFFFFF 5px solid;position:absolute;top:-60px;right:-80px;opacity:1;color:#FFFFFF;line-height:36px;font-size:60px;font-weight:normal;}
 /**endregion 产品中心-目录申请弹窗 */
@@ -1116,6 +1116,11 @@ a:link{ text-decoration:none;}
 	#footer .di-foot .address{width:99%; font-size: 11px; line-height: 18px;}
 	#footer .di-foot .address .line{width: 100%;}
 	.block-title .fr a{font-size: 12px; padding: 0 0.5%;}
+	.catalog-modal .modal-content .modal-body .catalog-modal-title,.catalog-modal .modal-content .modal-body .catalog-modal-subtitle,
+	.catalog-modal .modal-content .modal-body .catalog-modal-year{display: none;}
+	.catalog-modal .modal-content .modal-body{width: 98%; padding: 20px 10%;}
+	.catalog-modal .modal-content .modal-body .catalog-modal-text{width: 100%; height: 100px; font-size: 18px; line-height: 22px;}
+	.catalog-modal .modal-content .modal-body .catalog-modal-QRcode{width: 100%;}
 }
 
 /**endregion响应样式*/

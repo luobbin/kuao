@@ -1,6 +1,7 @@
 @extends('layouts.frame')
 
 @section('header_css')
+<link rel="stylesheet" href="{{ url('static/home/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/index.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/swiper.min.css') }}">
 <link rel="stylesheet" href="{{ url('static/css/animate.min.css') }}">
@@ -8,69 +9,104 @@
 
 
 @section('content')
-
-
     <!-- 内页banner -->
     <div class="ny-banner aa">
         <div class="img">
-            <img src="http://api.kalighting.cn/static/img_topic/contact.jpg" class="pc">
-            <img src="http://api.kalighting.cn/static/img_topic/contact_m.jpg" class="m">
+            <img src="http://api.kalighting.cn/static/img_topic/products_bg.jpg" class="pc">
+            <img src="http://api.kalighting.cn/static/img_topic/products_bg_m.jpg" class="m">
         </div>
         <div class="word1">
-            <h3 class="wow fadeInUp">联系我们</h3>
-            <p class="wow fadeInUp">先进的制造，贴心的服务，真诚与您合作。</p>
+            <h3 class="wow fadeInUp">产品中心</h3>
+            <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
         </div>
     </div>
     <!-- 内页banner End -->
     <div class="clearfix"></div>
 
     <div class="news w83">
-        <!--开始:联系我们-->
-        <div class="about p110">
-            <div class="col-title block-title">
-                <div class="tit-ban">联系我们</div>
+        <div class="about">
+            <div class="col-top block-title">
+                <div class="tit-ban">产品筛选</div>
+                <div class="fr">
+                    <a href="/products?cid=1">室内专业类</a>
+                    <a href="/products?cid=2">室内设计类</a>
+                    <a href="/products?cid=3">博物馆照明</a>
+                    <a href="/products?cid=4">展示箱</a>
+                </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-info" style="color: white;">
-                <div style="width: 100%; border-bottom: 2px solid #efefef;">
-                    <div class="p20">
-                        <img src="http://api.kalighting.cn/static/img_topic/dingwei.png" style="float: left;">
-                        <span style="margin-left: 3%;">广东省深圳市宝安区新湖路华美居 A区C座415-418</span>
-                    </div>
-                    <div class="p20">
-                        <img src="http://api.kalighting.cn/static/img_topic/email.png" style="float: left;width: 15px;">
-                        <span style="margin-left: 3%;">邮箱:zwb@kalighting.com </span>
-                    </div>
-                    <div class="p20" style="margin-bottom: 50px;">
-                        <img src="http://api.kalighting.cn/static/img_topic/phone-yellow.png" style="float: left;width: 15px;">
-                        <span style="margin-left: 3%;">电话：13927472536 / （周一至周五 9:00-18:00） </span>
-                    </div>
+            <div class="col-middle">
+                <div class="left">
+                    <a href="/products?cid=1"><img src="http://api.kalighting.cn/static/img_topic/product_center_01.jpg"></a>
+                    <p></p>
+                </div>
+                <div class="right">
+                    <a href="/products?cid=2"><img src="http://api.kalighting.cn/static/img_topic/product_center_02.jpg"></a>
+                    <p></p>
                 </div>
                 <div class="clearfix"></div>
-                <div style="width: 100%; margin-top: 50px;">
-                    <div class="p20">
-                        <img src="http://api.kalighting.cn/static/img_topic/dingwei.png" style="float: left;">
-                        <span style="margin-left: 3%;">广东省惠州市惠城区惠民大道辅路康卓大楼5楼（工厂）</span>
-                    </div>
-                    <div class="p20">
-                        <img src="http://api.kalighting.cn/static/img_topic/phone-yellow.png" style="float: left;width: 15px;">
-                        <span style="margin-left: 3%;">电话：0755-86575946 （工厂） </span>
-                    </div>
+                <div class="left">
+                    <a href="/products?cid=3"><img src="http://api.kalighting.cn/static/img_topic/product_center_03.jpg"></a>
                 </div>
-
+                <div class="right">
+                    <a href="/products?cid=4"><img src="http://api.kalighting.cn/static/img_topic/product_center_04.jpg"></a>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
         <div class="clearfix"></div>
-
-        <!--结束:联系我们-->
-
+        <div class="block-title" >
+            <div class="tit-ban">产品目录申请</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about3">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="http://api.kalighting.cn/static/img_topic/product_center_cate_01.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img style="width: 100%; height: auto;" src="http://api.kalighting.cn/static/img_topic/product_center_cate_02.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="modal fade catalog-modal" id="InventoryCatalogModal" tabindex="-1" role="dialog" aria-hidden="true"
+         data-backdrop="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">KA</div>
+                    <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} 产品目录">{{ $common['web_name'] }} 目录下载</div>
+                    <div class="pull-left catalog-modal-year" title="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></div>
+                    <div class="pull-left catalog-modal-text">
+                        <span title="微信扫描二维码添加{{ $common['web_name'] }}公众号可获取目录">微信扫描二维码<br>添加{{ $common['web_name'] }}公众号<br>可获取产品目录</span>
+                    </div>
+                    <div class="pull-left catalog-modal-QRcode">
+                        <img src="{{ $common['public_account_img'] }}">
+                    </div>
+                    <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">×</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 
 @section('footer_js')
+    <script src="{{ asset('static/home/bootstrap.js') }}"></script>
     <script>
+        $(function () {
+            //绑定目录申请弹窗事件
+            $('.about3 .swiper-container .swiper-slide,.about3 .swiper-container .swiper-slide img').click(function(e) {
+                $('#InventoryCatalogModal').modal({show: true});
+            });
+        });
         window.sr = new ScrollReveal({
             distance: '100px',
             duration: 1000,

@@ -171,14 +171,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">{{ $common['web_name'] }}</div>
-                    <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} LOOKBOOK">{{ $common['web_name'] }} LOOKBOOK</div>
-                    <div class="pull-left catalog-modal-year" title="2022">2022</div>
+                    <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">KA</div>
+                    <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} 产品目录">{{ $common['web_name'] }} 目录下载</div>
+                    <div class="pull-left catalog-modal-year" title="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></div>
                     <div class="pull-left catalog-modal-text">
-                        <span title="微信扫描二维码添加库奥客户可获取目录">微信扫描二维码<br>添加{{ $common['web_name'] }}客户<br>可获取目录</span>
+                        <span title="微信扫描二维码添加{{ $common['web_name'] }}公众号可获取目录">微信扫描二维码<br>添加{{ $common['web_name'] }}公众号<br>可获取产品目录</span>
                     </div>
                     <div class="pull-left catalog-modal-QRcode">
-                        <img src="{{ $common['wechat_connect_img'] }}">
+                        <img src="{{ $common['public_account_img'] }}">
                     </div>
                     <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
                     </div>
