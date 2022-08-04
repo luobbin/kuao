@@ -22,8 +22,9 @@
         <div class="point"></div>
         <div class="clearfix"></div>
     </section>
-    <div class="clearfix" style="margin-top: 80px;"></div>
+
     <section class="pin-1 css3">
+        <div class="p80"></div>
         <div class="pro-left css5">
 
             <div class="pro-left-fixed-btn"><span></span><span></span><span></span></div>

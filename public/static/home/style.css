@@ -595,7 +595,7 @@ a:link{ text-decoration:none;}
 
 /**region 产品中心-右侧-产品展示  */
 .pro-right .pro-right-list-container{width:100%;position:relative;}
-.pro-right-list{margin:0 0 0 -15px;width:100%;}
+.pro-right-list{margin:0 0 0 -2%;width:100%;}
 .pro-right-list li{margin:0;padding:15px 0 15px 15px;font-size:12px;cursor:pointer;}
 
 .pro-right-list li .pro-items-nei{border:#FFFFFF solid 2px;padding:15px;background:#FFFFFF;box-shadow:0px 1px 15px 0px rgba(124,124,124,0.2);border-radius:5px;}
@@ -1023,13 +1023,13 @@ a:link{ text-decoration:none;}
 	.di-zhong{ margin-top:30px; text-align:left;}
 	.di-zhong .ban{ margin-left:0;}
 	#footer{ padding-bottom:80px; padding-top:30px;}
-	.pin-1, .eight, .nei-1, .select{padding:50px 0;}
+	.pin-1, .eight, .nei-1, .select{padding:50px 6px;}
 	.pro-left{left:-310px;top:50px;z-index:999;position:absolute;}
 	.pro-left .pro-left-fixed-btn{display:block;width:30px;height:30px;position:fixed;left:0;top:150px;cursor:pointer;background-color:#FFFFFF;}
 	.pro-left .pro-left-fixed-btn span{background-color:#353535;display:block;height:6px;margin:3px 0;}
 	.pro-left.expansion{left:0px;}
-	.pro-left.expansion .pro-left-fixed-btn{position:absolute;top:-30px;left:0;}
-	.pro-right{padding-left:0;}
+	.pro-left.expansion .pro-left-fixed-btn{position:absolute;left:0; z-index: 999;}
+	.pro-right{padding:0; overflow: hidden;}
 
 	.pin-case, .pin-type, .discount-pic{ padding:0;}
 	.nei-right .nei-title, .case-right .case-title{ font-size:24px; line-height:26px;}
@@ -1092,7 +1092,8 @@ a:link{ text-decoration:none;}
 	.block-4 li div{top: 36%; left: 55%; width: 60px; height: 60px; background-size:60px 60px;}
 	.block-4 .video-switch-btn{width: 32px; height: 64px; top: 38%; background-size: 32px 64px}
 	.eight, .nei-1{ padding:50px 10px;}
-	.pin-1{ padding:50px 6px;}
+	.pin-1{ padding:0px 6px;}
+	.pin-1 .p80{display: none;}
 	.xin-jie h3{ font-size:16px; line-height:20px; max-height:20px; overflow:hidden;}
 	.xin-jie p{ font-size:12px; line-height:16px; max-height:35px; overflow:hidden; margin-top:0;}
 	.xin-jie{ padding:0; padding-left:5px;}
@@ -1106,7 +1107,7 @@ a:link{ text-decoration:none;}
 	.owl-theme .owl-controls .owl-pagination{ display:none;}
 	.di-left{display:none}
 	.block-title .fr{display: none}
-	.tit-ban{font-size: 16px;max-width: 50%;}
+	.tit-ban{font-size: 16px;max-width: 50%; padding-left: 2%;}
 	#footer .di-xin .di-link-ban{width: 100%;}
 	#footer .di-xin .di-link-ban .di-link{padding:0 5%;}
 	#footer .di-xin .di-qrcode-fen{display: none;}

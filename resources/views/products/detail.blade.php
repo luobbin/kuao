@@ -256,8 +256,6 @@
     <script>
         //内页导航置顶滚动
         $(function () {
-            //获取要定位元素距离浏览器顶部的距离
-            //var navH = $(".ny-banner").height() - 100;
             //滚动条事件
             $(window).scroll(function () {
                 //获取滚动条的滑动距离
