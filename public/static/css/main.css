@@ -1651,6 +1651,6 @@ footer .foot2 .fl a {padding-right:0;}
 .p-sx.active{opacity:1;}
 .case .col-top .right .form{margin-top: 0;}
 .search .product dl dd{display: block;}
-.case .col-top .right .tab{display: none;}
+.case .col-top .right .tab{display: block;}
 
 }
