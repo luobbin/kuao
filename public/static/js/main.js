@@ -224,67 +224,6 @@ $(function() {
 		});
 	}
 });
-/*
-// 产品中心
-$(document).ready(function() {
-    var w = $(window).width();
-    if (w > 1024) {
-	    $(".product dl dt").click(function() {
-		    if (!$(this).parent('dl').hasClass('active')) {
-			    $(this).parent('dl').addClass('active');
-			    $(this).nextAll('dd').stop(true, false).slideUp();
-
-		    } else {
-			    $(this).parent('dl').removeClass('active');
-			    $(this).nextAll('dd').stop(true, false).slideDown();
-		    }
-	    });
-        
-    }else{
-        //$('.product dl dd').css('display','none');
-        $(".product dl dt").click(function() {
-		    if (!$(this).parent('dl').hasClass('active')) {
-			    $(this).parent('dl').addClass('active');
-			    $(this).nextAll('dd').stop(true, false).slideUp();
-
-		    } else {
-			    $(this).parent('dl').removeClass('active');
-			    $(this).nextAll('dd').stop(true, false).slideDown();
-		    }
-	    });
-    }
-});
-
-$(document).ready(function() {
-	$(".other").click(function() {
-		if ($('.p-sx').hasClass('active')) {
-			$('.p-sx').removeClass('active');
-		} else {
-			$('.p-sx').addClass('active');
-		}
-	});
-});
-
-$(document).ready(function() {
-	$(".p-sx .other1 button.more").click(function() {
-		if ($('.p-sx').hasClass('active')) {
-			$('.p-sx').removeClass('active');
-		} else {
-			$('.p-sx').addClass('active');
-		}
-	});
-});
-*/
-
-// $(document).ready(function() {
-// 	$(".p-sx .other1 dl dd a").click(function() {
-// 		if ($(this).hasClass('active')) {
-// 			$(this).removeClass('active');
-// 		} else {
-// 			$(this).addClass('active');
-// 		}
-// 	});
-// });
 
 
 $(document).ready(function() {
@@ -306,22 +245,4 @@ $('footer .foot1 .right .fx span').on('click',function(e){
         $('footer .foot1 .right .fx span img').hide();
     })
     e.stopPropagation();/*stopPropagation();方法可以阻止把事件分派到其他节点*/
-})
-
-// 加入我们
-$(function () { 
-  $('.jobs li .jj').click(function (event) { 
-    //取消事件冒泡 
-    event.stopPropagation(); 
-    //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。 
-    $(this).nextAll('.tc').fadeIn();
-        return false;
-  }); 
-  //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
-    $(document).click(function(event){
-        var _con = $('.tc .ny');  // 设置目标区域
-        if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
-           $('.tc').fadeOut();     //淡出消失
-        }
-   });
 })
