@@ -12,7 +12,9 @@
 @endsection
 
 @section('footer_js')
-
+    <script>
+        window.location.reload();
+    </script>
 @endsection
 
 @section('content_js')
