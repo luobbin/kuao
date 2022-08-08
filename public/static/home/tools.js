@@ -31,13 +31,13 @@ function NumberToMoney(num) {
 }
 
 /**精确加法*/
-function accAdd(arg1,arg2){ 
-	var r1,r2,m; 
-	try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0} 
-	try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0} 
-	m=Math.pow(10,Math.max(r1,r2)) 
-	return (arg1*m+arg2*m)/m 
-} 
+function accAdd(arg1,arg2){
+	var r1,r2,m;
+	try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+	try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+	m=Math.pow(10,Math.max(r1,r2))
+	return (arg1*m+arg2*m)/m
+}
 
 /**判断是否不为null/''/undefined*/
 function isNotEmpty(val){
@@ -64,7 +64,7 @@ function isNull(val,re){
 
 /**将日期*/
 function DateToString(value){
-	
+
 	if (value instanceof Date){
 		value = value.getFullYear()+'-'+(value.getMonth()+1)+'-'+value.getDate();
 	}
@@ -80,7 +80,7 @@ function ShotDateString(value){
 //格式化数字输入控件
 function createNumberboxInput(){
 	var numberboxInput = $(".numberboxInput");
-	
+
 	numberboxInput.each(function(index, element) {
 		var maxValue = parseFloat($(this).attr("maxValue"));
 		maxValue = isNaN(maxValue) ? 9999999999 : maxValue;
@@ -90,7 +90,7 @@ function createNumberboxInput(){
 		precision = isNaN(precision) ? 0 : precision;
 		var value = parseFloat($(this).attr("value"));
 		value = isNaN(value) ? 1 : value;
-		
+
         $(element).keypress(function(b) {
 			var keyCode = b.keyCode ? b.keyCode : b.charCode;
 			if (keyCode != 0 && (keyCode < 48 || keyCode > 57) && keyCode != 8 && keyCode != 37 && keyCode != 39 && keyCode != 45 && keyCode != 46) {
@@ -102,7 +102,7 @@ function createNumberboxInput(){
 			var keyCode = e.keyCode ? e.keyCode : e.charCode;
 			if((keyCode == 109 || keyCode == 189) && $(element).val() == '-') {return;};
 			if(keyCode == 37 || keyCode == 39 || keyCode == 110) {return;};
-			
+
 			var numVal = $(element).val() == 0 ? 0 : parseFloat($(element).val()) || minValue;
 			numVal = numVal < minValue ? minValue : numVal;
 			numVal = numVal > maxValue ? maxValue : numVal;
@@ -113,7 +113,7 @@ function createNumberboxInput(){
 			numVal = numVal > maxValue ? maxValue : numVal;
 			$(element).val(numVal);
 		});
-		
+
     });
 }
 function createDatetimepicker(){
@@ -129,26 +129,26 @@ function createDatetimepicker(){
 		pickerPosition = pickerPosition == null || pickerPosition == "undefined" || pickerPosition == "" ? "bottom-left" : pickerPosition ;
 		var sellLanguage2 = 'ZH';
 		try{ sellLanguage2 = sellLanguage; }catch(e){ console.log(e.message); }
-		
+
 		$(element).datetimepicker({
-			language: sellLanguage2 == 'EN' ? 'en' : 'zh-CN',//语言        
+			language: sellLanguage2 == 'EN' ? 'en' : 'zh-CN',//语言
 			//format: format, //String 默认值: 'mm/dd/yyyy'日期转换格式      data-date-format
-			autoclose: true, //Boolean 默认值:false 选择完日期自动关闭  
-			startView: parseInt(startView),//Number, String. 默认值：2, 0 for the minute view, 1 for the hour view, 2 for the day view, 3 for month view (the default), 4 for the 12-month overview, 5 for the 10-year overview. Useful for date-of-birth datetimepickers.      
-			minView: parseInt(minView),//Number, String. 默认值：0, 'hour' 日期时间选择器所能够提供的最精确的时间选择视图        
-			//weekStart: 1,//默认值:0. 0(星期日)到6(星期六)        
-			//startDate: new Date("1997/1/1"),//Date类型,默认值：开始时间.不能小于开始时间        
-			//endDate: //Date类型,默认值：结束时间.不能大于开始时间        
-			//daysOfWeekDisabled: [0,1,2,3,4,5,6] //String,Array类型.默认值:"",[]. 不能被选择的week        
-			todayBtn: "linked",//Boolean, "linked". 默认值: false 如果此值为true 或 "linked"，则在日期时间选择器组件的底部显示一个 "Today" 按钮用以选择当前日期。如果是true的话，"Today" 按钮仅仅将视图转到当天的日期，如果是"linked"，当天日期将会被选中。        
-			todayHighlight: true,//Boolean. 默认值: false 如果为true, 高亮当前日期。        
+			autoclose: true, //Boolean 默认值:false 选择完日期自动关闭
+			startView: parseInt(startView),//Number, String. 默认值：2, 0 for the minute view, 1 for the hour view, 2 for the day view, 3 for month view (the default), 4 for the 12-month overview, 5 for the 10-year overview. Useful for date-of-birth datetimepickers.
+			minView: parseInt(minView),//Number, String. 默认值：0, 'hour' 日期时间选择器所能够提供的最精确的时间选择视图
+			//weekStart: 1,//默认值:0. 0(星期日)到6(星期六)
+			//startDate: new Date("1997/1/1"),//Date类型,默认值：开始时间.不能小于开始时间
+			//endDate: //Date类型,默认值：结束时间.不能大于开始时间
+			//daysOfWeekDisabled: [0,1,2,3,4,5,6] //String,Array类型.默认值:"",[]. 不能被选择的week
+			todayBtn: "linked",//Boolean, "linked". 默认值: false 如果此值为true 或 "linked"，则在日期时间选择器组件的底部显示一个 "Today" 按钮用以选择当前日期。如果是true的话，"Today" 按钮仅仅将视图转到当天的日期，如果是"linked"，当天日期将会被选中。
+			todayHighlight: true,//Boolean. 默认值: false 如果为true, 高亮当前日期。
 			todayBtn: todayBtn,
-			keyboardNavigation: true,//Boolean. 默认值: true 是否允许通过方向键改变日期。        
-			forceParse: true,//Boolean. 默认值: true  当选择器关闭的时候，是否强制解析输入框中的值。也就是说，当用户在输入框中输入了不正确的日期，选择器将会尽量解析输入的值，并将解析后的正确值按照给定的格式format设置到输入框中。        
+			keyboardNavigation: true,//Boolean. 默认值: true 是否允许通过方向键改变日期。
+			forceParse: true,//Boolean. 默认值: true  当选择器关闭的时候，是否强制解析输入框中的值。也就是说，当用户在输入框中输入了不正确的日期，选择器将会尽量解析输入的值，并将解析后的正确值按照给定的格式format设置到输入框中。
 			//minuteStep: 10,//Number. 默认值: 5  分钟的间隔
-			//showMeridian : true,//是否加上网格   
-			//initialDate: "2015/5/5",//Date or String. 默认值: new Date() 初始化日期        
-			//showMeridian: true//Boolean. 默认值: false 以12小时制显示 
+			//showMeridian : true,//是否加上网格
+			//initialDate: "2015/5/5",//Date or String. 默认值: new Date() 初始化日期
+			//showMeridian: true//Boolean. 默认值: false 以12小时制显示
 			pickerPosition: pickerPosition //String. 默认值: 'bottom-right' (还支持 : 'bottom-left') 此选项当前只在组件实现中提供支持。通过设置选项可以讲选择器放倒输入框下方
 		}).on('show', function(ev){
 			var fixed = $(element).attr("data-fixed");
@@ -213,7 +213,7 @@ function showBootboxAlert(text, time, fn) {
 			if(fn != null && fn != "undefined") fn();
 		}
 	});
-	
+
 	dialog.find(".modal-dialog").css('margin-top',$(window).height()/2 - 70+"px");
 
 	if(time >= 0){
@@ -234,9 +234,9 @@ function showBootboxConfirm(text, fn, ufn) {
 		okText = 'YES';
 		cancelText = 'NO';
 	}
-	var dialog = bootbox.confirm({ 
+	var dialog = bootbox.confirm({
 		size: text.length>20 ? "" : "small",
-		message: text, 
+		message: text,
 		className: "bootboxConfirmDialog",
 		buttons: {
 			confirm: {
@@ -255,7 +255,7 @@ function showBootboxConfirm(text, fn, ufn) {
 		}
 	});
 	dialog.find(".modal-dialog").css('margin-top',$(window).height()/2 - 70+"px");
-	
+
 }
 
 //弹出Bootstrap自定义对话框，页面是url地址
@@ -273,7 +273,7 @@ function showBootboxDialog(title, url, width, height, onlyView, fn, ufn) {
 		cancelText = 'NO';
 		closeText = "CLOSE";
 	}
-	
+
 	var dialog = bootbox.dialog({
 		title: title,
 		message: '<i class="toolsLoadingI"></i><iframe id="bootboxDialogIframe" class="bootboxDialogIframe" width="100%" height="100%" frameborder="0" src="'+url+'"></iframe> ',
@@ -304,7 +304,7 @@ function showBootboxDialog(title, url, width, height, onlyView, fn, ufn) {
 	dialog.find('.bootbox-close-button').click(function(e) {
         if(ufn != null && ufn != "undefined") return ufn();
     });
-	
+
 	dialog.find('.bootboxDialogIframe').load(function(){
 		dialog.find('.toolsLoadingI').hide();
 		dialog.find('.toolsLoadingI').remove();
@@ -327,7 +327,7 @@ function showBootboxDialog2(title, content, width, height, onlyView, fn, ufn,ini
 		cancelText = 'NO';
 		closeText = "CLOSE";
 	}
-	
+
 	var dialog = bootbox.dialog({
 		title: title,
 		message: content == null || content == "undefined" ? '' : content,
@@ -360,7 +360,7 @@ function showBootboxDialog2(title, content, width, height, onlyView, fn, ufn,ini
 	if(init != null && init != "undefined"){
 		dialog.init(init);
 	}
-	
+
 	return dialog;
 }
 
@@ -378,7 +378,7 @@ function showBootboxWait(title, content) {
 	dialog.find('.modal-dialog').width(300);
 	dialog.find('.bootbox-body').height(40);
 	dialog.find('.modal-content').css("margin-top", (300/$(window).height()*100+50)+"%");
-	
+
 	return dialog;
 }
 
@@ -401,7 +401,7 @@ function showBootboxTip(text, time) {
 	//dialog.find('.modal-content').css("margin-top", ($(window).height()/2 - 15)+"px");
 	dialog.find('.modal-content').css("margin-top", (dialog.height()/2 - 15)+"px");
 	$(".modal-backdrop.in").css("opacity","0");
-	
+
 	if(time >= 0){
 		setTimeout(function(){
 			dialog.modal('hide');
@@ -409,7 +409,7 @@ function showBootboxTip(text, time) {
 	}
 }
 /**删除右边的空格*/
-function rtrim(str){ 
+function rtrim(str){
 	if(str == null || typeof(str)=='undefined' || typeof str != 'string'){
 		return str;
 	}
@@ -448,46 +448,6 @@ function getHtmlByLangkey(locales2,key,langjustify){
 		return '';
 	}
 	var html = '';
-	// try{
-	// 	locales2 = isObject(locales2) ? locales2 : FLUA.locales[sellLanguage];
-	// 	try{
-	// 		if(!isObject(locales2) && isObject(locales)){
-	// 			locales2 = locales;
-	// 		}
-	// 	}catch (e) {}
-	// 	locales2 = isObject(locales2) ? locales2 : {};
-	// 	var req = true;
-	// 	if(key in locales2){
-	// 		html = locales2[key];
-	// 		req = false;
-	// 	}else if(key.indexOf('.') > 0){
-	// 		var keys = key.split('.');
-	// 		html = locales2;
-	// 		var len = keys.length;
-	// 		$.each(keys,function(index,value){
-	// 			if(isObject(html) && value in html){
-	// 				html = html[value];
-	// 				if(len == index+1){
-	// 					req = false;
-	// 				}
-	// 			}else{
-	// 				html = keys[keys.length-1];
-	// 				return false;
-	// 			}
-	// 		});
-	// 	}
-	// 	if(req){
-	// 		var result = $.ajax({url:"https://www.flua.com/MutiLangController.do?getTextByKey",data:{key:key,lang:sellLanguage},dataType:"json",async:false,cache:false,type:"post"}).responseText;
-	// 		html = $.parseJSON(result);
-	// 		locales2[key] = html
-	// 	}
-	//
-	// 	if(langjustify === true){
-	// 		html = html.replace(/([\u4e00-\u9fa5])([\u4e00-\u9fa5])/g, '$1 $2');
-	// 		//html = html.replace(/([\u4e00-\u9fa5])([\u4e00-\u9fa5])/g, '$1 $2');
-	// 	}
-	// }catch (e) {}
-
 	return html;
 }
 /**判断两个数组是否有交集*/
@@ -501,33 +461,6 @@ function ArrayHasIntersection(arr1,arr2){
 }
 
 
-/**
- * 跳转详细页
- * @param id         产品档案ID
- * @param tid        可选组合ID
- * @param locale     语言
- * @param referer    来源,数字类型 1.停制列表 2.下架产品列表
- * @param otherParam 其他参数  String||Object
- * */
-function goToFluaCustomerProductSellDetails(id,tid,locale,referer,otherParam){
-	locale = isNull(locale,sellLanguage);
-	var url = 'https://www.flua.com/FluaCustomerProductDetailsController.do?FluaCustomerProductSellDetails&id=' + id + '&tid=' + isNull(tid,'') + '&sl=' + locale + '&referer=' + isNull(referer,0);
-	if(otherParam){
-		if(typeof(otherParam)=='string'){
-			if(!otherParam.startsWith('&')){
-				otherParam = '&' + otherParam;
-			}
-			url = url + otherParam;
-		}else if(typeof otherParam === 'object'){
-			try{
-				$.each(otherParam,function(key,value){
-					url = url + '&' + key + '=' + value;
-				});
-			}catch (e) {}
-		}
-	}
-	window.open(url);
-}
 /**数组合并并去重*/
 function MergeArray(arr1,arr2){
     var _arr = new Array();
@@ -779,89 +712,6 @@ function coverObject(obj1,obj2){
  */
 function isObject(obj){
 	return getValueType(obj) === 'Object';
-}
-
-
-var FLUA_SYS_TYPE_LIST = {};
-
-/**
- * 根据字典编码获取数据字典项数据
- * @param groupCode  字典编码
- * @returns {{codeIndex: {}, list: *[], groupCode}}
- */
-function getSysTypeGroup(groupCode){
-	var empty = {groupCode:groupCode,codeIndex:{},list:[]};
-	if(isEmpty(groupCode)){
-		return empty;
-	}
-	var typeGroup = null;
-	var obj;
-	try{
-		obj = $.parseJSON(localStorage.getItem('FLUA_SYS_TYPE_LIST'));
-		typeGroup = obj[groupCode];
-	}catch (e) {
-	}
-
-	if(!isObject(typeGroup)){
-		try{
-			typeGroup = FLUA_SYS_TYPE_LIST[groupCode];
-		}catch (e) {
-		}
-	}
-
-	if(!isObject(typeGroup)){
-		obj = obj || {};
-		var result = $.ajax({url:"https://www.flua.com/systemController.do?getTypeList",data:{groupCode:groupCode},dataType:"json",async:false,cache:false,type:"post"}).responseText;
-		typeGroup = $.parseJSON(result);
-		typeGroup = isObject(typeGroup) ? typeGroup : empty;
-		obj[groupCode] = typeGroup;
-		FLUA_SYS_TYPE_LIST = obj;
-		localStorage.setItem('FLUA_SYS_TYPE_LIST',JSON.stringify(obj));
-	}
-	return isObject(typeGroup) ? typeGroup : empty;
-}
-
-/**
- *
- * 获取数据字典项对象
- * @param groupCode   字典编码
- * @param typeCode    字典项编码
- * @param lang        语言(值为空时，获取中文)
- * @returns {{path: string, code: string, names: {}, name: string, id: string, parentId: string}}
- */
-function getSysType(groupCode,typeCode,lang){
-	var empty = {id:'',code:typeCode,name:typeCode,path:'',parentId:'',names:{}};
-	if(isEmpty(groupCode) || isEmpty(typeCode)){
-		return empty;
-	}
-	var typeGroup = getSysTypeGroup(groupCode);
-	var type = null;
-
-	try{
-		type = typeGroup.list[typeGroup.codeIndex[typeCode]];
-		type.name = type.names[getLang(lang)];
-	}catch (e) {
-	}
-	return isObject(type) ? type : empty;
-}
-
-/**
- * 获取字典项的显示文本
- * @param groupCode   字典编码
- * @param typeCode    字典项编码
- * @param lang        语言(值为空时，获取中文)
- * @returns {*}
- */
-function getSysTypeText(groupCode,typeCode,lang){
-	if(isEmpty(groupCode) || isEmpty(typeCode)){
-		return typeCode;
-	}
-	try{
-		var obj = getSysType(groupCode,typeCode,lang);
-		return obj.name || typeCode;
-	}catch (e) {
-	}
-	return typeCode;
 }
 
 /**

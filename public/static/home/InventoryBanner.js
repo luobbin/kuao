@@ -5,15 +5,7 @@ var InventoryBanner = function(el, option){
     this.$el = $(el);
 	this.banner =  function(){
 		return [];
-	}/*function(){
-		return $.ajax({
-			url:'FLUAHomeController.do?getFLUAHomeData',
-			data:{type:6,sl:this.option.locale},
-			async:true,
-			type:'POST',
-			dataType:'json'
-		});
-    };*/
+	}
 	this.init();
 };
 
@@ -50,7 +42,7 @@ InventoryBanner.prototype = {
 		var that = this;
 		$.each(data,function(index,item){
 			html.push('<li class="css3">',
-				'	<img src="'.concat(that.option.fileServerHttp , item['hi10'] , '" width="100%" onerror="this.src=\'puri-plug/Images/Flua500x146.png\'">'),
+				'	<img src="'.concat(that.option.fileServerHttp , item['hi10'] , '" width="100%" onerror="this.src=\''+ default_img +'\'">'),
 				'	<div class="ban-con">',
 				'		<h2 title="'.concat(item['hi02'] , '">' , item['hi02'] , '</h2>'),
 				'		<p title="'.concat(item['hi03'] , '">' , item['hi03'] , '</p>'));

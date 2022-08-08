@@ -543,7 +543,6 @@ a:link{ text-decoration:none;}
 .pro-left .more-promotion-well{text-align:center;margin:20px auto;display:inline-block;padding:0 10px;cursor:pointer;}
 .pro-left .more-promotion-well-text{text-align:center;font-size:14px;font-weight:bold;color: #C19A61;font-family: 'SourceHanSansSC-Regular'}
 .pro-left .more-promotion-well-text:hover{color:#EDAF47;}
-.pro-left .more-promotion-well-arrow{width:6px;height:11px;background-image:url(images/FLUAInventory/pro-crumb.png);background-size:6px 11px;background-repeat:no-repeat;display:inline-block;margin-left:10px;}
 
 /**endregion 产品中心-左侧栏-热销新品推荐  */
 
@@ -707,7 +706,6 @@ a:link{ text-decoration:none;}
 
 .Inventory i.mini-pic{display:inline-block;width:15px;height: 15px;-moz-background-size: 100% 100%;background-size:100% 100%;background-repeat:repeat;border:none;}
 .Inventory i.pro-shengji{background-image:url(images/shengji.png);}
-.Inventory i.pro-DIY{background-image:url(images/FLUAInventory/DIY.png);}
 .Inventory i.pro-new{background-image:url(images/newIcon2.png);}
 /**endregion 产品中心*/
 
@@ -1417,7 +1415,7 @@ i.percent_off2I { border: 0; top:0px; margin-top:4px; margin-left: 4px; backgrou
 .pro-detail-body .div-row{display:table-row; margin-bottom: 10px;}
 .pro-detail-body .div-table>*:not(.div-row),.pro-detail-body .div-row>*{display:table-cell;vertical-align: middle;}
 .pro-detail-body .breadcrumb{background-color:transparent;line-height:58px;padding:0;margin:0;color:#8E8E93;}
-.pro-detail-body .breadcrumb > li + li:before{color:#8E8E93;content:url(images/FLUAInventory/pro-crumb.png);margin:0 10px;vertical-align:middle;}
+.pro-detail-body .breadcrumb > li + li:before{color:#8E8E93;margin:0 10px;vertical-align:middle;}
 .pro-detail-body .pgwSlideshow .ps-current > ul > li img {width:auto;}
 
 /**endregion产品详细页-其他样式*/
@@ -1648,43 +1646,6 @@ i.percent_off2I { border: 0; top:0px; margin-top:4px; margin-left: 4px; backgrou
 .pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download a{display:inline-block;margin-bottom:10px;color:#333;float:none;margin-right: 15px;background-size:8px 8px;}
 
 
-
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-btn a.btns{ padding-left:0 !important; ;display:inline-block; width:70px; height:24px; line-height:22px; cursor:default; text-align:center; font-size:12px; background:#666; color:#ccc;-webkit-transition: all 0.8s;-o-transition: all 0.8s; transition: all 0.8s;}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-btn a.btns_ok{ background:#e9ba64; color:#fff; cursor:pointer;}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div{width: max-content;}
-
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .check,.allSelect .check{height: 14px; margin-top: 3px;background-image: url('images/FluaCustomerProductSellDetails/check.png') ;background-repeat: no-repeat ; float: left; width: 14px}
-/** 3c*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileCcie{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/explain.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileCcie:hover{background-image: url('images/FluaCustomerProductSellDetails/explain1.png') }
-/**ies*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileIES{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/ies.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileIES:hover{background-image: url('images/FluaCustomerProductSellDetails/ies1.png') }
-/**ce*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFilePaten{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/explain.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFilePaten:hover{background-image: url('images/FluaCustomerProductSellDetails/explain1.png') }
-/**说明书*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileDirection{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/explain.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileDirection:hover{background-image: url('images/FluaCustomerProductSellDetails/explain1.png') }
-/**CAD*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileCAD{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/3d.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileCAD:hover{background-image: url('images/FluaCustomerProductSellDetails/3d1.png') }
-/**3c*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileDrawings{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/line.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileDrawings:hover{background-image: url('images/FluaCustomerProductSellDetails/line1.png') }
-/**3c*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileSpecification{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/norms.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileSpecification:hover{background-image: url('images/FluaCustomerProductSellDetails/norms1.png') }
-/**3c*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileVideo{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/explain.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileVideo:hover{background-image: url('images/FluaCustomerProductSellDetails/explain1.png') }
-/**3c*/
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileZhuanli{height: 40px;background-image: url('images/FluaCustomerProductSellDetails/explain.png') ;background-repeat: no-repeat ;background-position: center}
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .productFileZhuanli:hover{background-image: url('images/FluaCustomerProductSellDetails/explain1.png') }
-/**endregion产品详细页-产品信息*/
-
-
-
 /**region产品详细页-设计理念和推荐产品*/
 .pro-detail-body .nei-module.pro-info-design-concept{padding-top:10px;padding-bottom:10px;background-color:#ECECEC}
 .pro-detail-body .nei-module.pro-info-design-concept .title{vertical-align:top;font-weight:bold;font-size:16px;width:100px;}
@@ -1805,7 +1766,6 @@ i.percent_off2I { border: 0; top:0px; margin-top:4px; margin-left: 4px; backgrou
 .pro-detail-body .items-table .item-container .item-options .item-option:hover{color:#C99A44;border-color:#C99A44;border-radius: 4px;}
 .pro-detail-body .zddg-tip .moq-tip>div>div>span.num{background:#E9BA64;}
 .pro-detail-body #HaveInventory{color:#c99a44; }
-.pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .check.onCheck,.pro-detail-body .allSelect .check.allOnCheck{background-image: url('images/FluaCustomerProductSellDetails/check-yellow.png')  }
 .pro-detail-body .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-btn a.btns_ok{ background:#e9ba64; color:#fff; cursor:pointer;}
 .pro-detail-body .nei-color span:not(.disable):hover, .nei-color span:not(.disable):hover span{color:#c99a44;}
 
@@ -1824,9 +1784,6 @@ i.percent_off2I { border: 0; top:0px; margin-top:4px; margin-left: 4px; backgrou
 .pro-detail-body.theme-PURI .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-btn a.btns_ok{background: #29A750}
 .pro-detail-body.theme-PURI .nei-module.pro-info .pro-info-wai .pro-info-nei .pro-info-pic .pic-container img.original{border: #29A750 1px solid}
 .pro-detail-body.theme-PURI .nei-color a.btns_ok{background: #29A750;}
-.pro-detail-body.theme-PURI .nei-color .pro-color .item-tip{background-image: url(/webpage/com/productsSale-css/images/svg/puri_tip.png);}
-.pro-detail-body.theme-PURI .nei-module.pro-info .pro-info-wai .pro-info-nei .pro-info-att .pro-info-item .pro-info-item-title .strobe-tip{background-image: url(/webpage/com/productsSale-css/images/svg/puri_tip.png);}
-.pro-detail-body.theme-PURI .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .check.onCheck,.pro-detail-body.theme-PURI .allSelect .check.allOnCheck{background-image: url('images/FluaCustomerProductSellDetails/check-green.png')  }
 .pro-detail-body.theme-PURI .zddg-tip .moq-tip>i{border: #29A750 1px solid;}
 .pro-detail-body.theme-PURI .zddg-tip .moq-tip>div>div>span.num{background: #29A750;}
 
@@ -1845,7 +1802,6 @@ i.percent_off2I { border: 0; top:0px; margin-top:4px; margin-left: 4px; backgrou
 .pro-detail-body.theme-DRIARTE .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-btn a.btns_ok{background: #E19440}
 .pro-detail-body.theme-DRIARTE .nei-module.pro-info .pro-info-wai .pro-info-nei .pro-info-pic .pic-container img.original{border: #E19440 1px solid}
 .pro-detail-body.theme-DRIARTE .nei-color a.btns_ok{background: #E19440;}
-.pro-detail-body.theme-DRIARTE .nei-module.pro-info .pro-info-wai .pro-info-nei.download .pro-info-attachment .wai-div .check.onCheck,.pro-detail-body.theme-DRIARTE .allSelect .check.allOnCheck{background-image: url('images/FluaCustomerProductSellDetails/check-yellow.png')  }
 .pro-detail-body.theme-DRIARTE .zddg-tip .moq-tip>i{border: #E19440 1px solid;}
 .pro-detail-body.theme-DRIARTE .zddg-tip .moq-tip>div>div>span.num{background: #E19440;}
 
