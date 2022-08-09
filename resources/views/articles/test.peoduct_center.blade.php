@@ -72,6 +72,28 @@
         </div>
     </div>
 
+<div class="modal fade catalog-modal" id="InventoryCatalogModal" tabindex="-1" role="dialog" aria-hidden="true"
+     data-backdrop="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">KA</div>
+                <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} 产品目录">{{ $common['web_name'] }} 目录下载</div>
+                <div class="pull-left catalog-modal-year" title="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></div>
+                <div class="pull-left catalog-modal-text">
+                    <span title="微信扫描二维码添加{{ $common['web_name'] }}公众号可获取目录">微信扫描二维码<br>添加{{ $common['web_name'] }}公众号<br>可获取产品目录</span>
+                </div>
+                <div class="pull-left catalog-modal-QRcode">
+                    <img src="{{ $common['public_account_img'] }}">
+                </div>
+                <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
+                </div>
+                <div class="clearfix"></div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">×</div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('footer_js')

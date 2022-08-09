@@ -57,6 +57,15 @@ class ProductsController extends Controller
         $cname = "";
         if (!empty($cid)){
             $cname = ProductCate::with([])->where("id",$cid)->value("name");
+            if (in_array($cid,[2,4])){
+                $products = ProductCate::with([])->whereRaw("pid = '{$cid}'")->orderByDesc("sort")->get();
+            }else{
+                $products = ProductCate::with([])->whereRaw("pid IN(SELECT id FROM `product_cates` WHERE pid = '{$cid}')")->orderByDesc("sort")->get();
+            }
+            foreach ($products as $p){
+                $p->catelvlid = in_array($cid,[2,4]) ? "_0_{$cid}_1_{$p->id}" : "_0_{$cid}_1_{$p->pid}_2_{$p->id}";
+            }
+            //print_r($products);exit();
             $cid = sprintf("%04d",$cid);
         }
         $hots = $this->repository->getHots();
@@ -218,22 +227,19 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  string $id
      *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $idArr = explode(",",$id);
+        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'Product deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return success("删除成功");
         }
 
-        return redirect()->back()->with('message', 'Product deleted.');
+        return error(203,"删除失败");
     }
 }

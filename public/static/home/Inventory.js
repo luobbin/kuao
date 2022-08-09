@@ -43,7 +43,7 @@ function initInventory(option) {
 }
 
 var proUtil = {
-	NoDataReq:true,    //是否正在获取产品信息
+	NoDataReq:false,    //是否正在获取产品信息
 	proData:[],        //产品信息
 	filter:{},
 	init:function(){
@@ -136,7 +136,7 @@ var leftModule = {
 	/**展示分类数据*/
 	filterProLvl:function(){
 		var that = this;
-		console.log("--NoDataReq值为：",proUtil.NoDataReq)
+		//console.log("--NoDataReq值为：",proUtil.NoDataReq)
 		if(proUtil.NoDataReq){
 			clearTimeout(defaults.setTimeoutId.filterProLvl);
 			defaults.setTimeoutId.filterProLvl = setTimeout(function() {
@@ -365,7 +365,11 @@ var proListModule = {
 		html.push('					</ul>');
 		$('#pro-list-filter').html(html.join('\n'));
 		/*生成面包屑结束*/
-		this.initProducts();
+		if (fields.length > 1){
+			//console.log("展示小类数据为：",fields);
+			this.initProducts();
+		}
+
 	},
 
 	/**返回顶部*/
@@ -381,8 +385,25 @@ var proListModule = {
 		//产品点击事件
 		$('.pro-right .pro-right-list').off('click','>li').on('click','>li',function(){
 			var items = $(this).data('attr') || {};
-			var id = items.id;
-			window.open(items.url);
+			//var id = items.id;
+			//console.log("产品点击结果：",$.isEmptyObject(items))
+			if ($.isEmptyObject(items) === true){
+				//从列表页筛选分类
+				$('#'+InventoryProLvl.DEFAULTS.containerId).find('.selected').removeClass('selected');
+				var cid = $(this).data('id');
+				var $root = $('#'+InventoryProLvl.DEFAULTS.containerId+cid).parent();
+				$root.addClass('selected');
+				var filter = $root.data('filter');
+				var filter2 = {};
+				$.each(filter || [],function(index,item){
+					filter2[item.key] = item.value;
+				});
+				proUtil.filter = filter2;
+				proListModule.refresh(1);
+			}else{
+				//跳转产品详情
+				window.open(items.url);
+			}
 		});
 
 		//显示更多产品

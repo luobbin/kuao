@@ -32,7 +32,7 @@ InventoryProLvl.prototype = {
 		var that = this;
 		this.rendered = false;
 		$.when(this.productLvl()).then(function(data){
-			console.log("获取到的分类数据为：",data);
+			//console.log("获取到的分类数据为：",data);
 			that.appendProductLvl(data);
 		});
 	},

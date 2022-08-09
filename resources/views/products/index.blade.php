@@ -89,7 +89,32 @@
             </div>
 
             <div class="pull-left pro-right-list-container">
-                <ul class="pull-left pro-right-list"></ul>
+                <ul class="pull-left pro-right-list">
+                    @foreach ($data as $item)
+                        <li class="pro-items col-md-2 col-sm-4 col-xs-6" data-id="{{ $item['catelvlid'] }}">
+                            <div class="pro-items-nei">
+                                <div class="map">
+                                    <div class="img rectangle rectangle-1-1">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div></div>
+                                                    <img src="{{ $item['img'] }}" data-src="{{ $item['img'] }}" onerror="this.src='{{ $common['default_img'] }}'">
+                                                    <span class="pro-icons">
+                                                    <div class="clearfix"></div>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="info" style="position:relative;">
+                                        <div class="text text-ellipsis" title="{{ $item['name'] }}">{{ $item['name'] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
 
                 <div class="pull-left show-more-pro-btn hide" data-langkey="ShowMore" title="显示更多">显示更多</div>
 

@@ -91,6 +91,9 @@
                             <div class="img">
                                 <img src="{{ $cat['img'] }}">
                             </div>
+                            <div class="ban-con">
+                                <h2>{{ $cat['title'] }}</h2>
+                            </div>
                         </a>
                     </div>
                 @endforeach

@@ -749,6 +749,9 @@ to {opacity:1;stroke-dasharray:371 371}
 .news .n-list a.item .img img{display: block;width: 100%;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
 
 .news .n-list a.item:last-child{border-bottom: none;}
+.news .about table{border-collapse: collapse; width: 100%; background-color: #fff;}
+.news .about table caption{text-align: center; font-size: 30px; font-weight: bold; padding-bottom: 3px; padding-top: 15px; color: #575654;background-color: #fff;}
+
 
 /*分页*/
 .fy{text-align: center;background-color: #fff;padding:70px 0;}
@@ -1007,6 +1010,9 @@ to {opacity:1;stroke-dasharray:371 371}
 .about3 .col-bottom .adr dl:nth-child(7){right: 37.5%;top: 71%;}
 .about3 .col-bottom .adr dl:nth-child(8){right: 38.5%;top: 77%;}
 .about3 .col-bottom .adr dl:nth-child(9){right: 30.5%;top: 74%;}
+
+.about3 .catalog img{width: 100%; height: auto;}
+
 
 .about4{width: 100%;overflow: hidden;margin-bottom: 30px;}
 .about4 .tit{color:#333;font-size:40px;font-weight: bold;margin-bottom: 40px;}
