@@ -20,6 +20,6 @@ class ProductCate extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id', 'name', 'pid', 'sort'];
+    protected $fillable = ['id', 'name', 'img', 'pid', 'sort'];
 
 }
