@@ -36,12 +36,18 @@ class JobsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $jobs = $this->repository->all();
+
+        if (request()->wantsJson()) {
+            //返回json数据
+            return response()->json($jobs);
+        }
+
        // print_r($jobs);exit;
         $commonData = $this->websetRep->getCommonData();
 
@@ -83,12 +89,16 @@ class JobsController extends Controller
      *
      * @param  int $id
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function show($id)
     {
         $job = $this->repository->find($id);
         $commonData = $this->websetRep->getCommonData();
+
+        if (request()->wantsJson()) {
+            return response()->json($job);
+        }
 
         return view('jobs.detail', [
             'common'=>$commonData,

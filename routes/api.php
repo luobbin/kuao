@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('case_cate', 'CasesCatesController');//新闻分类管理
         Route::get('home/{id}', 'HomeController@show');//首页栏目获取
         Route::put('home/{id}', 'HomeController@update');//首页栏目修改
+        Route::resource('job', 'JobsController');//招聘管理
 
         Route::resource('admin_handle', 'AdminHandleController');//后台管理员管理
     });
