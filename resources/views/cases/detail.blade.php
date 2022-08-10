@@ -16,7 +16,7 @@
         </div>
         <div class="word1">
             <h3 class="wow fadeInUp">项目案例</h3>
-            <p class="wow fadeInUp">{{ $common['cases_background_info'] }}</p>
+            <p class="wow fadeInUp">{{ $data['info'] }}</p>
         </div>
     </div>
     <!-- 内页banner End -->
