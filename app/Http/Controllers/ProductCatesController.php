@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\ProductCate;
 use App\Repositories\ProductCateRepositoryEloquent;
 use App\Repositories\ProductRepository;
 use App\Repositories\WebSettingRepositoryEloquent;
@@ -150,13 +151,17 @@ class ProductCatesController extends Controller
      */
     public function destroy($ids)
     {
-        $idArr = explode(",",$ids);
-        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
-
-        if ($deleted) {
-            return success("删除成功");
+        $id = trim($ids,",");
+        $idArr = explode(",",$id);
+        try {
+            $deleted = ProductCate::with([])->whereIn("id", $idArr)->delete();
+            if ($deleted) {
+                return success("删除成功");
+            }else{
+                return error(203,"删除失败,请稍后重试");
+            }
+        }catch (\Exception $e){
+            return error(203,"删除失败:{$e->getMessage()}");
         }
-
-        return error(203,"删除失败");
     }
 }

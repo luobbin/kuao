@@ -228,9 +228,13 @@ if (! function_exists('success')) {
      * @param $content
      * @return \Illuminate\Http\JsonResponse
      */
-    function success($content,$ext = [])
+    function success($content,$ext = "")
     {
-        $data = ['code'=>200,'data'=>$content,'ext'=>$ext];
+        if (is_string($content)){
+            $data = ['code'=>200,'data'=>$content,'message'=>$content];
+        }else{
+            $data = ['code'=>200,'data'=>$content,'message'=>$ext];
+        }
         $json = response()->json($data);
         return $json;
     }

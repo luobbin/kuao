@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Cases;
 use App\Repositories\CasesCateRepositoryEloquent;
 use App\Repositories\CasesRepositoryEloquent;
 use App\Repositories\ProductRepositoryEloquent;
@@ -190,13 +191,17 @@ class CasesController extends Controller
      */
     public function destroy($id)
     {
+        $id = trim($id,",");
         $idArr = explode(",",$id);
-        $deleted = $this->repository->deleteWhere(["in"=>["id"=>$idArr]]);
-
-        if ($deleted) {
-            return success("删除成功");
+        try {
+            $deleted = Cases::with([])->whereIn("id", $idArr)->delete();
+            if ($deleted) {
+                return success("删除成功");
+            }else{
+                return error(203,"删除失败,请稍后重试");
+            }
+        }catch (\Exception $e){
+            return error(203,"删除失败:{$e->getMessage()}");
         }
-
-        return error(203,"删除失败");
     }
 }
