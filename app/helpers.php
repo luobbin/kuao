@@ -965,13 +965,9 @@ if(!function_exists('moneyFormat')){
     }
 }
 
-if(!function_exists('webset')){
-    function webset($mark,$default=''){
-        $ret = \App\Models\Webset::where('var',$mark)->value('val');
-        if($ret)
-            return $ret;
-        else
-            return $default;
+if(!function_exists('date_day')){
+    function date_day($date){
+        return date("Y.m.d",strtotime($date));
     }
 }
 

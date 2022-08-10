@@ -229,7 +229,7 @@ class ProductsController extends Controller
      *
      * @param  string $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {

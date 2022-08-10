@@ -69,9 +69,11 @@
     <!-- banner高度 -->
     <div class="oo"></div>
     <!-- banner高度End -->
+
+
     <div class="clearfix"></div>
 
-<div class="home w83">
+<div class="home mdec90 w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
         <div class="tit-ban">{{ $homeNames[1]['name'] }}</div>

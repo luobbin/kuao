@@ -24,7 +24,8 @@ Route::get("/article_detail/{id}",'ArticlesController@show');
 Route::get("/news/{id}",'ArticlesController@news');
 Route::get('/listFontCate', 'ProductCatesController@listFontCate');//产品分类
 Route::get('/listFontItems', 'ProductsController@listFontItems');//产品所有
-
+Route::get('/jobs', 'JobsController@index');//招聘
+Route::get('/job_detail/{id}', 'JobsController@show');
 
 Route::get("/test/{id}",'ArticlesController@test');//专题页测试
 //Route::get('/test', 'TestController@index');//->middleware("token:111222333");//中间件传参应用
