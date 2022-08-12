@@ -360,7 +360,7 @@ footer .foot2 .fl a:nth-child(1)::before {content:'';width:1px;height:10px;backg
 footer .foot2 .fr{display:none;}
 /* 内页banner */
 .ny-banner {position:relative;}
-.ny-banner .img {width:100%; max-height: 650px; overflow: hidden;}
+.ny-banner .img {width:100%; overflow: hidden;}
 .ny-banner .img img.pc {display:block;width:100%;}
 .ny-banner .img img.m {display:none;}
 .ny-banner .word {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;}
@@ -1028,7 +1028,6 @@ to {opacity:1;stroke-dasharray:371 371}
 	.i-product .ob .swiper-slide .word {margin-top:40px;}
 	.i-product1 a.item .img{max-height:350px;}
     .about .col-middle .info p{font-size: 16px; line-height: 32px;}
-    .ny-banner .img{max-height: 560px;}
     .case-show .col-middle .pic .img{max-height: 390px;}
 }
 @media (max-width:1600px) {
@@ -1163,7 +1162,6 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .case-show .col-top .right::-webkit-scrollbar-track {background:#fff;}
 .about .col-middle .info p{font-size: 14px; line-height: 30px;}
 .tabaa a{width: 100px;}
-.ny-banner .img{max-height: 500px;}
 }
 @media (max-width:1440px) {
 .i-product1 a.item .img{max-height:297px;}
@@ -1217,7 +1215,6 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .case .col-top .right h3{font-size: 18px; line-height: 24px;}
 .case .col-top .right .tab a{font-size: 13px; padding: 0 2%;}
 .case .col-top .right .form{}
-.ny-banner .img{max-height: 420px;}
 .case-show .col-middle .pic .img{max-height: 270px;}
 .job-di .news-show{margin-top: 50px;}
 }
