@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 
 class FileUploadController extends Controller
@@ -38,6 +39,10 @@ class FileUploadController extends Controller
                 //Log::info("获取到的新文件名为：{$filename}");
                 //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
                 Storage::disk('public')->put($filename, file_get_contents($path));
+                //添加水印
+                $img = Image::make(public_path("uploads/".date('Ymd')."/".$filename));
+                $img->insert(public_path('static/images/logo1.png'), 'bottom-right', 10, 10);
+                $img->save(public_path("uploads/".date('Ymd')."/".$filename));
                 return response()->json([
                     'path' => '/public/uploads/'.date('Ymd')."/".$filename,
                     'url' => Storage::disk('public')->url($filename)

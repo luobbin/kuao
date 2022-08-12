@@ -22,6 +22,7 @@ Route::get("/case_detail/{id}",'CasesController@show');
 Route::get('/articles', 'ArticlesController@index');
 Route::get("/article_detail/{id}",'ArticlesController@show');
 Route::get("/news/{id}",'ArticlesController@news');
+Route::get("/product_center",'ArticlesController@product_center');
 Route::get('/listFontCate', 'ProductCatesController@listFontCate');//产品分类
 Route::get('/listFontItems', 'ProductsController@listFontItems');//产品所有
 Route::get('/jobs', 'JobsController@index');//招聘

@@ -9,7 +9,118 @@
 
 
 @section('content')
-{!! $data['content'] !!}
+<!-- 内页banner -->
+<div class="ny-banner aa">
+    <div class="img">
+        <img src="http://api.kalighting.cn/static/img_topic/products_bg.jpg" class="pc">
+        <img src="http://api.kalighting.cn/static/img_topic/products_bg_m.jpg" class="m">
+    </div>
+    <div class="word1">
+        <h3 class="wow fadeInUp">产品中心</h3>
+        <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
+    </div>
+</div>
+<!-- 内页banner End -->
+<div class="clearfix"></div>
+
+{{--{!! $data['content'] !!}--}}
+<div class="news w83">
+    <div class="about">
+        <div class="col-top block-title">
+            <div class="tit-ban">产品筛选</div>
+            <div class="fr">
+                <a href="/products?cid=1">室内专业类</a>
+                <a href="/products?cid=2">室内设计类</a>
+                <a href="/products?cid=3">博物馆照明</a>
+                <a href="/products?cid=4">展示箱</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-middle">
+            <div class="left">
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/product_center_01_01.jpg"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/product_center_01_02.jpg"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p></p>
+            </div>
+            <div class="right">
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/product_center_02_01.jpg"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_02_02.jpg"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p></p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="left">
+                <table style="border-collapse: collapse; width: 100%; background-color: #fff;">
+                    <caption>配件类</caption>
+                    <tbody>
+                    <tr>
+                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_03.jpg"></a></td>
+                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_04.jpg"></a></td>
+                        <td style="width: 25%;"><a href="/products?cid=4"><img src="/static/img_topic/images/product_center_03_05.jpg"></a></td>
+                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_06.jpg"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="right">
+                <a href="/products?cid=4"><img src="http://api.kalighting.cn/static/img_topic/product_center_04.jpg"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="block-title" >
+        <div class="tit-ban">产品目录申请</div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="about3">
+        <div class="swiper-container">
+            <div class="swiper-wrapper catalog">
+                <div class="swiper-slide">
+                    <img src="http://api.kalighting.cn/static/img_topic/product_center_cate_01.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://api.kalighting.cn/static/img_topic/product_center_cate_02.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="modal fade catalog-modal" id="InventoryCatalogModal" tabindex="-1" role="dialog" aria-hidden="true"
+     data-backdrop="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">KA</div>
+                <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} 产品目录">{{ $common['web_name'] }} 目录下载</div>
+                <div class="pull-left catalog-modal-year" title="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></div>
+                <div class="pull-left catalog-modal-text">
+                    <span title="微信扫描二维码添加{{ $common['web_name'] }}公众号可获取目录">微信扫描二维码<br>添加{{ $common['web_name'] }}公众号<br>可获取产品目录</span>
+                </div>
+                <div class="pull-left catalog-modal-QRcode">
+                    <img src="{{ $common['public_account_img'] }}">
+                </div>
+                <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
+                </div>
+                <div class="clearfix"></div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">×</div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('footer_js')

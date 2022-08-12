@@ -118,6 +118,26 @@ class ArticlesController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     */
+    public function product_center()
+    {
+        $article = $this->websetRep->findByNameAttr("product_center");
+
+        if (request()->wantsJson()) {
+            return response()->json($article);
+        }
+        $commonData = $this->websetRep->getCommonData();
+        return view('articles.product_center', [
+            'common'=>$commonData,
+            'data' => $article,
+            'pageTitle'=> $article->name."-".$commonData['web_name']
+        ]);
+    }
+
+    /**
      * 资讯专题页测试
      *
      * @param  string $id
