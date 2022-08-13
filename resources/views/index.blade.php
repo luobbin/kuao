@@ -73,7 +73,7 @@
 
     <div class="clearfix"></div>
 
-<div class="home w83">
+<div class="home mdec90 w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
         <div class="tit-ban">{{ $homeNames[1]['name'] }}</div>
@@ -218,10 +218,11 @@
                     el: ".index-p",
                     clickable: !0,
                     renderBullet: function (e, i) {
-                        return '<div class="' + i +
-                            '"><svg viewBox="0 0 120 120" class="svg"><circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle1"></circle> <circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle2" style="animation-duration:' +
-                            $(".index-banner .swiper-slide").eq(e).data("duration") +
-                            's"></circle></svg></div>'
+                        return '';
+                        // return '<div class="' + i +
+                        //     '"><svg viewBox="0 0 120 120" class="svg"><circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle1"></circle> <circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle2" style="animation-duration:' +
+                        //     $(".index-banner .swiper-slide").eq(e).data("duration") +
+                        //     's"></circle></svg></div>'
                     }
                 },
                 on: {
