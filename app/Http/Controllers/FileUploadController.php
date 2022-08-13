@@ -40,9 +40,13 @@ class FileUploadController extends Controller
                 //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
                 Storage::disk('public')->put($filename, file_get_contents($path));
                 //添加水印
-                $img = Image::make(public_path("uploads/".date('Ymd')."/".$filename));
-                $img->insert(public_path('static/images/logo1.png'), 'bottom-right', 10, 10);
-                $img->save(public_path("uploads/".date('Ymd')."/".$filename));
+                $fileTypes = array('jpg','png','gif');//设置文件类型数组
+                $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
+                if (in_array($fileType,$fileTypes)) {
+                    $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                    $img->insert(public_path('static/images/logo1.png'), 'bottom-right', 10, 10);
+                    $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                }
                 return response()->json([
                     'path' => '/public/uploads/'.date('Ymd')."/".$filename,
                     'url' => Storage::disk('public')->url($filename)
