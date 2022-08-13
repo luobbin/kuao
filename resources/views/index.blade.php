@@ -73,7 +73,7 @@
 
     <div class="clearfix"></div>
 
-<div class="home mdec90 w83">
+<div class="home w83">
     <!--幻灯片:项目案例-->
     <div class="block-title">
         <div class="tit-ban">{{ $homeNames[1]['name'] }}</div>
