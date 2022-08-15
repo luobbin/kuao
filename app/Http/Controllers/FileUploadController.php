@@ -45,7 +45,7 @@ class FileUploadController extends Controller
                 //echo "文件类型为".$fileType;
                 if (in_array($fileType,$fileTypes)) {
                     $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
-                    $img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
+                    $img->insert(public_path('static/images/logo1.png'), 'bottom-right', 10, 10);
                     $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
                 }
                 return response()->json([
