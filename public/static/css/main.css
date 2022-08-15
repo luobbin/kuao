@@ -1025,11 +1025,11 @@ to {opacity:1;stroke-dasharray:371 371}
 
 
 @media (max-width:1680px) {
-	.i-product .ob .swiper-slide .word {margin-top:40px;}
-	.i-product1 a.item .img{max-height:350px;}
-    .about .col-middle .info p{font-size: 16px; line-height: 32px;}
-    .case-show .col-middle .pic .img{max-height: 390px;}
-    .home.mdec90{margin-top: -110px;}
+.i-product .ob .swiper-slide .word {margin-top:40px;}
+.i-product1 a.item .img{max-height:350px;}
+.about .col-middle .info p{font-size: 16px; line-height: 32px;}
+.case-show .col-middle .pic .img{max-height: 390px;}
+/*.home.mdec90{margin-top: -110px;}*/
 }
 @media (max-width:1600px) {
 	.i-case .right .tit h3 {font-size:30px;}
@@ -1248,7 +1248,7 @@ button.more:hover {background-color:#fff;}
 button.more:hover::before {width:100%;}
 button.more:hover span {color:#C8A063;}
 button.more:hover i {background-image:url(../images/more-ico1.png);}
-.home.mdec90{margin-top: -350px;}
+/*.home.mdec90{margin-top: -350px;}*/
 .news .n-list a.item .word .more:hover {background-color:transparent;}
 .news .n-list a.item .word .more:hover::before {width:100%;}
 .news .n-list a.item .word .more:hover span {color:#fff;}
