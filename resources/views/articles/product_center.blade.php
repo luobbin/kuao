@@ -174,14 +174,6 @@
                     freeMode: false,
                 },
             },
-            on: {
-                slideChange: function () {
-                    var aa = swiper1.getTranslate();
-                    var ab = -aa;
-                    var ac = ab + 700;
-                    $(".about1 .bg1").css('width', 1.2 * ac);
-                },
-            },
         });
 
         /*服务领域*/
