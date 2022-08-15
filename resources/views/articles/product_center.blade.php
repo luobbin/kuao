@@ -12,12 +12,12 @@
 <!-- 内页banner -->
 <div class="ny-banner aa">
     <div class="img">
-        <img src="http://api.kalighting.cn/static/img_topic/products_bg.jpg" class="pc">
-        <img src="http://api.kalighting.cn/static/img_topic/products_bg_m.jpg" class="m">
+        <img src="{{ $common['pcenter_background_pc_img'] }}" class="pc">
+        <img src="{{ $common['pcenter_background_mob_img'] }}" class="m">
     </div>
-    <div class="word1">
+    <div class="word1 w83">
         <h3 class="wow fadeInUp">产品中心</h3>
-        <p class="wow fadeInUp">库奥专心于照明技术、研究，制造让“消费者心动”的产品，创造全新的产品与需求，通过独特的产品研发，为顾客创造新的照明方式。</p>
+        <p class="wow fadeInUp">{{ $common['pcenter_background_info'] }}</p>
     </div>
 </div>
 <!-- 内页banner End -->
@@ -36,13 +36,16 @@
             </div>
         </div>
         <div class="clearfix"></div>
+        <div class="product-center-tag" style="position: absolute; height: 292px; margin-left: -68px; overflow: hidden; display: none;">
+            <img src="/static/img_topic/images/pcenter_tag.png" style="height: 100%;">
+        </div>
         <div class="col-middle">
             <div class="left">
                 <table style="border-collapse: collapse; width: 100%;">
                     <tbody>
                     <tr>
-                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/product_center_01_01.jpg"></a></td>
-                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/product_center_01_02.jpg"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/pcenter_04.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/pcenter_05.png"></a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -52,8 +55,8 @@
                 <table style="border-collapse: collapse; width: 100%;">
                     <tbody>
                     <tr>
-                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/product_center_02_01.jpg"></a></td>
-                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_02_02.jpg"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/pcenter_07.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/pcenter_08.png"></a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -61,20 +64,24 @@
             </div>
             <div class="clearfix"></div>
             <div class="left">
-                <table style="border-collapse: collapse; width: 100%; background-color: #fff;">
-                    <caption>配件类</caption>
+                <table style="border-collapse: collapse; width: 100%;">
                     <tbody>
                     <tr>
-                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_03.jpg"></a></td>
-                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_04.jpg"></a></td>
-                        <td style="width: 25%;"><a href="/products?cid=4"><img src="/static/img_topic/images/product_center_03_05.jpg"></a></td>
-                        <td style="width: 25%;"><a href="/products?cid=3"><img src="/static/img_topic/images/product_center_03_06.jpg"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/pcenter_12.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/pcenter_13.png"></a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <div class="right">
-                <a href="/products?cid=4"><img src="http://api.kalighting.cn/static/img_topic/product_center_04.jpg"></a>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 50%;"><a href="/products?cid=4"><img src="/static/img_topic/images/pcenter_14.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=4"><img src="/static/img_topic/images/pcenter_15.png"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="clearfix"></div>
         </div>
