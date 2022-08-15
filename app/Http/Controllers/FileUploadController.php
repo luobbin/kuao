@@ -42,7 +42,7 @@ class FileUploadController extends Controller
                 //添加水印
                 $fileTypes = array('jpg','png','gif');//设置文件类型数组
                 $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
-                echo "文件类型为".$fileType;
+                //echo "文件类型为".$fileType;
                 if (in_array($fileType,$fileTypes)) {
                     $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
                     $img->insert(public_path('static/images/logo1.png'), 'bottom-right', 10, 10);
