@@ -18,24 +18,24 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-swiper-autoplay="15000">
                         <video id="videoPlay" src="{{ $topVideo['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
-                               loop="loop" muted="muted" controls="controls" x5-video-player-type="h5" preload="metadata" playsinline="true"
+                               loop="loop" muted="muted" x5-video-player-type="h5" preload="metadata" playsinline="true"
                                webkit-playsinline="true"  x-webkit-airplay="true"x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="object-fit: fill;display: block;width:100vw;"></video>
-                        <div class="mm">
-                            <img src="{{ $topVideo['mob_img_url'] }}" class="mm">
-                            <div class="word">
-                                <h3><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"
-                                            swiper-animate-delay="0.2s">{{ $topVideo['mob_h3'] }}</strong></h3>
-                                <p><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"
-                                           swiper-animate-delay="0.4s">{{ $topVideo['mob_p'] }}</strong>
-                                </p>
-                                <div class="oc">
-                                    <a href="{{ $topVideo['mob_a_url'] }}" class="more ani" swiper-animate-effect="fadeInLeft2"
-                                       swiper-animate-duration="1s" swiper-animate-delay="0.6s">
-                                        <span>详情 >>></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="mm">--}}
+{{--                            <img src="{{ $topVideo['mob_img_url'] }}" class="mm">--}}
+{{--                            <div class="word">--}}
+{{--                                <h3><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"--}}
+{{--                                            swiper-animate-delay="0.2s">{{ $topVideo['mob_h3'] }}</strong></h3>--}}
+{{--                                <p><strong class="ani" swiper-animate-effect="fadeInLeft2" swiper-animate-duration="1s"--}}
+{{--                                           swiper-animate-delay="0.4s">{{ $topVideo['mob_p'] }}</strong>--}}
+{{--                                </p>--}}
+{{--                                <div class="oc">--}}
+{{--                                    <a href="{{ $topVideo['mob_a_url'] }}" class="more ani" swiper-animate-effect="fadeInLeft2"--}}
+{{--                                       swiper-animate-duration="1s" swiper-animate-delay="0.6s">--}}
+{{--                                        <span>详情 >>></span>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
 {{--                    <div class="swiper-slide">--}}
 {{--                        <div class="img">--}}
@@ -57,11 +57,11 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
                 </div>
-                <!-- Add Pagination -->
-                <div class="index-p"></div>
-                <!-- Add Arrows -->
-                <div class="index-next hide"></div>
-                <div class="index-prev hide"></div>
+{{--                <!-- Add Pagination -->--}}
+{{--                <div class="index-p"></div>--}}
+{{--                <!-- Add Arrows -->--}}
+{{--                <div class="index-next hide"></div>--}}
+{{--                <div class="index-prev hide"></div>--}}
             </div>
         </div>
     </div>
@@ -204,27 +204,27 @@
                     stopOnLastSlide: false,
                     disableOnInteraction: false,
                 },
-                pagination: {
-                    el: '.index-p',
-                    clickable: true,
-                    observer:true,//修改swiper自己或子元素时，自动初始化swiper
-                    observeParents:true,//修改swiper的父元素时，自动初始化swiper
-                },
-                navigation: {
-                    nextEl: '.index-next',
-                    prevEl: '.index-prev',
-                },
-                pagination: {
-                    el: ".index-p",
-                    clickable: !0,
-                    renderBullet: function (e, i) {
-                        return '';
-                        // return '<div class="' + i +
-                        //     '"><svg viewBox="0 0 120 120" class="svg"><circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle1"></circle> <circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle2" style="animation-duration:' +
-                        //     $(".index-banner .swiper-slide").eq(e).data("duration") +
-                        //     's"></circle></svg></div>'
-                    }
-                },
+                // pagination: {
+                //     el: '.index-p',
+                //     clickable: true,
+                //     observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                //     observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                // },
+                // navigation: {
+                //     nextEl: '.index-next',
+                //     prevEl: '.index-prev',
+                // },
+                // pagination: {
+                //     el: ".index-p",
+                //     clickable: !0,
+                //     renderBullet: function (e, i) {
+                //         return '';
+                //         // return '<div class="' + i +
+                //         //     '"><svg viewBox="0 0 120 120" class="svg"><circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle1"></circle> <circle cx="60" cy="60" r="54" stroke-width="6" fill="transparent" class="circle2" style="animation-duration:' +
+                //         //     $(".index-banner .swiper-slide").eq(e).data("duration") +
+                //         //     's"></circle></svg></div>'
+                //     }
+                // },
                 on: {
                     init: function () {
                         swiperAnimateCache(this); //隐藏动画元素
@@ -310,21 +310,24 @@
                 return animName;
             }
             //顶部视频自动播放（微信浏览器）
-            var voice = document.getElementById('videoPlay');
-            if(typeof WeixinJSBrdgeReady=="object" && typeof WeixinJSBridge.invoke == "function"){
-                voice.play()
-            }else{
-                if (document.addEventListener) {
-                    document.addEventListener("WeixinJSBridgeReady", function () {
-                        voice.play();
-                    }, false);
-                } else if (document.attachEvent) {
-                    document.attachEvent("WeixinJSBridgeReady", function () {
-                        voice.play();
-                    });
-                    document.attachEvent("onWeixinJSBridgeReady", function () {
-                        voice.play();
-                    });
+            var width = $('#videoPlay').width();
+            if(width < 768) {
+                var voice = document.getElementById('videoPlay');
+                if (typeof WeixinJSBrdgeReady == "object" && typeof WeixinJSBridge.invoke == "function") {
+                    voice.play()
+                } else {
+                    if (document.addEventListener) {
+                        document.addEventListener("WeixinJSBridgeReady", function () {
+                            voice.play();
+                        }, false);
+                    } else if (document.attachEvent) {
+                        document.attachEvent("WeixinJSBridgeReady", function () {
+                            voice.play();
+                        });
+                        document.attachEvent("onWeixinJSBridgeReady", function () {
+                            voice.play();
+                        });
+                    }
                 }
             }
             //其他模块加载

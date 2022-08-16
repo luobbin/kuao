@@ -74,6 +74,9 @@
         </div>
         <div class="clearfix"></div>
         <div class="about1">
+            <div class="img">
+                <img src="http://api.kalighting.cn/static/img_topic/about_us02.png">
+            </div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide c-flex">

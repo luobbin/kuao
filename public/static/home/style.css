@@ -290,6 +290,7 @@ a:link{ text-decoration:none;}
 .block-1 .cicle img{width: auto; height: 65%;}
 .block-1 .img{width:100%; overflow: hidden; max-height: 650px;}
 .block-1 .img img{width: 100%;}
+.block-1 .swiper-slide{padding-left: 1px;}
 
 .ban-con h2{ color:#fff; font-size:46px; line-height:54px; -transition: all 0.5s ease-out 0.6s;transition: all 0.5s ease-out 0.6s;-webkit-transform: translate3d(0,30px,0); transform: translate3d(0,30px,0);width:70%; min-width: 500px;}
 .ban-con p{ color:#fff; font-size:14px; line-height:20px; padding-top:10px; padding-bottom:60px;-transition: all 0.7s ease-out 1s;transition: all 0.7s ease-out 1s;-webkit-transform: translate3d(0,50px,0); transform: translate3d(0,50px,0); opacity: 0; width:400px;}
