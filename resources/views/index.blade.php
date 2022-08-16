@@ -17,6 +17,10 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" data-swiper-autoplay="15000">
+                        <div class="mm topVideo">
+                            <div class="play-button"></div>
+                            <img src="{{ $topVideo['mob_img_url'] }}" class="mm">
+                        </div>
                         <video id="videoPlay" src="{{ $topVideo['pc_video_url'] }}" type="video/mp4" autoplay="autoplay"
                                loop="loop" muted="muted" x5-video-player-type="h5" preload="metadata" playsinline="true"
                                webkit-playsinline="true"  x-webkit-airplay="true"x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="object-fit: fill;display: block;width:100vw;"></video>
@@ -311,25 +315,14 @@
             }
             //顶部视频自动播放（微信浏览器）
             var width = $('#videoPlay').width();
-            if(width < 768) {
-                $('#videoPlay').attr("controls","controls");
-                var voice = document.getElementById('videoPlay');
-                if (typeof WeixinJSBrdgeReady == "object" && typeof WeixinJSBridge.invoke == "function") {
-                    voice.play()
-                } else {
-                    if (document.addEventListener) {
-                        document.addEventListener("WeixinJSBridgeReady", function () {
-                            voice.play();
-                        }, false);
-                    } else if (document.attachEvent) {
-                        document.attachEvent("WeixinJSBridgeReady", function () {
-                            voice.play();
-                        });
-                        document.attachEvent("onWeixinJSBridgeReady", function () {
-                            voice.play();
-                        });
-                    }
-                }
+            if(width < 768 && isWeiXin()) {
+                $('.index-banner .swiper-slide .mm').show();
+                $('.topVideo .play-button').click(function(e) {
+                    $('.index-banner .swiper-slide .mm').hide();
+                    $('#videoPlay').trigger('play');
+                });
+                //$('#videoPlay').attr("controls","controls");
+                audioAutoPlay('videoPlay')
             }
             //其他模块加载
             initHome();

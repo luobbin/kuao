@@ -378,3 +378,36 @@ function toSearchProduct(keyWord){
 	console.log(keyWord)
 
 }
+
+function isWeiXin() {
+	var ua = window.navigator.userAgent.toLowerCase()
+	if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+		//是微信浏览器
+		return true
+	} else {
+		//不是微信浏览器
+		return false
+	}
+}
+function audioAutoPlay(id){
+	var audio = document.getElementById(id);
+
+	var play = function() {
+		document.removeEventListener("WeixinJSBridgeReady", play);
+		document.removeEventListener("YixinJSBridgeReady", play);
+
+		audio.play();
+		audio.pause();
+		// document.removeEventListener("touchstart", play, false);
+	};
+
+	audio.play();
+	audio.pause();
+
+	//weixin
+	document.addEventListener("WeixinJSBridgeReady", play, false);
+	//yixin
+	document.addEventListener('YixinJSBridgeReady', play, false);
+
+	// document.addEventListener("touchstart", play, false);
+}

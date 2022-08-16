@@ -177,7 +177,7 @@ header.gray {background-color:#eee;}
 .index-banner {width:100vw;height:100vh;overflow:hidden;position:fixed;top:0;left:0;z-index:3;background-color:#000000;}
 .index-banner .swiper-slide {position:relative;}
 .index-banner .swiper-slide .mm{display:none;}
-.index-banner .swiper-slide img.mm{display:none;width:100%;}
+.index-banner .swiper-slide img.mm{width:100%;}
 .index-banner .swiper-slide .img {width:100%;height:100vh;}
 .index-banner .swiper-slide .img img {width:100%;height:100vh;-webkit-animation-duration:5s;animation-duration:5s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 .index-banner .leftUp .img img {-webkit-animation-name:leftUp;animation-name:leftUp;}

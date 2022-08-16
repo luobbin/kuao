@@ -337,6 +337,7 @@ a:link{ text-decoration:none;}
 .block-4 li video{height:100%;width:100%;background:#000000;z-index: 29;}
 .block-4 li img{height:100%;width:100%;position:absolute;top:0;left:0;z-index:10;}
 .block-4 li div{display:none;width:100px;height:100px;position:absolute;top:50%;left:50%;margin:-50px 0 0 -50px;z-index:20;background:url(images/video-play.png) no-repeat;background-size:100px 100px;cursor: pointer;}
+.topVideo .play-button{width:100px;height:100px;position:absolute;top:20%;left:50%;margin:-50px 0 0 -50px;z-index:20;background:url(images/video-play.png) no-repeat;background-size:100px 100px;cursor: pointer;}
 .block-4 li.active div{display:block;}
 .block-4 li.playing img,.block-4 li.playing div{display:none;}
 .block-4 .video-switch-btn{width:48px;height:84px;position:absolute;top:38%;margin:0;z-index:30;background-size:48px 84px;cursor:pointer;background-image:url(images/video-left.png);}
@@ -1008,6 +1009,7 @@ a:link{ text-decoration:none;}
 	.block-4 li.to-center{height: 325px; width:100%; margin-left: -50%}
 	.block-4 li img{height: 325px;}
 	.block-4 li div{top: 40%;}
+	.topVideo .play-button{top: 40%;}
 	#head .logo img{ height:35px; width:auto;}
 	.block-1 li .ban-con{ height:200px; margin-top:-100px;}
 	.ban-con h2{ font-size:34px; line-height:35px;}
@@ -1087,6 +1089,7 @@ a:link{ text-decoration:none;}
 	.block-4 li.to-center{height: 260px; width:100%; margin-left: -50%}
 	.block-4 li img{height: 260px;}
 	.block-4 li div{top: 36%; left: 55%; width: 60px; height: 60px; background-size:60px 60px;}
+	.topVideo .play-button{top: 36%; left: 55%; width: 60px; height: 60px; background-size:60px 60px;}
 	.block-4 .video-switch-btn{width: 32px; height: 64px; top: 38%; background-size: 32px 64px}
 	.eight, .nei-1{ padding:50px 10px;}
 	.pin-1{ padding:0px 6px;}
