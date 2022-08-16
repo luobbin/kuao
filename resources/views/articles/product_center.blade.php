@@ -44,8 +44,8 @@
                 <table style="border-collapse: collapse; width: 100%;">
                     <tbody>
                     <tr>
-                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/pcenter_04.png"></a></td>
-                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/pcenter_05.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/pcenter_04.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=2"><img src="/static/img_topic/images/pcenter_05.png"></a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -67,8 +67,8 @@
                 <table style="border-collapse: collapse; width: 100%;">
                     <tbody>
                     <tr>
-                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/pcenter_12.png"></a></td>
-                        <td style="width: 50%;"><a href="/products?cid=3"><img src="/static/img_topic/images/pcenter_13.png"></a></td>
+                        <td style="width: 50%;"><a href="/products?cid=1"><img src="/static/img_topic/images/pcenter_12.png"></a></td>
+                        <td style="width: 50%;"><a href="/product_detail/133"><img src="/static/img_topic/images/pcenter_13.png"></a></td>
                     </tr>
                     </tbody>
                 </table>
