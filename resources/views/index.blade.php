@@ -312,6 +312,7 @@
             //顶部视频自动播放（微信浏览器）
             var width = $('#videoPlay').width();
             if(width < 768) {
+                $('#videoPlay').attr("controls","controls");
                 var voice = document.getElementById('videoPlay');
                 if (typeof WeixinJSBrdgeReady == "object" && typeof WeixinJSBridge.invoke == "function") {
                     voice.play()
