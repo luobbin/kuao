@@ -118,9 +118,10 @@ class CasesController extends Controller
         if (empty($request->cate_id)||empty($request->name)){
             error(203,"参数错误");
         }
+        $param = $request->all();
+
         try {
-            $param = $request->all();
-            $param['imgs'] = json_encode($request->imgs);
+            $param['imgs'] = json_to_string($request->imgs);
             $data = $this->repository->create($param);
 
             $response = [
@@ -165,9 +166,9 @@ class CasesController extends Controller
         if (empty($request->cate_id)||empty($request->name)){
             error(203,"参数错误");
         }
+        $param = $request->all();
         try {
-            $param = $request->all();
-            $param['imgs'] = json_encode($request->imgs);
+            $param['imgs'] = json_to_string($request->imgs);
             $res = $this->repository->update($param, $id);
 
             $response = [

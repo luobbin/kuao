@@ -165,7 +165,7 @@ class ProductsController extends Controller
         try {
             $data = $request->all();
             $data['imgs'] = json_encode($request->imgs);
-            $data['features'] = json_encode($request->features);
+            $data['features'] = json_to_string($request->features);
             $product = $this->repository->create($data);
 
             $response = [
@@ -210,7 +210,7 @@ class ProductsController extends Controller
         try {
             $data = $request->all();
             $data['imgs'] = json_encode($request->imgs);
-            $data['features'] = json_encode($request->features);
+            $data['features'] = json_to_string($request->features);
             $product = $this->repository->update($data, $id);
 
             $response = [

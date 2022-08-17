@@ -765,7 +765,7 @@ if(!function_exists('sec')) {
 }
 
 /**
- * 解析寄送里面的数据
+ * 解析json里面的数据
  * @param string|array $content
  * @return array
  * */
@@ -779,6 +779,23 @@ if(!function_exists('json_prase')) {
             }
         }
         return $data;
+    }
+}
+
+if(!function_exists('json_to_string')) {
+    function json_to_string($lists)
+    {
+        if (!is_array($lists)){
+            $lists = json_decode($lists,true);
+        }
+        $data_list = [];
+        foreach ($lists as $k=>$v){
+            if (empty($v))  continue;
+            $item = is_array($v)?$v:json_decode($v,true);
+            $item['id'] = $k+1;
+            $data_list[] = $item;
+        }
+        return json_encode($data_list);
     }
 }
 
