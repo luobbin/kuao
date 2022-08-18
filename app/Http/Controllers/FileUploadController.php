@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\WebSettingRepositoryEloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
@@ -17,7 +18,7 @@ class FileUploadController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function singleFile(Request $request)
+    public function singleFile(Request $request, WebSettingRepositoryEloquent $webSetRep)
     {
         if ($request->hasFile('file')) {
             //在源生的php代码中是使用$_FILE来查看上传文件的属性
@@ -43,10 +44,13 @@ class FileUploadController extends Controller
                 $fileTypes = array('jpg','png','gif','jpeg');//设置文件类型数组
                 $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
                 //echo "文件类型为".$fileType;
-                if (in_array($fileType,$fileTypes)) {
-                    $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
-                    $img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
-                    $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                $watermark_switch = $webSetRep->findByNameAttr("watermark_switch");
+                if ($watermark_switch) {
+                    if (in_array($fileType, $fileTypes) && $watermark_switch->content == "1") {
+                        $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                        $img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
+                        $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                    }
                 }
                 return response()->json([
                     'path' => '/public/uploads/'.date('Ymd')."/".$filename,
