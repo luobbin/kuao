@@ -48,7 +48,9 @@ class FileUploadController extends Controller
                 if ($watermark_switch) {
                     if (in_array($fileType, $fileTypes) && $watermark_switch->content == "1") {
                         $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
-                        $img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
+                        $mark=$webSetRep->findByNameAttr("water_mark");
+                        //$img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
+                        $img->insert($mark->content, 'bottom-right', 10, 10);
                         $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
                     }
                 }

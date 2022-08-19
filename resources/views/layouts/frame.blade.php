@@ -69,11 +69,11 @@
         <div class="col-bottom">
             <p class="time">{{ $common['connect_time'] }}</p>
             <p class="tel">{{ $common['connect_phone'] }}</p>
-            <div class="fx">
+<!--            <div class="fx">
 				<span>
 					<img src="{{ $common['wechat_connect_img'] }}">
 				</span>
-            </div>
+            </div>-->
         </div>
 
     </div>
