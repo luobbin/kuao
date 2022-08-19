@@ -63,6 +63,8 @@
 @endsection
 
 @section('content_js')
-
+<style>
+    article img{width: 100%; overflow: hidden;}
+</style>
 
 @endsection
