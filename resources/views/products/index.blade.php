@@ -60,7 +60,7 @@
             <div class="pro-block pro-left-catalog">
                 <ul>
                     @foreach($common['catalog_apply_imgs'] as $catalog_img)
-                    <li><img src="{{ $catalog_img }}"></li>
+                    <li class="cata-{{ $loop->index }}"><img src="{{ $catalog_img }}"></li>
                     @endforeach
                 </ul>
                 <div class="pro-left-catalog-btn" title="申请">申请</div>
@@ -204,6 +204,29 @@
                     </div>
                     <div class="pull-left catalog-modal-QRcode">
                         <img src="{{ $common['public_account_img'] }}">
+                    </div>
+                    <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">×</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade catalog-modal" id="BblCatalogModal" tabindex="-1" role="dialog" aria-hidden="true"
+         data-backdrop="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="pull-left catalog-modal-title" title="{{ $common['web_name'] }}">BBL</div>
+                    <div class="pull-left catalog-modal-subtitle" title="{{ $common['web_name'] }} 产品目录">BBL 目录下载</div>
+                    <div class="pull-left catalog-modal-year" title="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></div>
+                    <div class="pull-left catalog-modal-text">
+                        <span title="微信扫描二维码添加{{ $common['web_name'] }}公众号可获取目录">微信扫描二维码<br>添加BBL公众号<br>可获取产品目录</span>
+                    </div>
+                    <div class="pull-left catalog-modal-QRcode">
+                        <img src="{{ $common['public_account_bbl_img'] }}">
                     </div>
                     <div class="pull-left catalog-modal-phone" title="拨打服务热线:{{ $common['connect_phone'] }}">拨打服务热线:{{ $common['connect_phone'] }}
                     </div>

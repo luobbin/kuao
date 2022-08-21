@@ -157,8 +157,11 @@ var leftModule = {
 			$('body,html').animate({scrollTop: 0},500);
 		});
 		//绑定目录申请弹窗事件
-		$('.pro-left .pro-left-catalog li,.pro-left .pro-left-catalog .pro-left-catalog-btn').click(function(e) {
+		$('.pro-left .pro-left-catalog .cata-0,.pro-left .pro-left-catalog .pro-left-catalog-btn').click(function(e) {
 			$('#InventoryCatalogModal').modal({show: true});
+		});
+		$('.pro-left .pro-left-catalog .cata-1').click(function(e) {
+			$('#BblCatalogModal').modal({show: true});
 		});
 	}
 };
