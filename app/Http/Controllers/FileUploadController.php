@@ -41,19 +41,20 @@ class FileUploadController extends Controller
                 //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
                 Storage::disk('public')->put($filename, file_get_contents($path));
                 //添加水印
-                $fileTypes = array('jpg','bmp','png','gif','jpeg');//设置文件类型数组
+                $fileTypes = array('jpg','bmp','png','gif','jpeg','mp4','flv','pdf');//设置文件类型数组
                 $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
+                if (!in_array($fileType, $fileTypes)){
+                    return error(203,"文件格式不对：{$fileType}");
+                }
                 //echo "文件类型为".$fileType;
                 $watermark_switch = $webSetRep->findByNameAttr("watermark_switch");
                 if ($watermark_switch) {
-                    if (in_array($fileType, $fileTypes) && $watermark_switch->content == "1") {
+                    if (in_array($fileType, ['jpg','bmp','png','gif','jpeg']) && $watermark_switch->content == "1") {
                         $img = Image::make(public_path("uploads/" . date('Ymd') . "/" . $filename));
                         $mark=$webSetRep->findByNameAttr("water_mark");
                         //$img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
                         $img->insert($mark->content, 'bottom-right', 10, 10);
                         $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
-                    }else{
-                        return error(203,"文件格式不对：{$fileType}");
                     }
                 }
                 return response()->json([
