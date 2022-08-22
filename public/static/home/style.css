@@ -343,8 +343,8 @@ a:link{ text-decoration:none;}
 .block-4 .video-switch-btn{width:48px;height:84px;position:absolute;top:38%;margin:0;z-index:30;background-size:48px 84px;cursor:pointer;background-image:url(images/video-left.png);}
 .block-4 .video-switch-btn.last-video{left:130px;}
 .block-4 .video-switch-btn.next-video{right:130px;transform:rotate(180deg);-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);}
-.block-4 li.to-left{ min-height:390px; max-height: 410px; width:60%; top:20px; left:0; margin-left:-46%;opacity:1}
-.block-4 li.to-right{ min-height:390px; max-height: 410px; width:60%; top:20px; left:100%; margin-left:-15%;opacity:1}
+.block-4 li.to-left{ min-height:390px; max-height: 410px; width:61%; top:20px; left:0; margin-left:-46%;opacity:1; overflow: hidden;}
+.block-4 li.to-right{ min-height:390px; max-height: 410px; width:60%; top:20px; left:100%; margin-left:-15%;opacity:1; overflow: hidden;}
 .block-4 li.to-center{ min-height:425px; max-height: 445px; width:68%; top:0px; left:50%; margin-left:-34%;opacity:1; overflow: hidden;}
 .block-4 li.to-hide{ min-height:355px; max-height: 375px; width:58%; top:0px; left:0; margin-left:0;opacity:0}
 .block-4 li.to-center img{width: auto;}
