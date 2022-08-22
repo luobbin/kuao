@@ -248,7 +248,6 @@
             /**banner切换**/
             var swiper1 = new Swiper('.block-1 .swiper-container', {
                 slidesPerView: 1,
-                initialSlide: 1,
                 loop: true,
                 autoplay: {
                     delay: 5000
