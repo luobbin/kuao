@@ -124,7 +124,7 @@ class ProductsController extends Controller
     {
         $product = $this->repository->with(['cate'])->find($id);
         //print_r($product);
-        $product->imgs = str_empty($product->imgs)?[]:json_prase($product->imgs);
+        $product->imgs = str_empty($product->imgs)?[]:json_decode($product->imgs,true);
         //
         $features = str_empty($product->features)?[]:json_prase($product->features);
         //print_r($features);exit;
