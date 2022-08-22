@@ -123,10 +123,10 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = $this->repository->with(['cate'])->find($id);
-
-        $product->imgs = empty($product->imgs)?[]:json_prase($product->imgs);
+        //print_r($product);
+        $product->imgs = str_empty($product->imgs)?[]:json_prase($product->imgs);
         //
-        $features = empty($product->features)?[]:json_prase($product->features);
+        $features = str_empty($product->features)?[]:json_prase($product->features);
         //print_r($features);exit;
 //        if (count($features)>0){
 //            foreach ($features as $k=>$v){
@@ -137,7 +137,7 @@ class ProductsController extends Controller
 //            }
 //        }
         $product->features = $features;
-        //print_r($product->features);exit;
+        //print_r($product);exit;
         //dd($product);
         if (request()->wantsJson()) {
             return response()->json($product);

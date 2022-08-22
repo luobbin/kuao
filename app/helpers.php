@@ -800,6 +800,21 @@ if(!function_exists('json_to_string')) {
 }
 
 /**
+ * 判断为空
+ * @param string $content
+ * @return array
+ * */
+if(!function_exists('str_empty')) {
+    function str_empty($content)
+    {
+        if ($content=='null'||is_null($content)){
+            return true;
+        }
+        return empty($content);
+    }
+}
+
+/**
  * 返回rpc服务成功结果
  * @param string|array $content
  * @return array
