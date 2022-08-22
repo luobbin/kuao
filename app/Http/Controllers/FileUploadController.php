@@ -41,7 +41,7 @@ class FileUploadController extends Controller
                 //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
                 Storage::disk('public')->put($filename, file_get_contents($path));
                 //添加水印
-                $fileTypes = array('jpg','png','gif','jpeg');//设置文件类型数组
+                $fileTypes = array('jpg','bmp','png','gif','jpeg');//设置文件类型数组
                 $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
                 //echo "文件类型为".$fileType;
                 $watermark_switch = $webSetRep->findByNameAttr("watermark_switch");
