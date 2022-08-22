@@ -52,12 +52,16 @@ class FileUploadController extends Controller
                         //$img->insert(public_path('static/images/watermark.png'), 'bottom-right', 10, 10);
                         $img->insert($mark->content, 'bottom-right', 10, 10);
                         $img->save(public_path("uploads/" . date('Ymd') . "/" . $filename));
+                    }else{
+                        return error(203,"文件格式不对：{$fileType}");
                     }
                 }
                 return response()->json([
                     'path' => '/public/uploads/'.date('Ymd')."/".$filename,
                     'url' => Storage::disk('public')->url($filename)
                 ]);
+            }else{
+                return error(203,"上传文件失败，校验错误：{$fileCharater->isValid()}");
             }
         }
         return response()->json([]);

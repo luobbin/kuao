@@ -66,7 +66,7 @@ class CasesController extends Controller
         $commonData = $this->websetRep->getCommonData();
         return view('cases.index', [
             'common'=>$commonData,
-            'cates' => $cateRep->all(),
+            'cates' => $cateRep->orderBy("sort","desc")->all(),
             'cate_id' => $cate_id,
             'data' => $data,
             'pageTitle'=> "案例列表"."-".$commonData['web_name']
