@@ -292,8 +292,8 @@
                         searchJoin: 'and',
                         search: this.search,
                         searchFields: this.searchFields,
-                        orderBy: 'sort',
-                        sortedBy: 'desc',
+                        orderBy: 'sort;id',
+                        sortedBy: 'desc;desc',
                         filter: ''
                     },
                     type: 'GET',
