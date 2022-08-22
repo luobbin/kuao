@@ -367,9 +367,9 @@ footer .foot2 .fr{display:none;}
 .ny-banner .word {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;}
 .ny-banner .word h3 {font-size:38px;font-weight:bold;margin-bottom:36px;overflow:hidden;}
 .ny-banner .word p {font-size:20px;line-height:28px;height:56px;overflow:hidden;width:582px;max-width:94%;}
-.ny-banner .word1 {position:absolute;left:15%;color:#fff;z-index:2;top:50%;margin-top:-70px;background-color: rgba(235,235,235,0.4);padding: 1.5%;}
-.ny-banner .word1 h3 {font-size:36px;font-weight:bold;margin-bottom:24px;}
-.ny-banner .word1 p {font-size:20px;line-height:28px;overflow:hidden;min-width:384px;max-width:94%;position:relative;}
+.ny-banner .word1 {position:absolute;left:15%;color:#fff;z-index:2;top:50%;margin-top:0px;background-color: rgba(235,235,235,0.4);padding: 1%;}
+.ny-banner .word1 h3 {font-size:36px;font-weight:bold;margin-bottom:16px;}
+.ny-banner .word1 p {font-size:20px;line-height:28px;overflow:hidden;min-width:330px;max-width:94%;position:relative;}
 /*.ny-banner .word1 p::after {content:'';width:26px;height:2px;background-color:#fff;position:absolute;left:0;bottom:0;}*/
 .ny-banner .word2 {position:absolute;left:8.5%;color:#333;z-index:2;top:50%;margin-top:-70px;}
 .ny-banner .word2 h3 {font-size:40px;font-weight:bold;margin-bottom:24px;}
@@ -1069,7 +1069,7 @@ header .left .lang p {font-size:16px;}
 .ny-banner .word {margin-top:-62px;left:7.5%;}
 .ny-banner .word h3 {font-size:30px;}
 .ny-banner .word p {font-size:16px;padding-bottom:50px;}
-.ny-banner .word1 {margin-top:-62px;left:15%;}
+.ny-banner .word1 {left:15%;}
 .ny-banner .word1 h3 {font-size:30px;}
 .ny-banner .word1 p {font-size:16px;}
 .ny-banner .word2 {margin-top:-62px;left:7.5%;}
@@ -1421,8 +1421,8 @@ footer .foot2 .fr {display:none;}
 .ny-banner .word h3 {font-size:24px;margin-bottom:10px;}
 .ny-banner .word p {font-size:14px;line-height:24px;height:auto;}
 .ny-banner .word p::after {display:none;}
-.ny-banner .word1 {left:4%;margin-top:-24px;width:92%;}
-.ny-banner .word1 h3 {font-size:24px;margin-bottom:10px;}
+.ny-banner .word1 {left:4%;width:92%; display: none;}
+.ny-banner .word1 h3 {font-size:24px;margin-bottom:8px;}
 .ny-banner .word1 p {font-size:14px;line-height:24px;height:auto;}
 .ny-banner .word1 p::after {display:none;}
 .ny-banner .word2 {left:4%;margin-top:-24px;width:92%;}
