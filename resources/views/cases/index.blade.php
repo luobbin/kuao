@@ -292,7 +292,7 @@
                         searchJoin: 'and',
                         search: this.search,
                         searchFields: this.searchFields,
-                        orderBy: 'id',
+                        orderBy: 'sort',
                         sortedBy: 'desc',
                         filter: ''
                     },
