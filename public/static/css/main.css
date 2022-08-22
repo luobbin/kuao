@@ -365,10 +365,10 @@ footer .foot2 .fr{display:none;}
 .ny-banner .img img.pc {display:block;width:100%;}
 .ny-banner .img img.m {display:none;}
 .ny-banner .word {position:absolute;left:8.5%;color:#fff;z-index:2;top:50%;margin-top:-70px;}
-.ny-banner .word h3 {font-size:48px;font-weight:bold;margin-bottom:36px;overflow:hidden;}
+.ny-banner .word h3 {font-size:38px;font-weight:bold;margin-bottom:36px;overflow:hidden;}
 .ny-banner .word p {font-size:20px;line-height:28px;height:56px;overflow:hidden;width:582px;max-width:94%;}
 .ny-banner .word1 {position:absolute;left:15%;color:#fff;z-index:2;top:50%;margin-top:-70px;background-color: rgba(235,235,235,0.4);padding: 1.5%;}
-.ny-banner .word1 h3 {font-size:40px;font-weight:bold;margin-bottom:24px;}
+.ny-banner .word1 h3 {font-size:36px;font-weight:bold;margin-bottom:24px;}
 .ny-banner .word1 p {font-size:20px;line-height:28px;overflow:hidden;min-width:384px;max-width:94%;position:relative;}
 /*.ny-banner .word1 p::after {content:'';width:26px;height:2px;background-color:#fff;position:absolute;left:0;bottom:0;}*/
 .ny-banner .word2 {position:absolute;left:8.5%;color:#333;z-index:2;top:50%;margin-top:-70px;}
@@ -826,7 +826,7 @@ to {opacity:1;stroke-dasharray:371 371}
 .case .col-bottom a.item{display: block;width: calc(50% - 22px);margin-right:44px;position: relative;}
 .case .col-bottom a.item .img {width:100%;overflow:hidden;position:relative;}
 .case .col-bottom a.item .img img {display:block;width:100%;transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;-ms-transition:all .3s linear;}
-.case .col-bottom a.item .word {padding:36px 18px 10px 18px;position: relative;}
+.case .col-bottom a.item .word {padding:36px 0px 10px 18px;position: relative;}
 .case .col-bottom a.item .word h3 {font-size:24px;color:#9F9FA1;font-weight:bold;margin-bottom:15px;}
 .case .col-bottom a.item .word h3 span{float: right;font-family: 'SourceHanSansCN-Regular','SourceHanSansCN-Normal','黑体','SourceHanSansSC-Regular';}
 .case .col-bottom a.item .word p {display:none;font-size:16px;line-height:24px;height:48px;color:#666;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
@@ -1134,7 +1134,7 @@ header .left .ser input {height:30px;margin-left:30px;width:calc(100% - 30px);}
 .about3 .col-middle{margin-left:100px;margin-top:80px;}
 
 .case .col-top .left p{font-size: 30px;line-height: 40px;}
-.case .col-bottom a.item .word{padding:18px 10px 5px 10px;}
+.case .col-bottom a.item .word{padding:18px 0px 5px 10px;}
 .case .col-bottom a.item .word h3{font-size:18px;}
 .case .col-bottom a.item .word h3 span{font-size:15px; line-height: 18px;}
 .case .col-bottom a.item .word p{font-size:14px;}
