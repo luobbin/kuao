@@ -209,8 +209,10 @@ class ProductsController extends Controller
     {
         try {
             $data = $request->all();
-            $data['imgs'] = json_encode($request->imgs);
-            $data['features'] = json_to_string($request->features);
+            if ($request->has("imgs"))
+                $data['imgs'] = json_encode($request->imgs);
+            if ($request->has("features"))
+                $data['features'] = json_to_string($request->features);
             $product = $this->repository->update($data, $id);
 
             $response = [
