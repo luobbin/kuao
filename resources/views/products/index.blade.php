@@ -52,7 +52,7 @@
                     @endforeach
                 </ul>
                 <div class="more-promotion-well">
-                    <a href="{{ url("products") }}" class="more-promotion-well-text text-ellipsis" title="查看更多">查看更多 <span>>>></span></a>
+                    <a href="{{ url("product_center") }}" class="more-promotion-well-text text-ellipsis" title="查看更多">查看更多 <span>>>></span></a>
                 </div>
             </div>
 
