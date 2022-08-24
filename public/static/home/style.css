@@ -1079,7 +1079,7 @@ a:link{ text-decoration:none;}
 	.mobile-menu{top:80px;}
 	#head, .mobile-menu{ border:0 none;}
 	.block-1 li .ban-con{left:45px;}
-	.block-1 .ban-con{top: 80%; font-size: 12px; height:30px;line-height: 30px;}
+	.block-1 .ban-con{top: 80%; font-size: 10px; height:30px;line-height: 30px;}
 	.block-1 .ban-con h2{ font-size:14px; line-height:0px; width:100%;}
 	.ban-con p{ padding-bottom:20px; line-height:18px; width:250px; height:50px; overflow:hidden;}
 	.block-1 li .ban-con{ width:250px; height:120px; margin-top:-65px;}
