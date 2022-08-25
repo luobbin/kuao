@@ -7,6 +7,7 @@
  */
 
 namespace App\Console\Commands;
+use App\Entities\Product;
 use App\Entities\WebSetting;
 use Illuminate\Console\Command;
 
@@ -87,6 +88,15 @@ class ConsumerRobin extends Command
             WebSetting::with([])->where("name_attr",'web_header_menu_setting')->update(["content"=>json_encode($list)]);
             echo json_encode($list);
 
+        }elseif ($act=='docs'){//测试
+            $docs = [
+                ['name'=>"技术规格","link"=>"/static/images/001.zip"],
+                ['name'=>"产品线图","link"=>"/static/images/001.zip"],
+                ['name'=>"配光曲线","link"=>"/static/images/001.zip"],
+                ['name'=>"安装说明","link"=>"/static/images/001.zip"]
+            ];
+            Product::with([])->where("id",5)->update(['docs'=>json_encode($docs)]);
+            echo json_encode($docs);
         }elseif ($act=='test'){//测试
             $start = microtime();
             $waster = get_microtime_between($start,microtime());

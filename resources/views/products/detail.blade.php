@@ -26,6 +26,9 @@
                     <a href="#p-show1" class="active">简介</a>
                     <a href="#p-show2">特点</a>
                     <a href="#p-show3">规格</a>
+                    @if($data['docs'])
+                    <a href="#p-show6">文档</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -110,6 +113,32 @@
         </div>
     </div>
     <!-- 产品规格End -->
+    <!-- 产品文档 -->
+    @if($data['docs'])
+    <div id="p-show6"></div>
+    <div class="p-part6 pt110 ">
+        <div class="w83">
+            <div class="p-tit">文档下载</div>
+
+            <div class="down">
+                @foreach ($data['docs'] as $doc)
+                <div class="item pdf">
+                    <a href="{{ $doc['link'] }}">
+                        <div class="word">
+                            <h3>{{ $doc['name'] }}</h3>
+                        </div>
+                    </a>
+                    <a href="{{ $doc['link'] }}"  download="{{ $doc['link'] }}">
+                        <i></i>
+                    </a>
+                </div>
+                @endforeach
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    @endif
+    <!-- 产品文档End -->
 </div>
     <!-- 视频弹窗 -->
     <div id="z_tanchuang" class="z_tanchuang">
@@ -275,6 +304,7 @@
             var f1 = $('#p-show1').offset().top - 150;
             var f2 = $('#p-show2').offset().top - 150;
             var f3 = $('#p-show3').offset().top - 150;
+            var f6 = $('#p-show6').offset().top - 150;
             if ($(window).scrollTop() >= f1) {
                 $(".p-nav .c-nav a").eq(0).addClass('active').siblings().removeClass('active');
             }
@@ -286,7 +316,9 @@
             if ($(window).scrollTop() >= f3) {
                 $(".p-nav .c-nav a").eq(2).addClass('active').siblings().removeClass('active');
             }
-
+            if ($(window).scrollTop() >= f6) {
+                $(".p-nav .c-nav a").eq(5).addClass('active').siblings().removeClass('active');
+            };
         });
     </script>
 @endsection

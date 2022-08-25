@@ -68,10 +68,49 @@ class FileUploadController extends Controller
         return response()->json([]);
     }
 
-    public function mutiFile(Request $request)
+    /**
+     * 文档上传
+     * @param Request $request
+     * @param WebSettingRepositoryEloquent $webSetRep
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function docFile(Request $request, WebSettingRepositoryEloquent $webSetRep)
     {
+        if ($request->hasFile('file')) {
+            //在源生的php代码中是使用$_FILE来查看上传文件的属性
+            //但是在laravel里面有更好的封装好的方法，就是下面这个
+            //显示的属性更多
+            $fileCharater = $request->file('file');
 
-        return null;
+            if ($fileCharater->isValid()) { //括号里面的是必须加的哦
+                //如果括号里面的不加上的话，下面的方法也无法调用的
+
+                //获取文件的扩展名
+                $ext = $fileCharater->getClientOriginalExtension();
+
+                //获取文件的绝对路径
+                $path = $fileCharater->getRealPath();
+                //Log::info("获取到的文件绝对路径为：{$path}");
+                //定义文件名
+                $filename = time() . rand(100000, 999999) . '.' . $ext;
+                //Log::info("获取到的新文件名为：{$filename}");
+                //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置
+                Storage::disk('public')->put($filename, file_get_contents($path));
+//                //格式判断
+//                $fileTypes = array('zip','doc','dwg','pdf','txt','pdf');//设置文件类型数组
+//                $fileType = $fileCharater->getClientOriginalExtension();//获取文件类型
+//                if (!in_array($fileType, $fileTypes)){
+//                    return error(203,"文件格式不对：{$fileType}");
+//                }
+                return response()->json([
+                    'path' => '/public/uploads/'.date('Ymd')."/".$filename,
+                    'url' => Storage::disk('public')->url($filename)
+                ]);
+            }else{
+                return error(203,"上传文件失败，校验错误：{$fileCharater->isValid()}");
+            }
+        }
+        return response()->json([]);
     }
 
     //测试类

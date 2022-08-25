@@ -20,7 +20,7 @@ class Product extends Model implements Transformable
      * @var array
      */
     protected $fillable = ['id', 'name','description','info','cate_id','index_img','imgs','features','videos','scenes',
-        'specification','documents','created_at','updated_at','sort','if_hot'];
+        'specification','documents','created_at','updated_at','sort','if_hot','docs'];
 
     //商品---分类
     public function cate()

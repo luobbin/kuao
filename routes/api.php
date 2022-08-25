@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('login', 'UserController@login');
     //上传文件
     Route::post('single_upload', 'FileUploadController@singleFile');
-    Route::post('muti_upload', 'FileUploadController@mutiFile');
+    Route::post('doc_upload', 'FileUploadController@docFile');
 
     // 需要验证token的路由可在下方添加
     Route::group(['middleware' => 'jwt.token'], function () {

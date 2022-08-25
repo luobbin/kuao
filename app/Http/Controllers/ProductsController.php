@@ -126,17 +126,16 @@ class ProductsController extends Controller
         //print_r($product);
         $product->imgs = str_empty($product->imgs)?[]:json_decode($product->imgs,true);
         //
-        $features = str_empty($product->features)?[]:json_prase($product->features);
-        //print_r($features);exit;
-//        if (count($features)>0){
-//            foreach ($features as $k=>$v){
-//                if (is_array($v))
-//                    $features[$k] = $v;
-//                else
-//                    $features[$k] = json_decode($v,true);
-//            }
-//        }
-        $product->features = $features;
+        $product->features = str_empty($product->features)?[]:json_prase($product->features);
+
+//        $docs = [
+//            ['name'=>"技术规格","link"=>"/static/images/001.zip"],
+//            ['name'=>"产品线图","link"=>"/static/images/001.zip"],
+//            ['name'=>"配光曲线","link"=>"/static/images/001.zip"],
+//            ['name'=>"安装说明","link"=>"/static/images/001.zip"]
+//        ];
+        $docs = [];
+        $product->docs = str_empty($product->docs)?$docs:json_prase($product->docs);
         //print_r($product);exit;
         //dd($product);
         if (request()->wantsJson()) {
@@ -166,6 +165,7 @@ class ProductsController extends Controller
             $data = $request->all();
             $data['imgs'] = json_encode($request->imgs);
             $data['features'] = json_to_string($request->features);
+            $data['docs'] = json_to_string($request->docs);
             $product = $this->repository->create($data);
 
             $response = [
@@ -211,6 +211,8 @@ class ProductsController extends Controller
             $data = $request->all();
             if ($request->has("imgs"))
                 $data['imgs'] = json_encode($request->imgs);
+            if ($request->has("docs"))
+                $data['docs'] = json_to_string($request->docs);
             if ($request->has("features"))
                 $data['features'] = json_to_string($request->features);
             $product = $this->repository->update($data, $id);
