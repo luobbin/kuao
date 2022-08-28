@@ -1108,6 +1108,10 @@ a:link{ text-decoration:none;}
 	.owl-theme .owl-controls .owl-pagination{ display:none;}
 	.di-left{display:none}
 	.block-title .fr{display: none}
+	.block-title .fr a{font-size: 12px; padding: 0 0.5%;}
+	.block-case.block-title .fr{display: block; width: 100%; float: left; margin-top: -28px; text-align: left; padding-left: 1%;}
+	.block-case.block-title .fr a{ border-right: 1px solid #EEEEEE; padding: 0 1% 0 1%; height: 13px; line-height: 12px; float: left;}
+	.block-case.block-title .fr a:last-child{border-right: none;}
 	.tit-ban{font-size: 16px;max-width: 50%; padding-left: 2%;}
 	#footer .di-xin .di-link-ban{width: 100%;}
 	#footer .di-xin .di-link-ban .di-link{padding:0 5%;}
@@ -1116,7 +1120,6 @@ a:link{ text-decoration:none;}
 	#footer .di-foot{font-size: 11px;}
 	#footer .di-foot .address{width:99%; font-size: 11px; line-height: 18px;}
 	#footer .di-foot .address .line{width: 100%;}
-	.block-title .fr a{font-size: 12px; padding: 0 0.5%;}
 	.catalog-modal .modal-content .modal-body .catalog-modal-title,.catalog-modal .modal-content .modal-body .catalog-modal-subtitle,
 	.catalog-modal .modal-content .modal-body .catalog-modal-year{display: none;}
 	.catalog-modal .modal-content .modal-body{width: 98%; padding: 20px 10%;}

@@ -79,7 +79,7 @@
 
 <div class="home mdec90 w83">
     <!--幻灯片:项目案例-->
-    <div class="block-title">
+    <div class="block-title block-case">
         <div class="tit-ban">{{ $homeNames[1]['name'] }}</div>
         <div class="fr">
             @foreach ($cates as $cate)
