@@ -16,7 +16,7 @@
                     @foreach ($cates as $cate)
                     <div class="swiper-slide">
                         <div class="img">
-                            <img src="{{ $cate['img'] }}">
+                            <img src="{{ $cate['img'] }}" style="width: 100%;">
                         </div>
                         <div class="word1">
                             <h3>{{ $cate['name'] }}</h3>
