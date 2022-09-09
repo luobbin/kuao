@@ -155,7 +155,7 @@
         <div class="clearfix"></div>
         <hr style="margin: 10px 0; border: 1px solid; border-color:#9E9F9F;">
         <div class="clearfix"></div>
-        <a href="http://www.beian.miit.gov.cn/" title="{{$common['web_copyright']}}" target="_blank" class="di-beian" > {!! $common['web_copyright'] !!} </a>
+        {!! $common['web_copyright'] !!}
     </div>
     <div class="clearfix"></div>
 </footer>
