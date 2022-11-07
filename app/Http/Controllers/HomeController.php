@@ -42,7 +42,7 @@ class HomeController extends Controller
             'topVideo'    => json_decode($homeNames[7]['application'],true),//顶部视频
             'blockCases'    => $homeNames[1]['application'],//案例banner模块
             'cates' => $cateRep->all(),
-            'pageTitle'=> $this->commonData['web_name']."-"."首页"
+            'pageTitle'=> $this->commonData['web_name']."-"."BBL巴比伦博物馆照明"
             ]);
     }
 
